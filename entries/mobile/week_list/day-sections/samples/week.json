@@ -1,0 +1,77 @@
+{
+ "title": "This week",
+ "items": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "text": "Book the boiler service",
+   "done": true
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "text": "Return library books",
+   "done": false
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "text": "Pay the water bill",
+   "done": true
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "Buy bulbs for the front bed",
+   "done": false
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "Call grandma",
+   "done": true
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "text": "Plan the week",
+   "done": true
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-11-02"
+   },
+   "text": "Bin day",
+   "done": true
+  }
+ ],
+ "day_names": [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+ ],
+ "today_word": "today",
+ "week_word": "done this week",
+ "nothing_text": "Nothing for this day",
+ "add_word": "Add a to-do",
+ "add_label": "New to-do",
+ "tick_word": "Tick",
+ "untick_word": "Untick"
+}

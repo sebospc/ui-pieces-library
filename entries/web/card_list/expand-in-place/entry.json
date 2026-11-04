@@ -1,0 +1,12 @@
+{
+ "id": "web.card_list.expand-in-place",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "card_list",
+ "kinds": [
+  "collection",
+  "reading"
+ ],
+ "line": "Compact rows with a one-tap pill; a tap raises the full card over a dimmed page, close by tap outside or x."
+}

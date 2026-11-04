@@ -1,0 +1,12 @@
+{
+ "id": "web.filtered_feed.chip-counts",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "filtered_feed",
+ "kinds": [
+  "log",
+  "journal"
+ ],
+ "line": "A search field, kind chips that count their matches, and the events newest first with an icon badge and their age."
+}

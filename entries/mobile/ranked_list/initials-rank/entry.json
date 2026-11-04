@@ -1,0 +1,9 @@
+{
+ "id": "mobile.ranked_list.initials-rank",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": ["ranking", "people"],
+ "line": "A ranked list with an initial badge, a name and a value; the top three stand out."
+}

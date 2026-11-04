@@ -1,0 +1,176 @@
+{
+ "title": "Stretch",
+ "question": "Ten minutes of stretching after getting up?",
+ "cadence": "Daily",
+ "reminder": "07:15",
+ "marks": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-30"
+   }
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-29"
+   }
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-28"
+   }
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-26"
+   }
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-25"
+   }
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-23"
+   }
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-22"
+   }
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-21"
+   }
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-19"
+   }
+  },
+  {
+   "id": 10,
+   "date": {
+    "date": "2026-10-18"
+   }
+  },
+  {
+   "id": 11,
+   "date": {
+    "date": "2026-10-16"
+   }
+  },
+  {
+   "id": 12,
+   "date": {
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": 13,
+   "date": {
+    "date": "2026-10-14"
+   }
+  },
+  {
+   "id": 14,
+   "date": {
+    "date": "2026-10-12"
+   }
+  },
+  {
+   "id": 15,
+   "date": {
+    "date": "2026-10-11"
+   }
+  },
+  {
+   "id": 16,
+   "date": {
+    "date": "2026-10-09"
+   }
+  },
+  {
+   "id": 17,
+   "date": {
+    "date": "2026-10-08"
+   }
+  },
+  {
+   "id": 18,
+   "date": {
+    "date": "2026-10-07"
+   }
+  },
+  {
+   "id": 19,
+   "date": {
+    "date": "2026-10-05"
+   }
+  },
+  {
+   "id": 20,
+   "date": {
+    "date": "2026-10-04"
+   }
+  },
+  {
+   "id": 21,
+   "date": {
+    "date": "2026-10-02"
+   }
+  },
+  {
+   "id": 22,
+   "date": {
+    "date": "2026-10-01"
+   }
+  },
+  {
+   "id": 23,
+   "date": {
+    "date": "2026-09-26"
+   }
+  },
+  {
+   "id": 24,
+   "date": {
+    "date": "2026-09-21"
+   }
+  },
+  {
+   "id": 25,
+   "date": {
+    "date": "2026-09-16"
+   }
+  },
+  {
+   "id": 26,
+   "date": {
+    "date": "2025-10-15"
+   }
+  }
+ ],
+ "overview_head": "Numbers",
+ "score_word": "Last 30 days",
+ "streak_word": "Run",
+ "month_word": "This month",
+ "total_word": "All time",
+ "weeks_head": "By week",
+ "from_word": "From",
+ "empty_text": "Nothing yet. Each day you tick shows up here.",
+ "mark_text": "Done today",
+ "done_text": "Done. Tap to undo",
+ "mark_label": "Mark today as done",
+ "undo_label": "Undo today"
+}

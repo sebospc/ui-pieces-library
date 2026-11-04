@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: left words in order and their matches in a set shuffle, a pick on each side makes a pair in either order, a match dims and checks both tiles, a miss marks both with a cross and a line until the next tap and is counted, a bar fills per pair, a result line and start over"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "minimum: select, match and miss on each side with another pair already matched (the done-tile guard reads only the tapped tile)"}

@@ -1,0 +1,133 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the cards: id, name, by, icon (Tabler), about (a few sentences), done (false at first)"
+  },
+  {
+   "name": "act_label",
+   "type": "text",
+   "required": true,
+   "about": "the pill before it is done"
+  },
+  {
+   "name": "done_label",
+   "type": "text",
+   "required": true,
+   "about": "the pill once done"
+  },
+  {
+   "name": "close_label",
+   "type": "text",
+   "required": true,
+   "about": "the spoken label of the close button"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows with no items"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusCard",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row_open",
+    "gesture": "tap",
+    "event": "open"
+   },
+   {
+    "node": "row_act",
+    "gesture": "tap",
+    "event": "act"
+   },
+   {
+    "node": "dim",
+    "gesture": "tap",
+    "event": "close"
+   },
+   {
+    "node": "card_close",
+    "gesture": "tap",
+    "event": "close"
+   },
+   {
+    "node": "card_act",
+    "gesture": "tap",
+    "event": "act"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the empty line"
+   },
+   "open": {
+    "shows": "the page dims and the card rises over it"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "row_act",
+    "animate": "snappy",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row_open": "it.name",
+   "row_act": "pill words and the name",
+   "dim": "close_label",
+   "card_close": "close_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, snappy and shrink",
+  "not_colour_alone": "a done pill carries a tick and its own words"
+ }
+}

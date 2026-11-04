@@ -1,0 +1,74 @@
+{
+ "title": "Evenings",
+ "items": [
+  {
+   "id": 1,
+   "title": "Harbour Lights",
+   "sub": "Part 3",
+   "done_min": 18,
+   "total_min": 50,
+   "last_at": {
+    "date": "2026-10-30"
+   },
+   "plays": 820,
+   "dropped": false
+  },
+  {
+   "id": 2,
+   "title": "The Long Field",
+   "sub": "Part 1",
+   "done_min": 40,
+   "total_min": 80,
+   "last_at": {
+    "date": "2026-10-31"
+   },
+   "plays": 310,
+   "dropped": false
+  },
+  {
+   "id": 3,
+   "title": "Quiet Kitchen",
+   "sub": "Episode 6",
+   "done_min": 0,
+   "total_min": 25,
+   "last_at": {
+    "date": "2026-10-20"
+   },
+   "plays": 1200,
+   "dropped": false
+  },
+  {
+   "id": 4,
+   "title": "North Line",
+   "sub": "Episode 2",
+   "done_min": 44,
+   "total_min": 44,
+   "last_at": {
+    "date": "2026-10-29"
+   },
+   "plays": 560,
+   "dropped": false
+  },
+  {
+   "id": 5,
+   "title": "Low Tide",
+   "sub": "Part 2",
+   "done_min": 10,
+   "total_min": 60,
+   "last_at": {
+    "date": "2026-10-31"
+   },
+   "plays": 90,
+   "dropped": true
+  }
+ ],
+ "resume_title": "Pick up where you left off",
+ "popular_title": "Watched most",
+ "left_word": "min to go",
+ "playing_word": "Playing now",
+ "resume_word": "Play",
+ "more_label": "More for this",
+ "drop_word": "Take off this card",
+ "finish_word": "Mark as finished",
+ "empty_text": "Nothing to watch yet"
+}

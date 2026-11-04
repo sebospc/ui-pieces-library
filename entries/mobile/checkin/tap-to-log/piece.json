@@ -1,0 +1,172 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question over the levels, centred"
+  },
+  {
+   "name": "lead",
+   "type": "text",
+   "required": true,
+   "about": "one line under the question: one tap logs, another tap changes it"
+  },
+  {
+   "name": "levels",
+   "type": "list",
+   "required": true,
+   "about": "3 to 7 levels, worst to best: id (1 up, in order), name, icon (a Tabler name); the middle one is drawn largest, better ones above, worse ones below"
+  },
+  {
+   "name": "logged_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once the day has a log; may read logged_name"
+  },
+  {
+   "name": "future_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when the day field holds a day still to come"
+  },
+  {
+   "name": "day_label",
+   "type": "text",
+   "required": true,
+   "about": "the spoken label of the day field"
+  },
+  {
+   "name": "log",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: logs a level for the day, replacing that day's log"
+  },
+  {
+   "name": "pick_day",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: picks the day to log for"
+  },
+  {
+   "name": "back_today",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: puts the day back to today; the label is the button's words"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusTile",
+  "radiusControl",
+  "titleHero",
+  "body",
+  "caption",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "up_tile",
+    "gesture": "tap",
+    "event": "log"
+   },
+   {
+    "node": "mid_tile",
+    "gesture": "tap",
+    "event": "log"
+   },
+   {
+    "node": "down_tile",
+    "gesture": "tap",
+    "event": "log"
+   },
+   {
+    "node": "day_field",
+    "gesture": "pick",
+    "event": "pick_day"
+   },
+   {
+    "node": "today_btn",
+    "gesture": "tap",
+    "event": "back_today"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "no tile filled or ticked, done_row hidden"
+   },
+   "attention": {
+    "shows": "future_note, the levels dimmed and a tap does nothing"
+   },
+   "past_day": {
+    "shows": "today_btn beside the day field"
+   }
+  },
+  "motion": [
+   {
+    "node": "up_tile",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "mid_tile",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "down_tile",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "done_row",
+    "enter": "rise"
+   },
+   {
+    "node": "done_text",
+    "animate": "swap"
+   },
+   {
+    "node": "today_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "up_tile": "it.name",
+   "mid_tile": "it.name",
+   "down_tile": "it.name",
+   "day_field": "day_label",
+   "today_btn": "back_today.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, snappy, rise and swap",
+  "not_colour_alone": "the logged tile carries a tick and done_row names the level"
+ }
+}

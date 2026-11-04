@@ -1,0 +1,9 @@
+{
+ "id": "mobile.hero_list.latest-show",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": ["listening", "list"],
+ "line": "The show that updated last as a big cover with a play badge, then every new episode with its own play button."
+}

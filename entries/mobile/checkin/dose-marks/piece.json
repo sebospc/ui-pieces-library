@@ -1,0 +1,180 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "section",
+   "type": "text",
+   "required": true,
+   "about": "the heading over today's doses"
+  },
+  {
+   "name": "doses",
+   "type": "list",
+   "required": true,
+   "about": "today's doses in order: id (1 up), name, when (text), mark (0 open, 1 taken, 2 missed; start at 0); 0 or more, with none the empty line shows"
+  },
+  {
+   "name": "empty_line",
+   "type": "text",
+   "required": true,
+   "about": "the line shown when there are no doses"
+  },
+  {
+   "name": "card_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under each dose's name; may read it.name, it.when and it.mark (today's mark, 0 on a new day)"
+  },
+  {
+   "name": "taken_text",
+   "type": "text",
+   "required": true,
+   "about": "the word under the taken button"
+  },
+  {
+   "name": "missed_text",
+   "type": "text",
+   "required": true,
+   "about": "the word under the missed button"
+  },
+  {
+   "name": "today_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the heading; may read total, taken_today, missed_today and open_count"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "shown once no dose is open; may read taken_today and missed_today"
+  },
+  {
+   "name": "week_line",
+   "type": "formula",
+   "required": true,
+   "about": "the quiet line at the foot; may read week_taken and week_marked (doses marked in the last 7 days, today included)"
+  },
+  {
+   "name": "take",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: marks the dose taken (value: it.id), or clears it if it is already taken"
+  },
+  {
+   "name": "miss",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: marks the dose missed (value: it.id), or clears it if it is already missed"
+  },
+  {
+   "name": "took_all",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: marks every open dose taken and leaves marked ones as they are"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "surfaceRow",
+  "radiusCard",
+  "headline",
+  "cardTitle",
+  "body",
+  "caption",
+  "micro",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "take_btn",
+    "gesture": "tap",
+    "event": "take"
+   },
+   {
+    "node": "miss_btn",
+    "gesture": "tap",
+    "event": "miss"
+   },
+   {
+    "node": "all_btn",
+    "gesture": "tap",
+    "event": "took_all"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the heading and the empty line only; no cards, no took-all, no week line"
+   },
+   "attention": {
+    "shows": "open doses read as due, and took-all sits beside the heading"
+   },
+   "fallback": {
+    "shows": "a new day: yesterday's marks stay in the log but every card reads open again"
+   }
+  },
+  "motion": [
+   {
+    "node": "status_text",
+    "animate": "swap"
+   },
+   {
+    "node": "today_text",
+    "animate": "swap"
+   },
+   {
+    "node": "done_row",
+    "enter": "rise"
+   },
+   {
+    "node": "week_text",
+    "animate": "swap"
+   },
+   {
+    "node": "take_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "miss_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "all_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "take_btn": "take.label",
+   "miss_btn": "miss.label",
+   "all_btn": "took_all.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, rise and shrink",
+  "not_colour_alone": "each answer is an icon with a word under it, and each card's line says taken, missed or due in words"
+ }
+}

@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: four weeks of level cells, tap a day for its count in words, log today"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "cells come from MAP(DAYS(...) AS day, ...) in place of 28 written-out cells"}

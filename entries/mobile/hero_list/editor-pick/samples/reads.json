@@ -1,0 +1,20 @@
+{
+ "title": "Bookshop",
+ "eyebrow": "Staff picks",
+ "heading": "Quiet weekend reads",
+ "blurb": "Short books for a slow Saturday: a walk along a river, a year in a small garden, letters between two old friends, and a cook who only makes soup. Each one fits in an afternoon.",
+ "items": [
+  {"id": 1, "name": "The river path", "line": "Walking, 140 pages", "saved": false},
+  {"id": 2, "name": "A year of beans", "line": "Gardening, 180 pages", "saved": false},
+  {"id": 3, "name": "Dear Ruth", "line": "Letters, 120 pages", "saved": true},
+  {"id": 4, "name": "Soup, mostly", "line": "Cooking, 96 pages", "saved": false}
+ ],
+ "empty_line": "Nothing picked yet",
+ "count_line": "=IF(saved_count = 0, TEXT(total) & \" books\", TEXT(saved_count) & \" of \" & TEXT(total) & \" saved\")",
+ "save_word": "Save",
+ "saved_word": "Saved",
+ "more_word": "More",
+ "less_word": "Less",
+ "save": {"event": "save", "value": "=it.id", "label": "Save book"},
+ "more": {"event": "more", "value": "=0", "label": "Show the whole note"}
+}

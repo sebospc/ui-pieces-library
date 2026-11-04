@@ -1,0 +1,67 @@
+{
+ "title": "Choir altos",
+ "members": 14,
+ "members_word": " members",
+ "me": "You",
+ "messages": [
+  {
+   "id": 1,
+   "author": "Hana",
+   "mine": false,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "text": "Rehearsal moved to the small hall on Thursday."
+  },
+  {
+   "id": 2,
+   "author": "Hana",
+   "mine": false,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "text": "Same time, bring the blue folders."
+  },
+  {
+   "id": 3,
+   "author": "Lucia",
+   "mine": false,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "text": "Is the second verse still cut?"
+  },
+  {
+   "id": 4,
+   "author": "Lucia",
+   "mine": false,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "Found my answer in the notes, never mind."
+  },
+  {
+   "id": 5,
+   "author": "You",
+   "mine": true,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "I can bring spare copies."
+  },
+  {
+   "id": 6,
+   "author": "You",
+   "mine": true,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "Five of them."
+  }
+ ],
+ "today_word": "Today",
+ "yesterday_word": "Yesterday",
+ "empty_text": "No messages yet. Say hello.",
+ "field_label": "Write to the altos",
+ "send_text": "Send"
+}

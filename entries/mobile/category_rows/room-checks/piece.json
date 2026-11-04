@@ -1,0 +1,134 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "groups",
+   "type": "list",
+   "required": true,
+   "about": "id, label; one section each, in this order; a group with no items is hidden"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, group, name, note (may be empty), done"
+  },
+  {
+   "name": "left_word",
+   "type": "text",
+   "required": true,
+   "about": "after a count of what is not done, with a leading space"
+  },
+  {
+   "name": "all_done_line",
+   "type": "text",
+   "required": true,
+   "about": "a section header when everything in it is done"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a done row's name"
+  },
+  {
+   "name": "not_done_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after an open row's name"
+  },
+  {
+   "name": "clear_label",
+   "type": "text",
+   "required": true,
+   "about": "the button that removes the done rows"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when there are no items at all"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "capsule",
+  "body",
+  "caption",
+  "chipLabel",
+  "sectionHeader",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "toggle_item"
+   },
+   {
+    "node": "clear",
+    "gesture": "tap",
+    "event": "clear_done"
+   }
+  ],
+  "states": {
+   "open": {
+    "shows": "one section per group with items, open rows first, done rows below them, a count left per section and in total"
+   },
+   "section_done": {
+    "shows": "a section with nothing left says all_done_line"
+   },
+   "some_done": {
+    "shows": "the clear button"
+   },
+   "empty": {
+    "shows": "empty_text, no sections"
+   }
+  },
+  "motion": [
+   {
+    "node": "sec",
+    "enter": "rise"
+   },
+   {
+    "node": "row_mark",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row": "name, then done_word or not_done_word",
+   "sec": "label and what is left",
+   "clear": "clear_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "a done row changes its mark from an empty circle to a checked one and says done in words"
+ }
+}

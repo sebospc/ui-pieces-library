@@ -1,0 +1,25 @@
+{
+ "title": "Walk club",
+ "tier_name": "Second league",
+ "items": [
+  {"id": 1, "name": "Rosa", "points": 380, "is_me": false},
+  {"id": 2, "name": "Ben", "points": 355, "is_me": false},
+  {"id": 3, "name": "Ines", "points": 220, "is_me": false},
+  {"id": 4, "name": "Sam", "points": 190, "is_me": true},
+  {"id": 5, "name": "Omar", "points": 190, "is_me": false},
+  {"id": 6, "name": "Kai", "points": 168, "is_me": false},
+  {"id": 7, "name": "Lea", "points": 150, "is_me": false},
+  {"id": 8, "name": "Noor", "points": 92, "is_me": false},
+  {"id": 9, "name": "Tom", "points": 0, "is_me": false},
+  {"id": 10, "name": "Ada", "points": 41, "is_me": false}
+ ],
+ "move_share": 0.4,
+ "rule_word": "move up on Sunday night",
+ "day_word": "day to go",
+ "days_word": "days to go",
+ "points_unit": "pts",
+ "me_word": "you",
+ "inside_word": "Moving up",
+ "to_cut_word": "pts to move up",
+ "empty_text": "No one has walked yet this week"
+}

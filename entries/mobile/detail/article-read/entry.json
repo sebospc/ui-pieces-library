@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.article-read",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "reading",
+  "news"
+ ],
+ "line": "A reading page: big title, summary, a compact author row with reading time, body, actions in a bar below."
+}

@@ -1,0 +1,121 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "kicker",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the prompt"
+  },
+  {
+   "name": "prompt",
+   "type": "text",
+   "required": true,
+   "about": "the question the person answers each day"
+  },
+  {
+   "name": "field_label",
+   "type": "text",
+   "required": true,
+   "about": "the spoken label of the writing field"
+  },
+  {
+   "name": "post_label",
+   "type": "text",
+   "required": true,
+   "about": "the words on the post button"
+  },
+  {
+   "name": "mark_icon",
+   "type": "text",
+   "required": true,
+   "about": "a Tabler icon beside each entry"
+  },
+  {
+   "name": "entries",
+   "type": "list",
+   "required": true,
+   "about": "what was written: id, text, date"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows with no entries"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "separator",
+  "radiusControl",
+  "caption",
+  "headline",
+  "body",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "type"
+   },
+   {
+    "node": "post",
+    "gesture": "tap",
+    "event": "post"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of the list"
+   },
+   "blank_draft": {
+    "shows": "post dimmed, a tap does nothing"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "post",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "field": "field_label",
+   "post": "post_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and shrink",
+  "not_colour_alone": "a blank post is dimmed and does nothing; nothing depends on colour"
+ }
+}

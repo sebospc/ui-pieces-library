@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.settings-dependent",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["settings", "dependent rows"],
+ "line": "Setting rows in sections with switches and choices; rows under an off parent stay put, dimmed and saying what they need."
+}

@@ -1,0 +1,134 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "heading",
+   "type": "text",
+   "required": true,
+   "about": "the card's heading"
+  },
+  {
+   "name": "period_line",
+   "type": "text",
+   "required": true,
+   "about": "under the heading, names the period"
+  },
+  {
+   "name": "period_days",
+   "type": "number",
+   "required": true,
+   "about": "how many days back the totals count"
+  },
+  {
+   "name": "slices",
+   "type": "list",
+   "required": true,
+   "about": "id (1..4), key, label"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, date, cat (a slice key), amount"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "after every amount, with a leading space if a word"
+  },
+  {
+   "name": "total_label",
+   "type": "text",
+   "required": true,
+   "about": "above the total"
+  },
+  {
+   "name": "hidden_word",
+   "type": "text",
+   "required": true,
+   "about": "in place of the share for a slice left out"
+  },
+  {
+   "name": "split_of_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken between a slice and its share, with spaces"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "series1",
+  "series2",
+  "series3",
+  "series4",
+  "radiusCard",
+  "body",
+  "bodyNumber",
+  "caption",
+  "displayCounter",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space3",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "key",
+    "gesture": "tap",
+    "event": "toggle_slice"
+   }
+  ],
+  "states": {
+   "all_in": {
+    "shows": "the total of every slice, the bar split by share, each legend row with amount and share"
+   },
+   "some_out": {
+    "shows": "left-out rows faded with hidden_word; total and shares count only the rest; at least one slice always stays in"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "part",
+    "animate": "smooth"
+   },
+   {
+    "node": "total",
+    "animate": "smooth"
+   },
+   {
+    "node": "key_row",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "key": "label, amount, share or hidden_word",
+   "split": "each shown slice and its share"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "every slice is named with its share in the legend and in the bar's spoken line"
+ }
+}

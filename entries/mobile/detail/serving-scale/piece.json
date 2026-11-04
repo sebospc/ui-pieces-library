@@ -1,0 +1,157 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "photo",
+   "type": "text",
+   "required": true,
+   "about": "a photo source, or empty for none"
+  },
+  {
+   "name": "name",
+   "type": "text",
+   "required": true,
+   "about": "the thing this page is about"
+  },
+  {
+   "name": "byline",
+   "type": "text",
+   "required": true,
+   "about": "one small line over the name"
+  },
+  {
+   "name": "base_servings",
+   "type": "number",
+   "required": true,
+   "about": "how many the amounts below are written for"
+  },
+  {
+   "name": "unit_one",
+   "type": "text",
+   "required": true,
+   "about": "the word after a count of 1, like serving"
+  },
+  {
+   "name": "unit_word",
+   "type": "text",
+   "required": true,
+   "about": "the word after the count, like servings"
+  },
+  {
+   "name": "facts",
+   "type": "list",
+   "required": true,
+   "about": "2 or 3 facts: id, icon (Tabler), value (number), unit, scales (true when it grows with servings)"
+  },
+  {
+   "name": "parts_head",
+   "type": "text",
+   "required": true,
+   "about": "the header over the parts list"
+  },
+  {
+   "name": "parts",
+   "type": "list",
+   "required": true,
+   "about": "the parts: id, amount, unit, name"
+  },
+  {
+   "name": "done_label",
+   "type": "text",
+   "required": true,
+   "about": "the words on the main button"
+  },
+  {
+   "name": "done_note",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the button once used, can use made"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "separator",
+  "radiusCard",
+  "radiusControl",
+  "caption",
+  "headline",
+  "body",
+  "bodyNumber",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "fewer",
+    "gesture": "tap",
+    "event": "fewer"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "more"
+   },
+   {
+    "node": "done",
+    "gesture": "tap",
+    "event": "done"
+   }
+  ],
+  "states": {
+   "one_left": {
+    "shows": "minus dimmed, a tap does nothing"
+   },
+   "no_photo": {
+    "shows": "the page starts at the byline"
+   }
+  },
+  "motion": [
+   {
+    "node": "part_amount",
+    "animate": "swap"
+   },
+   {
+    "node": "count",
+    "animate": "swap"
+   },
+   {
+    "node": "done_note",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "fewer": "-1 unit_word",
+   "more": "+1 unit_word",
+   "done": "done_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, rise and shrink",
+  "not_colour_alone": "every fact carries its unit in words"
+ }
+}

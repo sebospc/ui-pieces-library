@@ -1,0 +1,292 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the large title"
+  },
+  {
+   "name": "name_label",
+   "type": "text",
+   "required": true,
+   "about": "the name field's label"
+  },
+  {
+   "name": "phone_label",
+   "type": "text",
+   "required": true,
+   "about": "the phone field's label"
+  },
+  {
+   "name": "addr_label",
+   "type": "text",
+   "required": true,
+   "about": "the one-line address field's label"
+  },
+  {
+   "name": "street_label",
+   "type": "text",
+   "required": true,
+   "about": "the street field's label (by-hand mode)"
+  },
+  {
+   "name": "city_label",
+   "type": "text",
+   "required": true,
+   "about": "the town field's label (by-hand mode)"
+  },
+  {
+   "name": "post_label",
+   "type": "text",
+   "required": true,
+   "about": "the postcode field's label (by-hand mode)"
+  },
+  {
+   "name": "min_phone",
+   "type": "number",
+   "required": true,
+   "about": "the fewest characters a phone number needs"
+  },
+  {
+   "name": "empty_error",
+   "type": "text",
+   "required": true,
+   "about": "the error under an empty required field after a save"
+  },
+  {
+   "name": "phone_error",
+   "type": "formula",
+   "required": true,
+   "about": "the error under a short phone number after a save; may read min_phone"
+  },
+  {
+   "name": "fix_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line over the fields after a failed save; may read miss_count (fields that need a look)"
+  },
+  {
+   "name": "manual_label",
+   "type": "formula",
+   "required": true,
+   "about": "the link under the address; may read manual (by-hand mode on)"
+  },
+  {
+   "name": "pref_label",
+   "type": "text",
+   "required": true,
+   "about": "the switch row's words"
+  },
+  {
+   "name": "saved_title",
+   "type": "text",
+   "required": true,
+   "about": "the heading once saved"
+  },
+  {
+   "name": "saved_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read last_line (the address in one line), last_pref, first_line (the first-choice address) and saved_count"
+  },
+  {
+   "name": "set_name",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the name field sends its text"
+  },
+  {
+   "name": "set_phone",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the phone field sends its text"
+  },
+  {
+   "name": "set_addr",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the one-line address field sends its text"
+  },
+  {
+   "name": "set_street",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the street field sends its text"
+  },
+  {
+   "name": "set_city",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the town field sends its text"
+  },
+  {
+   "name": "set_post",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the postcode field sends its text"
+  },
+  {
+   "name": "set_pref",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the switch sends on or off"
+  },
+  {
+   "name": "toggle_manual",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: swaps the one-line address for street, town and postcode and back; the one line carries into an empty street"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the address when every required field holds; otherwise shows the errors"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: from the saved state back to an empty form"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "separator",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "titleHero",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "name_field",
+    "gesture": "type",
+    "event": "set_name"
+   },
+   {
+    "node": "phone_field",
+    "gesture": "type",
+    "event": "set_phone"
+   },
+   {
+    "node": "addr_field",
+    "gesture": "type",
+    "event": "set_addr"
+   },
+   {
+    "node": "street_field",
+    "gesture": "type",
+    "event": "set_street"
+   },
+   {
+    "node": "city_field",
+    "gesture": "type",
+    "event": "set_city"
+   },
+   {
+    "node": "post_field",
+    "gesture": "type",
+    "event": "set_post"
+   },
+   {
+    "node": "pref_field",
+    "gesture": "toggle",
+    "event": "set_pref"
+   },
+   {
+    "node": "manual_btn",
+    "gesture": "tap",
+    "event": "toggle_manual"
+   },
+   {
+    "node": "save_btn",
+    "gesture": "tap",
+    "event": "save"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "every field quiet, no errors yet, save dimmed"
+   },
+   "attention": {
+    "shows": "a line over the fields counts what needs a look; each failing field says why in words; each error clears as its field holds"
+   },
+   "fallback": {
+    "shows": "street, town and postcode in place of the one-line address; the one line carries into an empty street"
+   }
+  },
+  "motion": [
+   {
+    "node": "fix_row",
+    "enter": "rise"
+   },
+   {
+    "node": "fix_text",
+    "animate": "swap"
+   },
+   {
+    "node": "street_field",
+    "enter": "rise"
+   },
+   {
+    "node": "town_row",
+    "enter": "rise"
+   },
+   {
+    "node": "manual_text",
+    "animate": "swap"
+   },
+   {
+    "node": "save_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "saved_box",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "name_field": "name_label",
+   "phone_field": "phone_label",
+   "addr_field": "addr_label",
+   "street_field": "street_label",
+   "city_field": "city_label",
+   "post_field": "post_label",
+   "pref_field": "pref_label",
+   "manual_btn": "manual_label",
+   "save_btn": "save.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, swap and shrink",
+  "not_colour_alone": "each error is words on its field, the summary has an icon and a count, save dims and does nothing until the form holds"
+ }
+}

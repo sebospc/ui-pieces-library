@@ -1,0 +1,131 @@
+{
+ "title": "My week",
+ "groups": [
+  {
+   "id": 1,
+   "label": "Mornings"
+  },
+  {
+   "id": 2,
+   "label": "Evenings"
+  }
+ ],
+ "habits": [
+  {
+   "id": 1,
+   "group": 1,
+   "label": "Stretch",
+   "target": 5
+  },
+  {
+   "id": 2,
+   "group": 1,
+   "label": "Water the plants",
+   "target": 2
+  },
+  {
+   "id": 3,
+   "group": 2,
+   "label": "Read before bed",
+   "target": 4
+  },
+  {
+   "id": 4,
+   "group": 2,
+   "label": "Phone out of the bedroom",
+   "target": 5
+  }
+ ],
+ "marks": [
+  {
+   "id": 1,
+   "habit": 1,
+   "date": {
+    "date": "2026-10-26"
+   }
+  },
+  {
+   "id": 2,
+   "habit": 1,
+   "date": {
+    "date": "2026-10-27"
+   }
+  },
+  {
+   "id": 3,
+   "habit": 1,
+   "date": {
+    "date": "2026-10-29"
+   }
+  },
+  {
+   "id": 4,
+   "habit": 1,
+   "date": {
+    "date": "2026-10-31"
+   }
+  },
+  {
+   "id": 5,
+   "habit": 2,
+   "date": {
+    "date": "2026-10-28"
+   }
+  },
+  {
+   "id": 6,
+   "habit": 3,
+   "date": {
+    "date": "2026-10-26"
+   }
+  },
+  {
+   "id": 7,
+   "habit": 3,
+   "date": {
+    "date": "2026-10-28"
+   }
+  },
+  {
+   "id": 8,
+   "habit": 3,
+   "date": {
+    "date": "2026-10-30"
+   }
+  },
+  {
+   "id": 9,
+   "habit": 3,
+   "date": {
+    "date": "2026-10-31"
+   }
+  },
+  {
+   "id": 10,
+   "habit": 4,
+   "date": {
+    "date": "2026-10-29"
+   }
+  },
+  {
+   "id": 11,
+   "habit": 1,
+   "date": {
+    "date": "2026-10-25"
+   }
+  }
+ ],
+ "day_letters": [
+  "S",
+  "M",
+  "T",
+  "W",
+  "T",
+  "F",
+  "S"
+ ],
+ "done_word": "done",
+ "open_word": "not done",
+ "later_word": "later",
+ "of_word": " of "
+}

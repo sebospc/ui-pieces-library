@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.notice-inbox",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "notices",
+  "inbox"
+ ],
+ "line": "Notices under day headings, each with its own step and mark-read; a switch with the unread count."
+}

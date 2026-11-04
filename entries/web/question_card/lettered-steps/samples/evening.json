@@ -1,0 +1,76 @@
+{
+ "title": "Evening check-in",
+ "heading": "Three quick ones",
+ "questions": [
+  {
+   "id": 1,
+   "ask": "How did you sleep?",
+   "hint": "Last night, roughly.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Deeply"
+    },
+    {
+     "key": "B",
+     "text": "Fine"
+    },
+    {
+     "key": "C",
+     "text": "Restless"
+    },
+    {
+     "key": "D",
+     "text": "Barely"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "ask": "Energy right now?",
+   "hint": "",
+   "options": [
+    {
+     "key": "A",
+     "text": "High"
+    },
+    {
+     "key": "B",
+     "text": "Steady"
+    },
+    {
+     "key": "C",
+     "text": "Low"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "ask": "Moved your body today?",
+   "hint": "Anything counts.",
+   "options": [
+    {
+     "key": "A",
+     "text": "A long walk"
+    },
+    {
+     "key": "B",
+     "text": "A workout"
+    },
+    {
+     "key": "C",
+     "text": "Not today"
+    }
+   ]
+  }
+ ],
+ "answers": [],
+ "of_word": " of ",
+ "answered_word": " done",
+ "picked_word": "chosen",
+ "skip_label": "Skip",
+ "next_label": "Next",
+ "done_label": "Finish",
+ "finished_text": "That's today logged",
+ "again_label": "Start over"
+}

@@ -1,0 +1,11 @@
+# Reference shots are measured locally and never published.
+entries/**/reference/*.png
+entries/**/reference/*.jpg
+agents/done/**/*.png
+agents/**/scratch/
+*.mp4
+.cursor/
+.DS_Store
+__pycache__/
+*.pyc
+agents/queue/**/*.png

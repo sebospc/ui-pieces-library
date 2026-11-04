@@ -1,0 +1,138 @@
+{
+ "title": "Library picks",
+ "regions": [
+  {
+   "id": 1,
+   "name": "This branch"
+  },
+  {
+   "id": 2,
+   "name": "Whole city"
+  },
+  {
+   "id": 3,
+   "name": "Partner towns"
+  }
+ ],
+ "start_region": 1,
+ "charts": [
+  {
+   "id": 1,
+   "name": "Most borrowed books"
+  },
+  {
+   "id": 2,
+   "name": "Most borrowed audio"
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "chart": 1,
+   "region": 1,
+   "name": "The Salt Road",
+   "credit": "M. Okafor",
+   "rank": 2,
+   "last_rank": 1
+  },
+  {
+   "id": 2,
+   "chart": 1,
+   "region": 1,
+   "name": "Winter Orchard",
+   "credit": "L. Brandt",
+   "rank": 1,
+   "last_rank": 3
+  },
+  {
+   "id": 3,
+   "chart": 1,
+   "region": 1,
+   "name": "A Map of Small Rivers",
+   "credit": "P. Iqbal",
+   "rank": 3,
+   "last_rank": 3
+  },
+  {
+   "id": 4,
+   "chart": 1,
+   "region": 1,
+   "name": "Night Ferry",
+   "credit": "S. Duarte",
+   "rank": 4,
+   "last_rank": 0
+  },
+  {
+   "id": 5,
+   "chart": 1,
+   "region": 1,
+   "name": "The Glass Allotment",
+   "credit": "H. Lind",
+   "rank": 5,
+   "last_rank": 2
+  },
+  {
+   "id": 6,
+   "chart": 2,
+   "region": 1,
+   "name": "Ten Walks",
+   "credit": "read by A. Ruiz",
+   "rank": 1,
+   "last_rank": 1
+  },
+  {
+   "id": 7,
+   "chart": 2,
+   "region": 1,
+   "name": "Bread at Home",
+   "credit": "read by T. Moss",
+   "rank": 2,
+   "last_rank": 4
+  },
+  {
+   "id": 8,
+   "chart": 1,
+   "region": 2,
+   "name": "Winter Orchard",
+   "credit": "L. Brandt",
+   "rank": 1,
+   "last_rank": 1
+  },
+  {
+   "id": 9,
+   "chart": 1,
+   "region": 2,
+   "name": "Night Ferry",
+   "credit": "S. Duarte",
+   "rank": 2,
+   "last_rank": 5
+  },
+  {
+   "id": 10,
+   "chart": 1,
+   "region": 2,
+   "name": "The Salt Road",
+   "credit": "M. Okafor",
+   "rank": 3,
+   "last_rank": 2
+  },
+  {
+   "id": 11,
+   "chart": 1,
+   "region": 2,
+   "name": "Field Notes",
+   "credit": "R. Abe",
+   "rank": 4,
+   "last_rank": 0
+  }
+ ],
+ "top_count": 4,
+ "more_word": "See all",
+ "less_word": "Top only",
+ "region_word": "Charts for",
+ "up_word": "up",
+ "down_word": "down",
+ "same_word": "no change",
+ "new_word": "new",
+ "empty_text": "No charts for this place yet"
+}

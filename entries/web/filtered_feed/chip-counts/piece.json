@@ -1,0 +1,130 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "categories",
+   "type": "list",
+   "required": true,
+   "about": "first the all chip with key \"\"; then key, label, icon (a Tabler name) per kind of event"
+  },
+  {
+   "name": "events",
+   "type": "list",
+   "required": true,
+   "about": "saved events: id, date, cat (a category key), title, note (may be empty)"
+  },
+  {
+   "name": "search_hint",
+   "type": "text",
+   "required": true,
+   "about": "the search field's label"
+  },
+  {
+   "name": "picked_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the chosen chip"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "age of an event from today"
+  },
+  {
+   "name": "yesterday_word",
+   "type": "text",
+   "required": true,
+   "about": "age of an event from yesterday"
+  },
+  {
+   "name": "days_ago_word",
+   "type": "text",
+   "required": true,
+   "about": "after the day count, with a leading space"
+  },
+  {
+   "name": "empty_line",
+   "type": "text",
+   "required": true,
+   "about": "shows when nothing matches the chip and the search"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "radiusCard",
+  "radiusControl",
+  "body",
+  "caption",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_cat"
+   },
+   {
+    "node": "search",
+    "gesture": "type",
+    "event": "type_query"
+   }
+  ],
+  "states": {
+   "all": {
+    "shows": "every event, newest first; each chip counts its matches"
+   },
+   "one_kind": {
+    "shows": "only that kind's events; its chip filled"
+   },
+   "nothing": {
+    "shows": "empty_line in place of the rows"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise",
+    "delay": "40 per row"
+   },
+   {
+    "node": "chip",
+    "animate": "snappy",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "label, count, and picked_word when chosen",
+   "search": "search_hint"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, delay, snappy and shrink",
+  "not_colour_alone": "the chosen chip carries picked_word in its label; each row says its kind in words"
+ }
+}

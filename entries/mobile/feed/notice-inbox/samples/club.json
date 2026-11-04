@@ -1,0 +1,60 @@
+{
+ "title": "Club notices",
+ "notices": [
+  {
+   "id": 1,
+   "title": "Pay this season's fee",
+   "body": "The fee for the autumn season is open until the end of next week.",
+   "date": {
+    "date": "2026-10-28"
+   },
+   "icon": "receipt",
+   "action": "Pay now",
+   "read": true
+  },
+  {
+   "id": 2,
+   "title": "Confirm your contact details",
+   "body": "We could not reach you on the number we have. Check it is still right.",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "icon": "phone",
+   "action": "Check",
+   "read": false
+  },
+  {
+   "id": 3,
+   "title": "Sign up for the clean-up day",
+   "body": "Volunteers are needed for the pitch clean-up on Saturday morning.",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "icon": "calendar",
+   "action": "Sign up",
+   "read": false
+  },
+  {
+   "id": 4,
+   "title": "New training times",
+   "body": "Tuesday sessions move half an hour later from next week.",
+   "date": {
+    "date": "2026-10-31"
+   },
+   "icon": "clock",
+   "action": "See times",
+   "read": false
+  }
+ ],
+ "all_text": "Everything",
+ "unread_text": "New",
+ "read_all_label": "Mark every notice read",
+ "read_text": "Mark read",
+ "unread_word": ", new",
+ "today_word": "Today",
+ "yesterday_word": "Yesterday",
+ "bulk_line": "Marked read:",
+ "undo_text": "Undo",
+ "empty_text": "No notices yet.",
+ "caught_up_text": "All caught up. Nothing new here."
+}

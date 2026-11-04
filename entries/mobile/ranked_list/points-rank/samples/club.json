@@ -1,0 +1,17 @@
+{
+ "title": "Allotment board",
+ "items": [
+  {"id": 1, "title": "Storing onions through the winter without sprouting", "source": "growers forum", "by": "posted by tomas_k", "points": 80, "comments": 12, "voted": false, "last_rank": 4},
+  {"id": 2, "title": "Plot 14 has spare rhubarb crowns", "source": "notice", "by": "posted by inesg", "points": 81, "comments": 3, "voted": false, "last_rank": 5},
+  {"id": 3, "title": "Water butts are back at the gate shed", "source": "committee", "by": "posted by marta", "points": 340, "comments": 41, "voted": false, "last_rank": 2},
+  {"id": 4, "title": "Has anyone tried wool pellets against slugs?", "source": "growers forum", "by": "posted by pablo", "points": 36, "comments": 9, "voted": false, "last_rank": 0},
+  {"id": 5, "title": "Autumn work day: bring gloves and a flask", "source": "committee", "by": "posted by lucia", "points": 205, "comments": 18, "voted": false, "last_rank": 1},
+  {"id": 6, "title": "Seed swap list for next spring", "source": "notice", "by": "posted by ana", "points": 182, "comments": 27, "voted": true, "last_rank": 3}
+ ],
+ "hot_points": 150,
+ "new_word": "new",
+ "vote_word": "Vote",
+ "unvote_word": "Take back vote",
+ "comments_word": "comments",
+ "empty_text": "Nothing posted yet"
+}

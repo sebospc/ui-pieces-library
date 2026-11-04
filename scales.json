@@ -1,0 +1,14 @@
+{
+ "unit": "pt",
+ "space0": 1,
+ "space1": 2,
+ "space2": 4,
+ "space3": 6,
+ "space4": 8,
+ "space5": 12,
+ "space6": 16,
+ "space7": 20,
+ "space8": 24,
+ "space9": 32,
+ "screenMargin": "space6"
+}

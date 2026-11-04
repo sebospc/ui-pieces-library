@@ -1,0 +1,13 @@
+{
+ "id": "mobile.ranked_list.period-chips",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": [
+  "fitness",
+  "habits",
+  "learning"
+ ],
+ "line": "Things ranked by their total in a chosen period (today, week from the locale, month, ever); ties share a rank."
+}

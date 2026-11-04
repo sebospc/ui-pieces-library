@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.email-start",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["setup", "single-field"],
+ "line": "A mark up top, one field low in thumb reach with a filled button, a hairline 'or' and a softer way to skip."
+}

@@ -1,0 +1,21 @@
+{
+ "title": "Weigh in",
+ "start": 650,
+ "span": 50,
+ "max_back": 6,
+ "units": [
+  {"id": 1, "short": "kg", "per": 1},
+  {"id": 2, "short": "lb", "per": 2.20462}
+ ],
+ "day_line": "=IF(offset = 0, \"Today\", IF(offset = 1, \"Yesterday\", TEXT(offset) & \" days back\"))",
+ "change_line": "=IF(is_up, \"Up \" & change_text & \" \" & unit_short, IF(is_down, \"Down \" & change_text & \" \" & unit_short, IF(has_prev, \"Same as last time\", \"First entry\")))",
+ "save_line": "=IF(has_day, \"Update \", \"Log \") & value_text & \" \" & unit_short",
+ "step_up": {"event": "step_up", "value": "=0", "label": "A tenth more"},
+ "step_down": {"event": "step_down", "value": "=0", "label": "A tenth less"},
+ "slide": {"event": "slide", "value": "=value", "label": "Weight"},
+ "pick_unit": {"event": "pick_unit", "value": "=it.id", "label": "Unit"},
+ "save": {"event": "save", "value": "=0", "label": "Save weight"},
+ "remove": {"event": "remove", "value": "=0", "label": "Delete"},
+ "back": {"event": "back", "value": "=0", "label": "Day before"},
+ "forward": {"event": "forward", "value": "=0", "label": "Day after"}
+}

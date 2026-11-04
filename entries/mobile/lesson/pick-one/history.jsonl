@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: one select-one question per step, picks kept per question and changeable after going back, segmented step bar, next waits for a pick and turns into finish on the last, a scored review that names the right answer on a miss, try again"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "minimum: pick-radio-on-fill and other-radio-quiet (the picked option's radio takes the on-fill ink, the others stay quiet)"}

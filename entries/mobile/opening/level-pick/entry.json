@@ -1,0 +1,12 @@
+{
+ "id": "mobile.opening.level-pick",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "opening",
+ "kinds": [
+  "first-run",
+  "setup"
+ ],
+ "line": "An ordered single choice: each card shows its level as rising bars, a name and a line; next waits."
+}

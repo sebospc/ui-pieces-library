@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.sideways-rows",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["catalog", "browse"],
+ "line": "Named rows that scroll sideways, chip rows to pick a kind and card rows of things; a chevron opens a row."
+}

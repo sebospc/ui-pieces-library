@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: ideas by votes or date with id ties, vote toggle re-sorts, title search with a no-match line"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "checks that a voted row's vote icon is accent and an unvoted row's is textSecondary, with mutants that swap or flatten the icon colour"}

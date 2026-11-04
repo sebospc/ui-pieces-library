@@ -1,0 +1,31 @@
+{
+ "title": "Reading look",
+ "theme_label": "Page look",
+ "themes": [
+  {"id": 1, "name": "Paper", "fill": "surfaceRow", "ink": "textPrimary"},
+  {"id": 2, "name": "Night", "fill": "textPrimary", "ink": "background"},
+  {"id": 3, "name": "Tinted", "fill": "accentContainer", "ink": "onAccentContainer"},
+  {"id": 4, "name": "Bold", "fill": "accentFill", "ink": "onAccentFill"},
+  {"id": 5, "name": "Quiet", "fill": "surfacePlaceholder", "ink": "textSecondary"}
+ ],
+ "default_theme": 1,
+ "swatch_glyph": "Aa",
+ "choices": [
+  {"id": 1, "label": "Letter size", "options": ["Compact", "Regular", "Roomy"], "default": "Regular", "now": "Regular"},
+  {"id": 2, "label": "Opens on", "options": ["Library", "Last book", "Today's pick"], "default": "Library", "now": "Library"}
+ ],
+ "switches": [
+  {"id": 1, "name": "Keep screen awake", "line": "While a page is open", "help": "", "default": false, "on": false},
+  {"id": 2, "name": "Turn pages with volume", "line": "Up goes back, down goes on", "help": "Only while reading; the keys change the volume everywhere else.", "default": true, "on": true},
+  {"id": 3, "name": "Hyphenate", "line": "Break long words at line ends", "help": "Fewer gaps in justified text, at the cost of some split words.", "default": false, "on": false}
+ ],
+ "on_word": "on",
+ "off_word": "off",
+ "help_label": "More on this",
+ "empty_text": "Nothing to set here yet",
+ "pick_theme": {"event": "pick_theme", "value": "=it.id", "label": "Pick"},
+ "choose": {"event": "choose", "value": "=value", "label": "Choose"},
+ "flip": {"event": "flip", "value": "=it.id", "label": "Switch"},
+ "toggle_help": {"event": "toggle_help", "value": "=it.id", "label": "More"},
+ "reset": {"event": "reset", "value": "=0", "label": "Back to defaults"}
+}

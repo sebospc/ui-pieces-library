@@ -1,0 +1,170 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question on top of the opening block"
+  },
+  {
+   "name": "hint",
+   "type": "text",
+   "required": true,
+   "about": "one or two lines under it: what following does"
+  },
+  {
+   "name": "topics",
+   "type": "list",
+   "required": true,
+   "about": "what can be followed: id (1 up), name, icon (a Tabler icon), on (false at the start)"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the home feed: id, topic (a topic id), title, date"
+  },
+  {
+   "name": "done_text",
+   "type": "text",
+   "required": true,
+   "about": "the words on the button that closes the opening"
+  },
+  {
+   "name": "change_text",
+   "type": "text",
+   "required": true,
+   "about": "the words on the small button that brings the opening back"
+  },
+  {
+   "name": "feed_head",
+   "type": "text",
+   "required": true,
+   "about": "the head over the feed"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when the followed topics have nothing yet"
+  },
+  {
+   "name": "follow_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a topic's name while not followed"
+  },
+  {
+   "name": "unfollow_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a topic's name while followed"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusControl",
+  "radiusCard",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "topic",
+    "gesture": "tap",
+    "event": "toggle_topic"
+   },
+   {
+    "node": "finish",
+    "gesture": "tap",
+    "event": "finish"
+   },
+   {
+    "node": "change",
+    "gesture": "tap",
+    "event": "change_topics"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of rows"
+   },
+   "fallback": {
+    "shows": "finish dimmed and doing nothing"
+   },
+   "attention": {
+    "shows": "the opening block above the feed"
+   }
+  },
+  "motion": [
+   {
+    "node": "topic",
+    "enter": "rise"
+   },
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "topic_mark",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   },
+   {
+    "node": "topic",
+    "press": "shrink"
+   },
+   {
+    "node": "finish",
+    "press": "shrink"
+   },
+   {
+    "node": "change",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "topic": "follow_word or unfollow_word + name",
+   "finish": "done_text",
+   "change": "change_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap; the block still goes, without the fold"
+ }
+}

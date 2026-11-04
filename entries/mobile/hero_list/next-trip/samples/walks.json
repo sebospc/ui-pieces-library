@@ -1,0 +1,18 @@
+{
+ "title": "Trips",
+ "trips": [
+  {"id": 1, "name": "Lake weekend", "dates": "12 to 14 Sep", "start": {"date": "2026-09-12"}, "end": {"date": "2026-09-14"}},
+  {"id": 2, "name": "Coast walk", "dates": "20 to 24 Oct", "start": {"date": "2026-10-20"}, "end": {"date": "2026-10-24"}},
+  {"id": 3, "name": "Mountain hut", "dates": "12 to 15 Nov", "start": {"date": "2026-11-12"}, "end": {"date": "2026-11-15"}},
+  {"id": 4, "name": "City break", "dates": "4 to 7 Dec", "start": {"date": "2026-12-04"}, "end": {"date": "2026-12-07"}},
+  {"id": 5, "name": "Spring fair", "dates": "20 to 22 Mar", "start": {"date": "2027-03-20"}, "end": {"date": "2027-03-22"}}
+ ],
+ "hero_line": "=IF(hero_now, \"Day \" & TEXT(hero_day) & \" of \" & TEXT(hero_len), IF(hero_until = 1, \"Leaves tomorrow\", \"Leaves in \" & TEXT(hero_until) & \" days\"))",
+ "later_title": "Later",
+ "later_line": "=it.dates & \", \" & IF(it.until <= 0, \"under way\", TEXT(it.until) & \" days to go\")",
+ "past_title": "=\"Past trips (\" & TEXT(past_count) & \")\"",
+ "past_line": "=it.dates & \", \" & IF(it.ago = 1, \"yesterday\", TEXT(it.ago) & \" days back\")",
+ "empty_line": "Nothing planned yet",
+ "open": {"event": "open", "value": "=it.id", "label": "Open trip"},
+ "toggle_past": {"event": "toggle_past", "value": "=0", "label": "Past trips"}
+}

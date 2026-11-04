@@ -1,0 +1,27 @@
+{
+ "title": "10k plan",
+ "plan_start": "=DATE(2026, 10, 19)",
+ "weeks": 4,
+ "sessions": [
+  {"id": 1, "date": {"date": "2026-10-19"}, "name": "Easy run", "done": true},
+  {"id": 2, "date": {"date": "2026-10-21"}, "name": "Intervals", "done": true},
+  {"id": 3, "date": {"date": "2026-10-23"}, "name": "Long run", "done": false},
+  {"id": 4, "date": {"date": "2026-10-27"}, "name": "Easy run", "done": true},
+  {"id": 5, "date": {"date": "2026-10-29"}, "name": "Tempo", "done": false},
+  {"id": 6, "date": {"date": "2026-10-31"}, "name": "Long run", "done": false},
+  {"id": 7, "date": {"date": "2026-11-02"}, "name": "Easy run", "done": false},
+  {"id": 8, "date": {"date": "2026-11-04"}, "name": "Hills", "done": false}
+ ],
+ "day_names": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+ "week_word": "Week",
+ "of_word": "of",
+ "rest_word": "Rest",
+ "done_word": "Done",
+ "next_word": "Up next",
+ "missed_word": "Missed",
+ "mark_word": "Mark done",
+ "unmark_word": "Mark not done",
+ "previous_label": "Previous week",
+ "next_label": "Next week",
+ "empty_text": "No sessions in this plan yet"
+}

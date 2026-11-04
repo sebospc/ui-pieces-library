@@ -1,0 +1,9 @@
+{
+ "id": "mobile.lesson.result-card",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": ["result", "score"],
+ "line": "The end of a run as one big word from score bands, a verdict and why, the missed ones folded, and a best kept."
+}

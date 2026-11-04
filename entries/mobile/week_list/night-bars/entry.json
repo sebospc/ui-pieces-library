@@ -1,0 +1,9 @@
+{
+ "id": "mobile.week_list.night-bars",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": ["tracker", "daily"],
+ "line": "This week's days as rows, each with a bar placed on a time track; tap a day for its times."
+}

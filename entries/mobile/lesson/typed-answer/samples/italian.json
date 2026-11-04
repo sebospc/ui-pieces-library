@@ -1,0 +1,20 @@
+{
+ "title": "Write this in Italian",
+ "items": [
+  {"id": 1, "prompt": "the bread", "answers": ["il pane"], "near": ["pane"], "show": "il pane"},
+  {"id": 2, "prompt": "the coffee", "answers": ["il caffè"], "near": ["il caffe", "Caffè"], "show": "il caffè"},
+  {"id": 3, "prompt": "good morning", "answers": ["Buongiorno", "buon giorno"], "near": [], "show": "buongiorno"}
+ ],
+ "field_label": "Your answer",
+ "streak_line": "=TEXT(streak) & \" straight\"",
+ "right_line": "Nice one",
+ "near_line": "Almost: mind the article and accents",
+ "wrong_line": "Not quite",
+ "answer_line": "=\"Say it like this: \" & show_now",
+ "next_line": "=IF(is_last, \"See score\", \"Continue\")",
+ "score_line": "=IF(score = total, \"Every one right\", TEXT(total - score) & \" to go over again\")",
+ "set_draft": {"event": "set_draft", "value": "=value", "label": "Your answer"},
+ "check": {"event": "check", "value": "=0", "label": "Check"},
+ "next": {"event": "next", "value": "=0", "label": "Continue"},
+ "restart": {"event": "restart", "value": "=0", "label": "Start again"}
+}

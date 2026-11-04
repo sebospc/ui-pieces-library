@@ -1,0 +1,156 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "collection_title",
+   "type": "text",
+   "required": true,
+   "about": "the title on the collection card"
+  },
+  {
+   "name": "categories",
+   "type": "list",
+   "required": true,
+   "about": "the categories in a fixed order: id, name, icon (a Tabler icon name), found, total, open (false keeps it a locked placeholder)"
+  },
+  {
+   "name": "info_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the info button"
+  },
+  {
+   "name": "info_text",
+   "type": "text",
+   "required": true,
+   "about": "the short note the info button opens in place"
+  },
+  {
+   "name": "locked_name",
+   "type": "text",
+   "required": true,
+   "about": "the name shown under a locked tile"
+  },
+  {
+   "name": "locked_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a locked tile"
+  },
+  {
+   "name": "locked_hint",
+   "type": "text",
+   "required": true,
+   "about": "the line a tap on a locked tile shows: how to open one"
+  },
+  {
+   "name": "of_word",
+   "type": "text",
+   "required": true,
+   "about": "between found and total when spoken or written out"
+  },
+  {
+   "name": "found_word",
+   "type": "text",
+   "required": true,
+   "about": "after the total on the picked line"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is no category"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accentContainer",
+  "onAccentContainer",
+  "radiusCard",
+  "sectionHeader",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "tile",
+    "gesture": "tap",
+    "event": "pick_category"
+   },
+   {
+    "node": "info",
+    "gesture": "tap",
+    "event": "toggle_info"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty inside the card"
+   },
+   "fallback": {
+    "shows": "a locked tile keeps its place: dim, a question mark, locked_name, no count, spoken as locked_word"
+   },
+   "attention": {
+    "shows": "the picked tile fills; the line under the grid gives its count, or locked_hint for a locked tile"
+   }
+  },
+  "motion": [
+   {
+    "node": "tile_box",
+    "enter": "rise"
+   },
+   {
+    "node": "tile",
+    "press": "shrink"
+   },
+   {
+    "node": "info",
+    "press": "shrink"
+   },
+   {
+    "node": "info_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "picked_note",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "tile": "name with found of total, or locked_word",
+   "info": "info_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Fixed order from the data, open and locked mixed, so a category opening changes in place and nothing reflows."
+}

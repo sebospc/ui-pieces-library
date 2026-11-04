@@ -1,0 +1,79 @@
+{
+ "title": "Daily walk",
+ "marks": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-30"
+   }
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-29"
+   }
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-28"
+   }
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-21"
+   }
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-20"
+   }
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-19"
+   }
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-18"
+   }
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-17"
+   }
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-11"
+   }
+  }
+ ],
+ "day_letters": [
+  "S",
+  "M",
+  "T",
+  "W",
+  "T",
+  "F",
+  "S"
+ ],
+ "unit_one": "day",
+ "unit_many": "days",
+ "going_line": "Keep the run going",
+ "start_line": "Start a new run today",
+ "week_title": "This week",
+ "best_word": "Best run",
+ "mark_label": "I walked today",
+ "undo_label": "Not today after all",
+ "done_word": "done",
+ "open_word": "not done",
+ "later_word": "later"
+}

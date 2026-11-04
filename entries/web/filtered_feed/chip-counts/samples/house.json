@@ -1,0 +1,69 @@
+{
+ "title": "House log",
+ "categories": [
+  {
+   "key": "",
+   "label": "All",
+   "icon": "list"
+  },
+  {
+   "key": "fix",
+   "label": "Fixes",
+   "icon": "tool"
+  },
+  {
+   "key": "clean",
+   "label": "Cleaning",
+   "icon": "spray"
+  },
+  {
+   "key": "garden",
+   "label": "Garden",
+   "icon": "plant"
+  }
+ ],
+ "events": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-24"
+   },
+   "cat": "garden",
+   "title": "Raked the front leaves",
+   "note": ""
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "cat": "fix",
+   "title": "New washer on the kitchen tap",
+   "note": "It stopped dripping."
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "cat": "clean",
+   "title": "Descaled the kettle",
+   "note": "Vinegar, one hour."
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "cat": "fix",
+   "title": "Tightened the bedroom door hinge",
+   "note": ""
+  }
+ ],
+ "search_hint": "Search the log",
+ "picked_word": "chosen",
+ "today_word": "Today",
+ "yesterday_word": "Yesterday",
+ "days_ago_word": " days ago",
+ "empty_line": "Nothing here yet."
+}

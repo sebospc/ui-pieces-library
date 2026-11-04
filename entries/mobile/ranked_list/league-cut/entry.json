@@ -1,0 +1,9 @@
+{
+ "id": "mobile.ranked_list.league-cut",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": ["ranking", "people"],
+ "line": "A league ranked by points: the move-up share and days left on top, your row tagged, ties share a rank."
+}

@@ -1,0 +1,18 @@
+{
+ "title": "Wishlist",
+ "items": [
+  {"id": 1, "title": "Dark mode for the planner", "excerpt": "Evening planning is bright on the eyes. A dark look would help when the lights are off.", "votes": 19, "voted": false, "comments": 4, "posted": {"date": "2026-10-12"}},
+  {"id": 2, "title": "Share a list with family", "excerpt": "We plan meals together, so a shared list everyone can tick would save a lot of messages.", "votes": 15, "voted": true, "comments": 7, "posted": {"date": "2026-10-20"}},
+  {"id": 3, "title": "Weekly summary email", "excerpt": "A short note every Sunday with what got done and what is left.", "votes": 15, "voted": false, "comments": 2, "posted": {"date": "2026-10-28"}},
+  {"id": 4, "title": "Planner widget", "excerpt": "Today's three items on the home screen without opening the app.", "votes": 10, "voted": false, "comments": 0, "posted": {"date": "2026-10-30"}}
+ ],
+ "top_word": "Most votes",
+ "new_word": "Newest",
+ "sort_label": "Sort by",
+ "search_label": "Find an idea",
+ "vote_word": "Vote for",
+ "unvote_word": "Remove vote for",
+ "comments_word": "comments",
+ "no_match_text": "No idea matches that",
+ "empty_text": "No ideas yet. Be the first."
+}

@@ -1,0 +1,126 @@
+{
+ "title": "Listen",
+ "topics": [
+  {
+   "id": 1,
+   "name": "Science"
+  },
+  {
+   "id": 2,
+   "name": "History"
+  },
+  {
+   "id": 3,
+   "name": "Food"
+  },
+  {
+   "id": 4,
+   "name": "Sport"
+  }
+ ],
+ "shows": [
+  {
+   "id": 1,
+   "name": "Small Worlds",
+   "topic": 1,
+   "on": true
+  },
+  {
+   "id": 2,
+   "name": "Night Sky Notes",
+   "topic": 1,
+   "on": false
+  },
+  {
+   "id": 3,
+   "name": "Field Lab",
+   "topic": 1,
+   "on": false
+  },
+  {
+   "id": 4,
+   "name": "Old Roads",
+   "topic": 2,
+   "on": true
+  },
+  {
+   "id": 5,
+   "name": "Slow Kitchen",
+   "topic": 3,
+   "on": false
+  }
+ ],
+ "items": [
+  {
+   "id": 11,
+   "show": 1,
+   "title": "Why moss grows where it does",
+   "date": {
+    "date": "2026-10-24"
+   },
+   "minutes": 31
+  },
+  {
+   "id": 12,
+   "show": 2,
+   "title": "A guide to the winter sky over the next weeks",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "minutes": 44
+  },
+  {
+   "id": 13,
+   "show": 3,
+   "title": "Testing kitchen myths with a thermometer",
+   "date": {
+    "date": "2026-10-27"
+   },
+   "minutes": 27
+  },
+  {
+   "id": 14,
+   "show": 4,
+   "title": "Salt routes",
+   "date": {
+    "date": "2026-10-29"
+   },
+   "minutes": 52
+  },
+  {
+   "id": 15,
+   "show": 5,
+   "title": "Bread with three things",
+   "date": {
+    "date": "2026-10-28"
+   },
+   "minutes": 19
+  },
+  {
+   "id": 16,
+   "show": 1,
+   "title": "Tiny engines inside cells",
+   "date": {
+    "date": "2026-10-17"
+   },
+   "minutes": 36
+  },
+  {
+   "id": 17,
+   "show": 4,
+   "title": "Bridges that lasted",
+   "date": {
+    "date": "2026-10-22"
+   },
+   "minutes": 40
+  }
+ ],
+ "min_word": " min",
+ "empty_text": "Nothing new here yet. Pick another topic.",
+ "follow_word": "Follow",
+ "unfollow_word": "Stop following",
+ "play_word": "Play",
+ "pause_word": "Pause",
+ "queue_word": "Add to up next:",
+ "unqueue_word": "Remove from up next:"
+}

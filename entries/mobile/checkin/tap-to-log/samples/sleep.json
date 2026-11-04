@@ -1,0 +1,30 @@
+{
+ "title": "Sleep log",
+ "ask": "How did you sleep?",
+ "lead": "One tap keeps it for the night below. Tap another to change it.",
+ "levels": [
+  {"id": 1, "name": "Awful", "icon": "mood-sad"},
+  {"id": 2, "name": "Restless", "icon": "cloud-rain"},
+  {"id": 3, "name": "Fine", "icon": "moon"},
+  {"id": 4, "name": "Rested", "icon": "mood-smile"},
+  {"id": 5, "name": "Deep", "icon": "mood-happy"}
+ ],
+ "logged_line": "=\"Kept: \" & logged_name",
+ "future_text": "That night has not come yet",
+ "day_label": "Night of",
+ "log": {
+  "event": "log",
+  "value": "=it.id",
+  "label": "Log"
+ },
+ "pick_day": {
+  "event": "pick_day",
+  "value": "=value",
+  "label": "Night of"
+ },
+ "back_today": {
+  "event": "back_today",
+  "value": "=0",
+  "label": "Tonight"
+ }
+}

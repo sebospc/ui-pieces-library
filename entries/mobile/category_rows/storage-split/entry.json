@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.storage-split",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["usage", "cleanup"],
+ "line": "One total split into categories, a bar and rows with share and size; ticked rows sum into the clear button."
+}

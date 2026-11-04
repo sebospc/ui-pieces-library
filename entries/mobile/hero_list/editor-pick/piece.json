@@ -1,0 +1,177 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "eyebrow",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the heading: who picked the collection"
+  },
+  {
+   "name": "heading",
+   "type": "text",
+   "required": true,
+   "about": "the collection's name; its first letter stands in for the art"
+  },
+  {
+   "name": "blurb",
+   "type": "text",
+   "required": true,
+   "about": "why these were picked; folds to two lines"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the collection in order: id (1 up), name, line, saved (true or false); 0 or more, with none the empty line shows"
+  },
+  {
+   "name": "empty_line",
+   "type": "text",
+   "required": true,
+   "about": "the line when the collection is empty"
+  },
+  {
+   "name": "count_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the blurb; may read saved_count and total"
+  },
+  {
+   "name": "save_word",
+   "type": "text",
+   "required": true,
+   "about": "the row button's word before saving"
+  },
+  {
+   "name": "saved_word",
+   "type": "text",
+   "required": true,
+   "about": "the row button's word once saved"
+  },
+  {
+   "name": "more_word",
+   "type": "text",
+   "required": true,
+   "about": "the blurb's control while folded"
+  },
+  {
+   "name": "less_word",
+   "type": "text",
+   "required": true,
+   "about": "the blurb's control while open"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: saves the row's item, or unsaves it (value: it.id)"
+  },
+  {
+   "name": "more",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: opens or folds the blurb"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "radiusCover",
+  "radiusThumbnail",
+  "titleHero",
+  "cardTitle",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "save_btn",
+    "gesture": "tap",
+    "event": "save"
+   },
+   {
+    "node": "more_btn",
+    "gesture": "tap",
+    "event": "more"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the hero and the empty line; no count and no rows"
+   },
+   "attention": {
+    "shows": "saved rows' buttons fill and say so, and the count line counts them"
+   },
+   "fallback": {
+    "shows": "the blurb folds to two lines with a more control"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero",
+    "enter": "rise"
+   },
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "blurb_text",
+    "animate": "smooth"
+   },
+   {
+    "node": "save_text",
+    "animate": "swap"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "save_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "more_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "save_btn": "save.label",
+   "more_btn": "more.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, smooth, swap and shrink",
+  "not_colour_alone": "a saved row's button says the saved word, and the count line says how many are saved"
+ }
+}

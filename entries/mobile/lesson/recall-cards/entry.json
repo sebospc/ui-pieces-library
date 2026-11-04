@@ -1,0 +1,9 @@
+{
+ "id": "mobile.lesson.recall-cards",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": ["flashcards", "self-graded"],
+ "line": "One card at a time: turn it over, say if you had it; a miss goes to the back and comes round until known."
+}

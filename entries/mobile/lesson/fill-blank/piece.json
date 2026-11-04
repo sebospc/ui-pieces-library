@@ -1,0 +1,144 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "kicker",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the task"
+  },
+  {
+   "name": "task",
+   "type": "text",
+   "required": true,
+   "about": "what to do, in a few words"
+  },
+  {
+   "name": "cards",
+   "type": "list",
+   "required": true,
+   "about": "the questions: id (1 up, in order), before, after, answer, words (the answer among 2 to 4 words)"
+  },
+  {
+   "name": "gap_mark",
+   "type": "text",
+   "required": true,
+   "about": "what stands in the gap before a pick"
+  },
+  {
+   "name": "right_text",
+   "type": "text",
+   "required": true,
+   "about": "the line after a right answer"
+  },
+  {
+   "name": "wrong_lead",
+   "type": "text",
+   "required": true,
+   "about": "the words before the right answer after a miss"
+  },
+  {
+   "name": "check_label",
+   "type": "text",
+   "required": true,
+   "about": "the button before checking"
+  },
+  {
+   "name": "next_label",
+   "type": "text",
+   "required": true,
+   "about": "the button after checking"
+  },
+  {
+   "name": "done_text",
+   "type": "formula",
+   "required": true,
+   "about": "the line when every card is done, can use score and total"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "destructive",
+  "radiusControl",
+  "caption",
+  "body",
+  "headline",
+  "chipLabel",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "word",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "go",
+    "gesture": "tap",
+    "event": "check, then next"
+   }
+  ],
+  "states": {
+   "unpicked": {
+    "shows": "the gap mark, the button dimmed"
+   },
+   "checked": {
+    "shows": "a tick or a cross with words, the button moves on"
+   },
+   "done": {
+    "shows": "the finish line with the score"
+   }
+  },
+  "motion": [
+   {
+    "node": "bar_on",
+    "animate": "smooth"
+   },
+   {
+    "node": "feedback",
+    "enter": "rise"
+   },
+   {
+    "node": "word",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "word": "it",
+   "go": "check_label or next_label",
+   "bar": "cards done of total"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, smooth and shrink",
+  "not_colour_alone": "a miss says the right answer in words, with a cross icon"
+ }
+}

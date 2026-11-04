@@ -1,0 +1,179 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "required": true,
+   "about": "this step's place in the first run, 1 up"
+  },
+  {
+   "name": "steps",
+   "type": "number",
+   "required": true,
+   "about": "how many steps the first run has"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question"
+  },
+  {
+   "name": "parts",
+   "type": "list",
+   "required": true,
+   "about": "2 to 4 parts of the day: id (1 up), name, icon (Tabler), times (texts, the first is the default); the first part starts picked"
+  },
+  {
+   "name": "lead",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the time field, also its spoken label"
+  },
+  {
+   "name": "set_text",
+   "type": "text",
+   "required": true,
+   "about": "the main button's words"
+  },
+  {
+   "name": "skip_text",
+   "type": "text",
+   "required": true,
+   "about": "the quiet button's words"
+  },
+  {
+   "name": "set_line",
+   "type": "text",
+   "required": true,
+   "about": "put before the part and time once the reminder is set"
+  },
+  {
+   "name": "at_word",
+   "type": "text",
+   "required": true,
+   "about": "between the part and the time in that line"
+  },
+  {
+   "name": "skipped_line",
+   "type": "text",
+   "required": true,
+   "about": "the line once the step is skipped"
+  },
+  {
+   "name": "change_text",
+   "type": "text",
+   "required": true,
+   "about": "the button that brings the step back"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusTile",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "tile",
+    "gesture": "tap",
+    "event": "pick_part"
+   },
+   {
+    "node": "time",
+    "gesture": "tap",
+    "event": "set_time"
+   },
+   {
+    "node": "set",
+    "gesture": "tap",
+    "event": "set"
+   },
+   {
+    "node": "skip",
+    "gesture": "tap",
+    "event": "skip"
+   },
+   {
+    "node": "change",
+    "gesture": "tap",
+    "event": "change"
+   }
+  ],
+  "states": {
+   "fallback": {
+    "shows": "the picked part's first time in the field"
+   },
+   "attention": {
+    "shows": "done_box with the set or skipped line"
+   }
+  },
+  "motion": [
+   {
+    "node": "tile",
+    "press": "shrink"
+   },
+   {
+    "node": "time",
+    "animate": "swap"
+   },
+   {
+    "node": "done_box",
+    "enter": "rise"
+   },
+   {
+    "node": "set",
+    "press": "shrink"
+   },
+   {
+    "node": "skip",
+    "press": "shrink"
+   },
+   {
+    "node": "change",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "tile": "it.name",
+   "time": "lead",
+   "set": "set_text",
+   "skip": "skip_text",
+   "change": "change_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, swap and rise"
+ }
+}

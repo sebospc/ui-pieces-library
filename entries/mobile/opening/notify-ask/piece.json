@@ -1,0 +1,189 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question, centred"
+  },
+  {
+   "name": "line",
+   "type": "text",
+   "required": true,
+   "about": "one line under it: what the notices are for"
+  },
+  {
+   "name": "kinds",
+   "type": "list",
+   "required": true,
+   "about": "what can be sent: id, name, on (true at the start for the suggested ones)"
+  },
+  {
+   "name": "samples",
+   "type": "list",
+   "required": true,
+   "about": "sample notices, newest first: id, kind (a kind id), who, line, ago (a short time text)"
+  },
+  {
+   "name": "none_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the samples when no kind is on"
+  },
+  {
+   "name": "allow_text",
+   "type": "text",
+   "required": true,
+   "about": "the main button's words"
+  },
+  {
+   "name": "skip_text",
+   "type": "text",
+   "required": true,
+   "about": "the quiet button's words"
+  },
+  {
+   "name": "asked_text",
+   "type": "text",
+   "required": true,
+   "about": "the line while the phone's own question is showing"
+  },
+  {
+   "name": "granted_text",
+   "type": "text",
+   "required": true,
+   "about": "the line once the phone allowed it"
+  },
+  {
+   "name": "denied_text",
+   "type": "text",
+   "required": true,
+   "about": "the line once the phone said no: where to change it"
+  },
+  {
+   "name": "skipped_text",
+   "type": "text",
+   "required": true,
+   "about": "the line once skipped"
+  },
+  {
+   "name": "again_text",
+   "type": "text",
+   "required": true,
+   "about": "the button after a skip that asks after all"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "kind",
+    "gesture": "tap",
+    "event": "toggle_kind"
+   },
+   {
+    "node": "allow",
+    "gesture": "tap",
+    "event": "allow"
+   },
+   {
+    "node": "skip",
+    "gesture": "tap",
+    "event": "skip"
+   },
+   {
+    "node": "again",
+    "gesture": "tap",
+    "event": "ask_again"
+   }
+  ],
+  "host_events": [
+   {
+    "event": "allow",
+    "value": "the host shows the phone's own question after this rule"
+   },
+   {
+    "event": "permission",
+    "value": "\"granted\" or \"denied\", sent by the host after the phone's answer"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "none in place of the samples; allow dimmed"
+   },
+   "attention": {
+    "shows": "status_line: asked, granted, denied or skipped"
+   }
+  },
+  "motion": [
+   {
+    "node": "sample",
+    "enter": "rise"
+   },
+   {
+    "node": "status_line",
+    "enter": "rise"
+   },
+   {
+    "node": "kind",
+    "press": "shrink"
+   },
+   {
+    "node": "allow",
+    "press": "shrink"
+   },
+   {
+    "node": "skip",
+    "press": "shrink"
+   },
+   {
+    "node": "again",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "kind": "it.name",
+   "allow": "allow_text",
+   "skip": "skip_text",
+   "again": "again_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and shrink"
+ }
+}

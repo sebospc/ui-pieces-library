@@ -1,0 +1,139 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question in the soft card on top: what was true today"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the things that can be true on a day: id (1 up), name, on (false); 0 or more, the rows follow this order"
+  },
+  {
+   "name": "hint_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the card; may read picked_count (ticked today) and item_count"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the rows when items is empty"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the footer line once today is checked in; may read saved_count (things kept with today's check-in) and day_count (days checked in)"
+  },
+  {
+   "name": "toggle",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: ticks or unticks one thing for today; after the check-in the same tap rewrites today's record (one undo step)"
+  },
+  {
+   "name": "check_in",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps today with what is ticked, nothing ticked counts too; the label is the button's words"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusCard",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "toggle"
+   },
+   {
+    "node": "check_btn",
+    "gesture": "tap",
+    "event": "check_in"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note in place of the hint and rows; the check-in still works"
+   },
+   "fallback": {
+    "shows": "ticks from an earlier day read as cleared, the first tick today starts fresh"
+   },
+   "attention": {
+    "shows": "done_row in place of check_btn; a tick after it rewrites today's record"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise",
+    "delay": "it.id * 0.05",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "hint",
+    "animate": "swap"
+   },
+   {
+    "node": "check_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "done_row",
+    "enter": "rise"
+   },
+   {
+    "node": "done_text",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row": "it.name",
+   "check_btn": "check_in.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, snappy and swap",
+  "not_colour_alone": "a ticked row swaps the empty ring for a filled check, and the hint counts the ticks"
+ }
+}

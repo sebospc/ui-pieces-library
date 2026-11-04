@@ -1,0 +1,9 @@
+{
+ "id": "mobile.hero_list.resume-card",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": ["watching", "progress"],
+ "line": "The half-done item opened last as one resume card with a bar and time to go, then the rest by popularity."
+}

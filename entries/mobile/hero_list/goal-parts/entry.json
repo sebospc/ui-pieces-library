@@ -1,0 +1,13 @@
+{
+ "id": "mobile.hero_list.goal-parts",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": [
+  "health",
+  "learning",
+  "fitness"
+ ],
+ "line": "Today's total against a goal with a bar, up to three parts with their own bars, day slots with a one-tap log."
+}

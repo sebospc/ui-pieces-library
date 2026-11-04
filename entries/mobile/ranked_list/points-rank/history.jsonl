@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: rank by points with ties to the lower id, move since last visit, hot mark, vote re-ranks"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "added boundary and flipped-condition checks found by a self-review flip of every comparison"}

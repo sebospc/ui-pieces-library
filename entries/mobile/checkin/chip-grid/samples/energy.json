@@ -1,0 +1,82 @@
+{
+ "title": "Energy log",
+ "levels": [
+  {
+   "id": 1,
+   "name": "Drained"
+  },
+  {
+   "id": 2,
+   "name": "Low"
+  },
+  {
+   "id": 3,
+   "name": "Steady"
+  },
+  {
+   "id": 4,
+   "name": "Good"
+  },
+  {
+   "id": 5,
+   "name": "Bright"
+  },
+  {
+   "id": 6,
+   "name": "Buzzing"
+  }
+ ],
+ "tags": [
+  {
+   "id": 1,
+   "name": "Sleep",
+   "on": false
+  },
+  {
+   "id": 2,
+   "name": "Coffee",
+   "on": false
+  },
+  {
+   "id": 3,
+   "name": "Exercise",
+   "on": false
+  },
+  {
+   "id": 4,
+   "name": "Work",
+   "on": false
+  },
+  {
+   "id": 5,
+   "name": "Sun",
+   "on": false
+  },
+  {
+   "id": 6,
+   "name": "Food",
+   "on": false
+  }
+ ],
+ "ask_level": "How much energy right now?",
+ "ask_tags": "What played a part?",
+ "lead": "Energy",
+ "none_yet": "Pick one",
+ "save_text": "Save today",
+ "saved_text": "Saved for today",
+ "pick_level": {
+  "event": "pick_level",
+  "value": "=it.id",
+  "label": "Pick"
+ },
+ "toggle_tag": {
+  "event": "toggle_tag",
+  "value": "=it.id",
+  "label": "Add or remove"
+ },
+ "save": {
+  "event": "save",
+  "value": "=0",
+  "label": "Save today"
+ }
+}

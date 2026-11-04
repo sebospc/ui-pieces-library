@@ -1,0 +1,9 @@
+{
+ "id": "mobile.checkin.multi-pick",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": ["daily", "habit"],
+ "line": "Tick every thing that was true today in full-width rows, then check in; a day with nothing ticked still counts."
+}

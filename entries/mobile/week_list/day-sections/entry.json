@@ -1,0 +1,9 @@
+{
+ "id": "mobile.week_list.day-sections",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": ["checklist", "plan"],
+ "line": "The week as one checklist split by day headers with done of total; tick in place, type a new one under a day."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.reply-posts",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "community",
+  "messages"
+ ],
+ "line": "Text posts in bubbles with a heart count and a reply, replies one indent in, and a composer that waits."
+}

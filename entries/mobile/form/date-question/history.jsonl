@@ -1,0 +1,1 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: a step counter and bar, the question in a card, one date field answering the shown step, each step held to days back and ahead with the error in words, optional steps that can be left blank or cleared, back and forward pinned, a finished state counting answered and blank, and a way back to change an answer"}

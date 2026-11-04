@@ -1,0 +1,131 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "one span per day: id, date (the day the span starts), start and end in minutes after midnight; an end below the start runs past midnight"
+  },
+  {
+   "name": "day_names",
+   "type": "list",
+   "required": true,
+   "about": "seven short day names, Sunday first, in the app's language; the week starts on the phone's first_weekday"
+  },
+  {
+   "name": "window_start",
+   "type": "number",
+   "required": true,
+   "about": "minutes after midnight where every track begins, e.g. 1200 for 20:00"
+  },
+  {
+   "name": "window_length",
+   "type": "number",
+   "required": true,
+   "about": "minutes one track covers, e.g. 840; a span past the end is cut at the end"
+  },
+  {
+   "name": "avg_label",
+   "type": "text",
+   "required": true,
+   "about": "label over the week's average length"
+  },
+  {
+   "name": "count_label",
+   "type": "text",
+   "required": true,
+   "about": "label over the days logged so far this week"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when the week has no span yet"
+  },
+  {
+   "name": "no_record_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a day without a span"
+  },
+  {
+   "name": "open_event",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: opens one day's times under its bar, a second tap closes it"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "radiusControl",
+  "titleHero",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "day",
+    "gesture": "tap",
+    "event": "open_event"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty, the stats hide, the seven empty tracks stay so the week still reads"
+   },
+   "attention": {
+    "shows": "today's day name in accent; days after today at 0.4 opacity"
+   }
+  },
+  "motion": [
+   {
+    "node": "day_box",
+    "enter": "rise"
+   },
+   {
+    "node": "day",
+    "press": "shrink"
+   },
+   {
+    "node": "bar",
+    "animate": "smooth"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "day": "open_event.label (the sample speaks the day name and its length, or no_record_word)"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and shrink"
+ }
+}

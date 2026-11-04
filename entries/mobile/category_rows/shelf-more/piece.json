@@ -1,0 +1,159 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "categories",
+   "type": "list",
+   "required": true,
+   "about": "the shelves in order: id, name"
+  },
+  {
+   "name": "tags",
+   "type": "list",
+   "required": true,
+   "about": "up to four filters over every shelf: id (1 or more), name"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the things on the shelves: id, category (a category id), tag (a tag id), name, note (a short second line, may be blank), liked (true or false)"
+  },
+  {
+   "name": "more_word",
+   "type": "text",
+   "required": true,
+   "about": "the shelf button while it shows two, e.g. See all"
+  },
+  {
+   "name": "less_word",
+   "type": "text",
+   "required": true,
+   "about": "the shelf button while it shows everything, e.g. Show less"
+  },
+  {
+   "name": "like_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before an item's name on its like button when not liked"
+  },
+  {
+   "name": "unlike_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before an item's name on its like button when liked"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when nothing is on any shelf, or nothing matches the filter"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "accentFill",
+  "onAccentFill",
+  "radiusCover",
+  "sectionHeader",
+  "chipLabel",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_tag"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "open_shelf"
+   },
+   {
+    "node": "like",
+    "gesture": "tap",
+    "event": "like"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; with no items at all the chips hide too"
+   },
+   "fallback": {
+    "shows": "a shelf with two or fewer has no See all button"
+   },
+   "attention": {
+    "shows": "the picked chip fills; shelves with nothing left under the filter hide"
+   }
+  },
+  "motion": [
+   {
+    "node": "tile",
+    "enter": "rise"
+   },
+   {
+    "node": "chip",
+    "press": "shrink"
+   },
+   {
+    "node": "more",
+    "press": "shrink"
+   },
+   {
+    "node": "like",
+    "press": "shrink"
+   },
+   {
+    "node": "like_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "more_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "the tag name",
+   "more": "more_word or less_word and the shelf name",
+   "like": "like_word or unlike_word and the item name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ }
+}

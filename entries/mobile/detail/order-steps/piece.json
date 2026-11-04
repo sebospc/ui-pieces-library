@@ -1,0 +1,182 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "heading",
+   "type": "text",
+   "required": true,
+   "about": "what this is, the largest line"
+  },
+  {
+   "name": "facts",
+   "type": "list",
+   "required": true,
+   "about": "label and value pairs under the heading: id, label, value"
+  },
+  {
+   "name": "steps",
+   "type": "list",
+   "required": true,
+   "about": "the journey in order: id (1 up), name"
+  },
+  {
+   "name": "current",
+   "type": "number",
+   "required": true,
+   "about": "the step it is on at the start"
+  },
+  {
+   "name": "reached",
+   "type": "list",
+   "required": true,
+   "about": "when each step was reached: step (a step id), date"
+  },
+  {
+   "name": "eta",
+   "type": "formula",
+   "required": true,
+   "about": "the expected date of the last step"
+  },
+  {
+   "name": "section_head",
+   "type": "text",
+   "required": true,
+   "about": "the head over the steps"
+  },
+  {
+   "name": "eta_word",
+   "type": "text",
+   "required": true,
+   "about": "put before the expected date"
+  },
+  {
+   "name": "arrived_word",
+   "type": "text",
+   "required": true,
+   "about": "put before the date the last step was reached"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a reached step's name"
+  },
+  {
+   "name": "now_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the current step's name"
+  },
+  {
+   "name": "later_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a step still to come"
+  },
+  {
+   "name": "place_head",
+   "type": "text",
+   "required": true,
+   "about": "the head over the place lines"
+  },
+  {
+   "name": "place",
+   "type": "list",
+   "required": true,
+   "about": "the place lines: id, text"
+  },
+  {
+   "name": "watch_text",
+   "type": "text",
+   "required": true,
+   "about": "the button that asks for a nudge at each step"
+  },
+  {
+   "name": "watching_text",
+   "type": "text",
+   "required": true,
+   "about": "its words once asked"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "separator",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "minTouch",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space0",
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "watch",
+    "gesture": "tap",
+    "event": "watch"
+   }
+  ],
+  "host_events": [
+   {
+    "event": "reach",
+    "value": "the step id the order has reached, sent by the host"
+   }
+  ],
+  "states": {
+   "attention": {
+    "shows": "the arrival date in place of the estimate; watch hidden"
+   }
+  },
+  "motion": [
+   {
+    "node": "mark",
+    "animate": "swap"
+   },
+   {
+    "node": "eta",
+    "animate": "swap"
+   },
+   {
+    "node": "watch",
+    "press": "shrink"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "watch": "watch_text or watching_text",
+   "step": "name + done, now or later word"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap and shrink"
+ }
+}

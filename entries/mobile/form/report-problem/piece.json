@@ -1,0 +1,215 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "lead",
+   "type": "text",
+   "required": true,
+   "about": "the bold paragraph on top: what to write and why it helps"
+  },
+  {
+   "name": "field_label",
+   "type": "text",
+   "required": true,
+   "about": "the long field's label"
+  },
+  {
+   "name": "min_chars",
+   "type": "number",
+   "required": true,
+   "about": "the least the message needs (spaces at the ends don't count)"
+  },
+  {
+   "name": "max_chars",
+   "type": "number",
+   "required": true,
+   "about": "the most the message may hold"
+  },
+  {
+   "name": "count_line",
+   "type": "formula",
+   "required": true,
+   "about": "the count under the field's end; may read used and max_chars"
+  },
+  {
+   "name": "short_text",
+   "type": "formula",
+   "required": true,
+   "about": "the field's error after a send that was too short; may read need (characters still missing)"
+  },
+  {
+   "name": "over_text",
+   "type": "formula",
+   "required": true,
+   "about": "the field's error while over the limit, shown at once; may read over_by"
+  },
+  {
+   "name": "topic_ask",
+   "type": "text",
+   "required": true,
+   "about": "the question over the topics"
+  },
+  {
+   "name": "optional_word",
+   "type": "text",
+   "required": true,
+   "about": "the quiet word after the question that says the topic is not needed"
+  },
+  {
+   "name": "topics",
+   "type": "list",
+   "required": true,
+   "about": "the topics: id (1 up), name; 0 or more, with none the question is left out"
+  },
+  {
+   "name": "note",
+   "type": "text",
+   "required": true,
+   "about": "the fine print under the button: what not to put in a report"
+  },
+  {
+   "name": "sent_title",
+   "type": "text",
+   "required": true,
+   "about": "the heading once sent"
+  },
+  {
+   "name": "sent_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read sent_count and last_topic (the topic name sent, or \"\")"
+  },
+  {
+   "name": "set_text",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the field sends its whole text as it changes"
+  },
+  {
+   "name": "pick_topic",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: picks one topic, a second tap on it clears the pick"
+  },
+  {
+   "name": "send",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: sends when long enough and under the limit; otherwise marks the try so the short error shows"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: from the sent state back to an empty form"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "surfaceRow",
+  "radiusCard",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "set_text"
+   },
+   {
+    "node": "topic_row",
+    "gesture": "tap",
+    "event": "pick_topic"
+   },
+   {
+    "node": "send_btn",
+    "gesture": "tap",
+    "event": "send"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "no topic question; the message alone is the form"
+   },
+   "attention": {
+    "shows": "over the limit: the count turns destructive and the field says by how much, at once; too short: the field says how much is missing, only after a send"
+   },
+   "fallback": {
+    "shows": "sent_box in place of the form, naming the topic sent; again brings back an empty form"
+   }
+  },
+  "motion": [
+   {
+    "node": "field",
+    "animate": "swap"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "topic_ring",
+    "animate": "snappy"
+   },
+   {
+    "node": "topic_row",
+    "press": "shrink"
+   },
+   {
+    "node": "send_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "sent_box",
+    "enter": "rise"
+   },
+   {
+    "node": "again_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "field": "field_label",
+   "topic_row": "it.name",
+   "send_btn": "send.label",
+   "again_btn": "again.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, snappy, shrink and rise",
+  "not_colour_alone": "over the limit and too short are said in words on the field; the picked topic is a dot in the ring, not only a colour; optional is a word"
+ }
+}

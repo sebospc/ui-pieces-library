@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.found-grid",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["collection", "progress"],
+ "line": "Categories as a three-column grid of tiles with found of total; locked ones stay in place, dim, as a question."
+}

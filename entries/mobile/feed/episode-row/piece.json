@@ -1,0 +1,185 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "topics",
+   "type": "list",
+   "required": true,
+   "about": "2 to 4 filter chips sharing one row: id (1 up), name; the first one starts picked"
+  },
+  {
+   "name": "shows",
+   "type": "list",
+   "required": true,
+   "about": "the sources: id, name, topic (a topic id), on (followed at the start)"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the feed: id, show (a show id), title, date, minutes"
+  },
+  {
+   "name": "min_word",
+   "type": "text",
+   "required": true,
+   "about": "after the minutes in a row's meta line, e.g. ' min'"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the feed when the picked topic has nothing"
+  },
+  {
+   "name": "follow_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a show's name on its follow button while not followed"
+  },
+  {
+   "name": "unfollow_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a show's name on its follow button while followed"
+  },
+  {
+   "name": "play_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's title on its play button"
+  },
+  {
+   "name": "pause_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's title on its play button while it plays"
+  },
+  {
+   "name": "queue_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's title on its queue button"
+  },
+  {
+   "name": "unqueue_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's title on its queue button once queued"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCover",
+  "radiusThumbnail",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel"
+ ],
+ "scales": [
+  "space0",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_topic"
+   },
+   {
+    "node": "follow",
+    "gesture": "tap",
+    "event": "follow"
+   },
+   {
+    "node": "play",
+    "gesture": "tap",
+    "event": "play"
+   },
+   {
+    "node": "queue",
+    "gesture": "tap",
+    "event": "queue"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of rows; shelf hidden when the topic has no source"
+   },
+   "attention": {
+    "shows": "the playing row's play button filled with a pause icon"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "chip",
+    "press": "shrink"
+   },
+   {
+    "node": "follow",
+    "press": "shrink"
+   },
+   {
+    "node": "play",
+    "press": "shrink"
+   },
+   {
+    "node": "queue",
+    "press": "shrink"
+   },
+   {
+    "node": "play_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "follow_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "queue_icon",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "it.name",
+   "follow": "follow_word or unfollow_word + name",
+   "play": "play_word or pause_word + title",
+   "queue": "queue_word or unqueue_word + title"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ }
+}

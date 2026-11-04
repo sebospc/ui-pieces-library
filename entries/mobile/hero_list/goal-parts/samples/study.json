@@ -1,0 +1,96 @@
+{
+ "title": "Study day",
+ "goal_label": "Study time",
+ "goal": 180,
+ "unit": " min",
+ "parts": [
+  {
+   "id": 1,
+   "label": "Spanish",
+   "target": 60
+  },
+  {
+   "id": 2,
+   "label": "Maths",
+   "target": 90
+  },
+  {
+   "id": 3,
+   "label": "Piano",
+   "target": 30
+  }
+ ],
+ "day_slots": [
+  {
+   "id": 1,
+   "label": "Morning",
+   "preset_name": "Verb drills",
+   "preset_part": 1,
+   "preset_amount": 25
+  },
+  {
+   "id": 2,
+   "label": "Afternoon",
+   "preset_name": "Problem set",
+   "preset_part": 2,
+   "preset_amount": 45
+  },
+  {
+   "id": 3,
+   "label": "Evening",
+   "preset_name": "Scales",
+   "preset_part": 3,
+   "preset_amount": 20
+  }
+ ],
+ "entries": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "slot": 1,
+   "part": 1,
+   "name": "Verb drills",
+   "amount": 25
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "slot": 1,
+   "part": 2,
+   "name": "Fractions",
+   "amount": 40
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "slot": 2,
+   "part": 3,
+   "name": "Scales",
+   "amount": 20
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "slot": 3,
+   "part": 1,
+   "name": "Podcast",
+   "amount": 50
+  }
+ ],
+ "of_word": " of ",
+ "left_word": " to go",
+ "over_word": " past the goal",
+ "diary_title": "Today",
+ "empty_slot_line": "Nothing yet",
+ "and_word": " and ",
+ "more_word": " more",
+ "log_word": "Log"
+}

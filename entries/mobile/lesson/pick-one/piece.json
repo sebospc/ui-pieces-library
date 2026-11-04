@@ -1,0 +1,203 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "questions",
+   "type": "list",
+   "required": true,
+   "about": "the deck, copied into state: id (1 up, in order), ask, options (2 to 5 records: id 1 up, in order, name), answer (the id of the right option); a pick is kept as {id, pick} and scored against the deck"
+  },
+  {
+   "name": "step_line",
+   "type": "formula",
+   "required": true,
+   "about": "the small counter over the bar; may read step and total"
+  },
+  {
+   "name": "hint",
+   "type": "text",
+   "required": true,
+   "about": "the line under the question card: pick one"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the big line when every question is answered; may read score and total"
+  },
+  {
+   "name": "wrong_lead",
+   "type": "text",
+   "required": true,
+   "about": "in the review, the words before the right answer on a miss"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when questions is empty"
+  },
+  {
+   "name": "pick",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: picks one option for this question, replacing an earlier pick"
+  },
+  {
+   "name": "next",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: on to the next question once one is picked; the label is the button's words"
+  },
+  {
+   "name": "finish_label",
+   "type": "text",
+   "required": true,
+   "about": "the words the next button takes on the last question"
+  },
+  {
+   "name": "back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: back one question, its pick still there; the label is the button's words"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: clears every pick and starts over; the label is the button's words"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "destructive",
+  "radiusCard",
+  "radiusControl",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "opt",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "next_btn",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "back_btn",
+    "gesture": "tap",
+    "event": "back"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no bar, no buttons"
+   },
+   "attention": {
+    "shows": "the next button dimmed; a tap on it does nothing until an option is picked"
+   },
+   "fallback": {
+    "shows": "the score, a review row per question (miss rows name the right answer) and the again button"
+   }
+  },
+  "motion": [
+   {
+    "node": "opt",
+    "enter": "rise",
+    "delay": "it.id * 0.05",
+    "animate": "smooth",
+    "press": "shrink"
+   },
+   {
+    "node": "seg",
+    "animate": "smooth"
+   },
+   {
+    "node": "ask",
+    "animate": "swap"
+   },
+   {
+    "node": "step_text",
+    "animate": "swap"
+   },
+   {
+    "node": "next_text",
+    "animate": "swap"
+   },
+   {
+    "node": "result",
+    "enter": "rise"
+   },
+   {
+    "node": "rev_row",
+    "enter": "rise",
+    "delay": "it.id * 0.05"
+   },
+   {
+    "node": "back_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "next_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "again_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "opt": "it.name",
+   "next_btn": "next.label or finish_label",
+   "back_btn": "back.label",
+   "again_btn": "again.label",
+   "bar": "step_line"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, smooth and swap",
+  "not_colour_alone": "the picked option swaps its ring for a dot; review rows carry a check or a cross and miss rows name the right answer"
+ }
+}

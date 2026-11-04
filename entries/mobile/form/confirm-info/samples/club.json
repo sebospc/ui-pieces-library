@@ -1,0 +1,18 @@
+{
+ "title": "Check your details before we send them",
+ "fields": [
+  {"id": 1, "label": "Full name", "value": "Ada Brook", "required": true},
+  {"id": 2, "label": "Club", "value": "", "required": true},
+  {"id": 3, "label": "Note for the coach", "value": "", "required": false}
+ ],
+ "empty_line": "Not filled in",
+ "sign_label": "I agree to the club rules",
+ "missing_line": "=IF(open > 0, \"Finish the open answer first\", IF(missing > 0, TEXT(missing) & IF(missing = 1, \" answer\", \" answers\") & \" still empty\", \"Tick the box to agree\"))",
+ "done_line": "Sent to the club",
+ "edit": {"event": "edit", "value": "=it.id", "label": "Edit"},
+ "set_draft": {"event": "set_draft", "value": "=value", "label": "Answer"},
+ "done_edit": {"event": "done_edit", "value": "=0", "label": "Done"},
+ "cancel_edit": {"event": "cancel_edit", "value": "=0", "label": "Cancel"},
+ "toggle_sign": {"event": "toggle_sign", "value": "=0", "label": "Agree to the rules"},
+ "create": {"event": "create", "value": "=0", "label": "Send details"}
+}

@@ -1,0 +1,163 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title (the course)"
+  },
+  {
+   "name": "eyebrow",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the unit name, such as its level"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "the unit's name"
+  },
+  {
+   "name": "lessons",
+   "type": "list",
+   "required": true,
+   "about": "the unit's lessons in order: id (1 up, in order), name, done (true or false); 1 or more"
+  },
+  {
+   "name": "count_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the unit name; may read done_count and total"
+  },
+  {
+   "name": "row_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under each lesson's name; may read it.name and it.step (1 done, 2 current, 3 locked)"
+  },
+  {
+   "name": "start_text",
+   "type": "text",
+   "required": true,
+   "about": "the tag on the current lesson"
+  },
+  {
+   "name": "locked_line",
+   "type": "formula",
+   "required": true,
+   "about": "the note after a locked lesson is tapped; may read blocked_name and current_name"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once every lesson is done; may read total"
+  },
+  {
+   "name": "open_lesson",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: a lesson card is tapped (value: it.id); an open lesson goes to the host, a locked one shows the note"
+  },
+  {
+   "name": "complete",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: sent by the host when a lesson ends (value: the lesson's id); marks it done if it is open"
+  },
+  {
+   "name": "fold",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: folds or unfolds the unit's list"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "radiusCard",
+  "headline",
+  "cardTitle",
+  "body",
+  "caption",
+  "micro",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "lesson_btn",
+    "gesture": "tap",
+    "event": "open_lesson"
+   },
+   {
+    "node": "unit_bar",
+    "gesture": "tap",
+    "event": "fold"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the first lesson is current and tagged; the rest are locked"
+   },
+   "attention": {
+    "shows": "a note says which lesson comes first, under the unit name"
+   },
+   "fallback": {
+    "shows": "every card is checked, no tag, and the done line shows"
+   }
+  },
+  "motion": [
+   {
+    "node": "list",
+    "enter": "rise"
+   },
+   {
+    "node": "start_tag",
+    "enter": "rise"
+   },
+   {
+    "node": "note_text",
+    "enter": "rise"
+   },
+   {
+    "node": "done_row",
+    "enter": "rise"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "lesson_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "lesson_btn": "open_lesson.label",
+   "unit_bar": "fold.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, swap and shrink",
+  "not_colour_alone": "each card's line says done, start now or locked in words, the current one carries a tag, and locked ones show a lock"
+ }
+}

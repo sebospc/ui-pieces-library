@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.episode-row",
+ "version": "0.1.2",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "listening",
+  "media"
+ ],
+ "line": "Topic chips, a shelf of sources to follow, then newest items with a round play target and a queue button."
+}

@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.report-problem",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["feedback", "long text"],
+ "line": "A long field with a live count and a limit, an optional topic said in words, one send that waits, then thanks."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "web.line_chart.span-switch",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "line_chart",
+ "kinds": [
+  "measure",
+  "log"
+ ],
+ "line": "The latest value large, its change over the window, a line chart with window choices, a field to log today."
+}

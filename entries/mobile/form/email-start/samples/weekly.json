@@ -1,0 +1,32 @@
+{
+ "title": "Weekly note",
+ "mark_icon": "mail",
+ "name": "Weekly note",
+ "tagline": "Your week in five lines, every Sunday morning",
+ "hint": "Where should the note go?",
+ "field_label": "Email",
+ "valid": "=AND(LEN(entry) >= 6, CONTAINS(entry, \"@\"), CONTAINS(entry, \".\"), NOT(CONTAINS(entry, \" \")))",
+ "error_text": "That address looks incomplete",
+ "or_word": "or",
+ "done_line": "=IF(kept = \"\", \"No note for now\", \"Notes go to \" & kept)",
+ "set_draft": {
+  "event": "set_draft",
+  "value": "=value",
+  "label": "Email"
+ },
+ "submit": {
+  "event": "submit",
+  "value": "=0",
+  "label": "Send me the note"
+ },
+ "skip": {
+  "event": "skip",
+  "value": "=0",
+  "label": "Not now"
+ },
+ "change": {
+  "event": "change",
+  "value": "=0",
+  "label": "Change"
+ }
+}

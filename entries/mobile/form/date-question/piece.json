@@ -1,0 +1,214 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "steps",
+   "type": "list",
+   "required": true,
+   "about": "copied into state: id (1 up, the step order), ask (the question), back (days into the past a date may go, 0 = not before today), ahead (days into the future, 0 = not after today), optional (true when it may be skipped)"
+  },
+  {
+   "name": "step_line",
+   "type": "formula",
+   "required": true,
+   "about": "the counter over the bar; may read cur and total"
+  },
+  {
+   "name": "hint_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the question; may read cur_optional"
+  },
+  {
+   "name": "date_label",
+   "type": "text",
+   "required": true,
+   "about": "the date field's label"
+  },
+  {
+   "name": "early_error",
+   "type": "formula",
+   "required": true,
+   "about": "the field's error when the date is further back than the step allows; may read cur_back"
+  },
+  {
+   "name": "late_error",
+   "type": "formula",
+   "required": true,
+   "about": "the field's error when the date is further ahead than the step allows; may read cur_ahead"
+  },
+  {
+   "name": "next_word",
+   "type": "text",
+   "required": true,
+   "about": "the forward button's words before the last step"
+  },
+  {
+   "name": "finish_word",
+   "type": "text",
+   "required": true,
+   "about": "the forward button's words on the last step"
+  },
+  {
+   "name": "done_title",
+   "type": "text",
+   "required": true,
+   "about": "the heading once finished"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read answered, skipped and total"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when steps is empty"
+  },
+  {
+   "name": "set_date",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the picked date, answering the shown step"
+  },
+  {
+   "name": "clear",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: takes back the answer on an optional step"
+  },
+  {
+   "name": "prev",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one step back"
+  },
+  {
+   "name": "next",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one step on, or finish on the last; waits for a fitting date unless the step is optional"
+  },
+  {
+   "name": "edit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: back to the last step from the finished state"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "radiusCard",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "titleHero",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "date_field",
+    "gesture": "pick",
+    "event": "set_date"
+   },
+   {
+    "node": "clear_btn",
+    "gesture": "tap",
+    "event": "clear"
+   },
+   {
+    "node": "prev_btn",
+    "gesture": "tap",
+    "event": "prev"
+   },
+   {
+    "node": "next_btn",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "edit_btn",
+    "gesture": "tap",
+    "event": "edit"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no steps and no buttons"
+   },
+   "attention": {
+    "shows": "the field's error in words, saying how far back or ahead the step allows, and a dim forward button"
+   },
+   "fallback": {
+    "shows": "done_title, done_line with answered and skipped counts, and the edit button"
+   }
+  },
+  "motion": [
+   {
+    "node": "step_text",
+    "animate": "swap"
+   },
+   {
+    "node": "bar_on",
+    "animate": "smooth"
+   },
+   {
+    "node": "ask_text",
+    "animate": "swap"
+   },
+   {
+    "node": "date_field",
+    "animate": "swap"
+   },
+   {
+    "node": "done_box",
+    "enter": "rise"
+   },
+   {
+    "node": "next_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "date_field": "date_label",
+   "clear_btn": "clear.label",
+   "prev_btn": "prev.label",
+   "next_btn": "finish_word on the last step, next_word before",
+   "edit_btn": "edit.label",
+   "bar": "step_line"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, smooth, swap and rise",
+  "not_colour_alone": "an unpicked day is dimmed and the hint asks for one; an unfit date is said in words under the field; the counter says the step in words as well as the bar"
+ }
+}

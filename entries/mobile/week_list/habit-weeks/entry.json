@@ -1,0 +1,13 @@
+{
+ "id": "mobile.week_list.habit-weeks",
+ "version": "0.2.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": [
+  "habits",
+  "fitness",
+  "care"
+ ],
+ "line": "Habits in grouped cards, each with a count-to-target ring and this week's days to tap done."
+}

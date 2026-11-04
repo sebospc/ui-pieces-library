@@ -1,0 +1,69 @@
+{
+ "title": "Kept",
+ "topics": [
+  {
+   "id": 1,
+   "name": "Soil"
+  },
+  {
+   "id": 2,
+   "name": "Seeds"
+  },
+  {
+   "id": 3,
+   "name": "Tools"
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "title": "A simple test for clay in your beds",
+   "date": {
+    "date": "2026-10-20"
+   },
+   "kind": "Guide",
+   "summary": "Roll a damp pinch between two fingers; how far it stretches tells you most of what you need.",
+   "topics": [
+    1
+   ],
+   "photo": "",
+   "saved": true
+  },
+  {
+   "id": 2,
+   "title": "Saving tomato seed from this year's best plant",
+   "date": {
+    "date": "2026-10-28"
+   },
+   "kind": "How-to",
+   "summary": "Ferment, rinse and dry on a plate. Label the jar the same day or you will forget which one it was.",
+   "topics": [
+    2,
+    1
+   ],
+   "photo": "",
+   "saved": true
+  },
+  {
+   "id": 3,
+   "title": "Sharpening a spade without a bench grinder",
+   "date": {
+    "date": "2026-10-25"
+   },
+   "kind": "Video",
+   "summary": "A flat file and ten quiet minutes. Keep the old bevel and work from the back.",
+   "topics": [
+    3
+   ],
+   "photo": "",
+   "saved": true
+  }
+ ],
+ "empty_text": "Nothing kept yet. Tap the bookmark on anything to keep it here.",
+ "empty_topic_text": "Nothing kept under this topic any more.",
+ "showing_word": "Showing",
+ "clear_text": "Show all",
+ "removed_word": "Removed:",
+ "put_back_text": "Put back",
+ "unsave_word": "Remove from kept:"
+}

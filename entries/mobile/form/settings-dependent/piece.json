@@ -1,0 +1,142 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "settings",
+   "type": "list",
+   "required": true,
+   "about": "copied into state: id (1 up, the list order, no gaps: a row's place is its id), head (the section name on a section's first row, else \"\"), icon, name, kind (\"switch\" or \"choice\"), on (switch value), options (choice words, a list of text), pick (choice place in options, 1 up), note (a quiet line under a switch, or \"\"), parent (0, or the id of a top-level switch that must be on)"
+  },
+  {
+   "name": "needs_text",
+   "type": "text",
+   "required": true,
+   "about": "the words before the parent's name on a row that is waiting for its parent"
+  },
+  {
+   "name": "on_word",
+   "type": "text",
+   "required": true,
+   "about": "said for a switch that is on"
+  },
+  {
+   "name": "off_word",
+   "type": "text",
+   "required": true,
+   "about": "said for a switch that is off"
+  },
+  {
+   "name": "changed_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line over the restore button; may read changed (rows that differ from the start)"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when settings is empty"
+  },
+  {
+   "name": "tap_row",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: a tap on a row flips its switch or moves its choice to the next option; nothing while its parent is off"
+  },
+  {
+   "name": "restore",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: every row back to the start"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row_btn",
+    "gesture": "tap",
+    "event": "tap_row"
+   },
+   {
+    "node": "restore_btn",
+    "gesture": "tap",
+    "event": "restore"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only"
+   },
+   "attention": {
+    "shows": "changed_line and the restore button, pinned at the bottom"
+   },
+   "fallback": {
+    "shows": "a row whose parent is off stays in place at 0.4 with its value replaced by needs_text and the parent's name, and taps do nothing"
+   }
+  },
+  "motion": [
+   {
+    "node": "row_btn",
+    "press": "shrink",
+    "animate": "smooth"
+   },
+   {
+    "node": "knob",
+    "animate": "smooth"
+   },
+   {
+    "node": "track",
+    "animate": "smooth"
+   },
+   {
+    "node": "row_sub",
+    "animate": "swap"
+   },
+   {
+    "node": "foot",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row_btn": "the name, on_word or off_word or the chosen option, and needs_text with the parent's name while waiting",
+   "restore_btn": "restore.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, smooth, swap and rise",
+  "not_colour_alone": "a switch's knob moves side as well as colour, and a waiting row says what it needs in words"
+ }
+}

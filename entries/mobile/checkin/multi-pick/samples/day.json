@@ -1,0 +1,25 @@
+{
+ "title": "Day log",
+ "ask": "What was part of today?",
+ "items": [
+  {"id": 1, "name": "Walked outside", "on": false},
+  {"id": 2, "name": "Stretched", "on": false},
+  {"id": 3, "name": "Cooked a meal", "on": false},
+  {"id": 4, "name": "Called someone", "on": false},
+  {"id": 5, "name": "Screen-free hour", "on": false},
+  {"id": 6, "name": "In bed by eleven", "on": false}
+ ],
+ "hint_line": "=IF(picked_count = 0, \"Tick any that fit\", TEXT(picked_count) & \" ticked so far\")",
+ "empty_text": "Nothing to tick yet",
+ "done_line": "=\"Checked in with \" & TEXT(saved_count) & IF(saved_count = 1, \" thing\", \" things\") & \", \" & TEXT(day_count) & IF(day_count = 1, \" day\", \" days\") & \" kept\"",
+ "toggle": {
+  "event": "toggle",
+  "value": "=it.id",
+  "label": "Tick"
+ },
+ "check_in": {
+  "event": "check_in",
+  "value": "=0",
+  "label": "Check in"
+ }
+}

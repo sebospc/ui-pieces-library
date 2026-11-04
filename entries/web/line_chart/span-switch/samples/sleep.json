@@ -1,0 +1,316 @@
+{
+ "title": "Sleep",
+ "measure_name": "Hours slept",
+ "unit": "h",
+ "records": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-09-18"
+   },
+   "value": 7.2
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-09-19"
+   },
+   "value": 6.8
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-09-20"
+   },
+   "value": 7.5
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-09-21"
+   },
+   "value": 6.1
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-09-23"
+   },
+   "value": 8.2
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-09-24"
+   },
+   "value": 7.0
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-09-25"
+   },
+   "value": 6.5
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-09-26"
+   },
+   "value": 7.4
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-09-27"
+   },
+   "value": 7.8
+  },
+  {
+   "id": 10,
+   "date": {
+    "date": "2026-09-28"
+   },
+   "value": 6.9
+  },
+  {
+   "id": 11,
+   "date": {
+    "date": "2026-09-29"
+   },
+   "value": 7.1
+  },
+  {
+   "id": 12,
+   "date": {
+    "date": "2026-09-30"
+   },
+   "value": 8.0
+  },
+  {
+   "id": 13,
+   "date": {
+    "date": "2026-10-02"
+   },
+   "value": 6.4
+  },
+  {
+   "id": 14,
+   "date": {
+    "date": "2026-10-03"
+   },
+   "value": 7.3
+  },
+  {
+   "id": 15,
+   "date": {
+    "date": "2026-10-04"
+   },
+   "value": 7.7
+  },
+  {
+   "id": 16,
+   "date": {
+    "date": "2026-10-05"
+   },
+   "value": 8.1
+  },
+  {
+   "id": 17,
+   "date": {
+    "date": "2026-10-06"
+   },
+   "value": 6.6
+  },
+  {
+   "id": 18,
+   "date": {
+    "date": "2026-10-07"
+   },
+   "value": 7.2
+  },
+  {
+   "id": 19,
+   "date": {
+    "date": "2026-10-08"
+   },
+   "value": 7.9
+  },
+  {
+   "id": 20,
+   "date": {
+    "date": "2026-10-09"
+   },
+   "value": 6.8
+  },
+  {
+   "id": 21,
+   "date": {
+    "date": "2026-10-11"
+   },
+   "value": 7.0
+  },
+  {
+   "id": 22,
+   "date": {
+    "date": "2026-10-12"
+   },
+   "value": 7.5
+  },
+  {
+   "id": 23,
+   "date": {
+    "date": "2026-10-13"
+   },
+   "value": 6.2
+  },
+  {
+   "id": 24,
+   "date": {
+    "date": "2026-10-14"
+   },
+   "value": 7.8
+  },
+  {
+   "id": 25,
+   "date": {
+    "date": "2026-10-15"
+   },
+   "value": 8.3
+  },
+  {
+   "id": 26,
+   "date": {
+    "date": "2026-10-16"
+   },
+   "value": 7.1
+  },
+  {
+   "id": 27,
+   "date": {
+    "date": "2026-10-17"
+   },
+   "value": 6.9
+  },
+  {
+   "id": 28,
+   "date": {
+    "date": "2026-10-18"
+   },
+   "value": 7.6
+  },
+  {
+   "id": 29,
+   "date": {
+    "date": "2026-10-20"
+   },
+   "value": 8.0
+  },
+  {
+   "id": 30,
+   "date": {
+    "date": "2026-10-21"
+   },
+   "value": 7.4
+  },
+  {
+   "id": 31,
+   "date": {
+    "date": "2026-10-22"
+   },
+   "value": 6.7
+  },
+  {
+   "id": 32,
+   "date": {
+    "date": "2026-10-23"
+   },
+   "value": 7.9
+  },
+  {
+   "id": 33,
+   "date": {
+    "date": "2026-10-24"
+   },
+   "value": 7.3
+  },
+  {
+   "id": 34,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "value": 7.5
+  },
+  {
+   "id": 35,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "value": 6.8
+  },
+  {
+   "id": 36,
+   "date": {
+    "date": "2026-10-27"
+   },
+   "value": 7.7
+  },
+  {
+   "id": 37,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "value": 7.6
+  },
+  {
+   "id": 38,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "value": 7.4
+  },
+  {
+   "id": 39,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "value": 7.8
+  }
+ ],
+ "spans": [
+  {
+   "span": 7,
+   "label": "7D",
+   "phrase": "this week"
+  },
+  {
+   "span": 30,
+   "label": "30D",
+   "phrase": "this month"
+  },
+  {
+   "span": 365,
+   "label": "1Y",
+   "phrase": "this year"
+  }
+ ],
+ "month_names": [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+ ],
+ "empty_value": "No nights yet",
+ "empty_window": "Nothing logged in this window",
+ "show_data_label": "List the nights",
+ "input_hint": "Hours last night",
+ "log_label": "Log"
+}

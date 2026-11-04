@@ -1,0 +1,54 @@
+{
+ "title": "Kitchen",
+ "photo": "",
+ "name": "Red lentil soup with lemon",
+ "byline": "Weeknight",
+ "base_servings": 4,
+ "facts": [
+  {
+   "id": 1,
+   "icon": "flame",
+   "value": 1280,
+   "unit": "kcal",
+   "scales": true
+  },
+  {
+   "id": 2,
+   "icon": "clock",
+   "value": 35,
+   "unit": "min",
+   "scales": false
+  }
+ ],
+ "parts_head": "What goes in",
+ "parts": [
+  {
+   "id": 1,
+   "amount": 250,
+   "unit": "g",
+   "name": "red lentils"
+  },
+  {
+   "id": 2,
+   "amount": 1,
+   "unit": "l",
+   "name": "vegetable stock"
+  },
+  {
+   "id": 3,
+   "amount": 1,
+   "unit": "",
+   "name": "lemon, juiced"
+  },
+  {
+   "id": 4,
+   "amount": 2,
+   "unit": "tsp",
+   "name": "ground cumin"
+  }
+ ],
+ "done_label": "I made it",
+ "done_note": "=\"Made \" & TEXT(COUNT(made)) & IF(COUNT(made) = 1, \" time\", \" times\")",
+ "unit_one": "bowl",
+ "unit_word": "bowls"
+}

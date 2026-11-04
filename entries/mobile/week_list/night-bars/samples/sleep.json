@@ -1,0 +1,81 @@
+{
+ "title": "Nights",
+ "records": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-24"
+   },
+   "start": 1380,
+   "end": 420
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "start": 1350,
+   "end": 405
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "start": 1395,
+   "end": 390
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-27"
+   },
+   "start": 1160,
+   "end": 320
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "start": 1310,
+   "end": 380
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "start": 40,
+   "end": 670
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "start": 1410,
+   "end": 480
+  }
+ ],
+ "day_names": [
+  "Su",
+  "Mo",
+  "Tu",
+  "We",
+  "Th",
+  "Fr",
+  "Sa"
+ ],
+ "window_start": 1200,
+ "window_length": 840,
+ "avg_label": "Average night",
+ "count_label": "Nights logged",
+ "empty_text": "No nights logged this week",
+ "no_record_word": "nothing logged",
+ "open_event": {
+  "event": "open_day",
+  "value": "=it.id",
+  "label": "=it.spoken"
+ }
+}

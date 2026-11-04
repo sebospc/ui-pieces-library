@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.shelf-more",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["catalog", "browse"],
+ "line": "Filter chips over named shelves of two tiles each; a shelf opens to show all, a heart likes a tile."
+}

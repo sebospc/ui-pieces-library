@@ -1,0 +1,188 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the instruction over every item"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "items in order: id (1 up, no gaps), prompt, answers (forms that pass, any case), near (forms that pass with the right one shown, any case, none also in answers, may be empty), show (the form to show)"
+  },
+  {
+   "name": "field_label",
+   "type": "text",
+   "required": true,
+   "about": "the answer box's label"
+  },
+  {
+   "name": "streak_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line over the bar from two right answers running; may read streak"
+  },
+  {
+   "name": "right_line",
+   "type": "text",
+   "required": true,
+   "about": "the panel heading for an exact answer"
+  },
+  {
+   "name": "near_line",
+   "type": "text",
+   "required": true,
+   "about": "the panel heading for a near answer, which still passes"
+  },
+  {
+   "name": "wrong_line",
+   "type": "text",
+   "required": true,
+   "about": "the panel heading for a wrong answer"
+  },
+  {
+   "name": "answer_line",
+   "type": "formula",
+   "required": true,
+   "about": "the panel line after a near or wrong answer; may read show_now"
+  },
+  {
+   "name": "next_line",
+   "type": "formula",
+   "required": true,
+   "about": "the continue button's words; may read is_last"
+  },
+  {
+   "name": "score_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the score at the end; may read score and total"
+  },
+  {
+   "name": "set_draft",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: typing (value: the text)"
+  },
+  {
+   "name": "check",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: checks the typed answer, once there is one"
+  },
+  {
+   "name": "next",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: after a check, the next item or the end"
+  },
+  {
+   "name": "restart",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: at the end, starts again from the first item"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "destructive",
+  "radiusCard",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "set_draft"
+   },
+   {
+    "node": "check_btn",
+    "gesture": "tap",
+    "event": "check"
+   },
+   {
+    "node": "next_btn",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "restart_btn",
+    "gesture": "tap",
+    "event": "restart"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the box is empty and check is dimmed and does nothing"
+   },
+   "attention": {
+    "shows": "the foot turns into a panel: a check and the right or near heading, or an x and the wrong heading, the form to learn after a near or wrong answer, and continue; typing is locked"
+   },
+   "fallback": {
+    "shows": "the score out of the total, a line, and start again"
+   }
+  },
+  "motion": [
+   {
+    "node": "foot",
+    "animate": "smooth"
+   },
+   {
+    "node": "verdict_text",
+    "animate": "swap"
+   },
+   {
+    "node": "prompt_text",
+    "animate": "swap"
+   },
+   {
+    "node": "seg",
+    "animate": "smooth"
+   },
+   {
+    "node": "check_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "field": "field_label",
+   "bar": "step / total",
+   "check_btn": "check.label",
+   "next_btn": "next.label",
+   "restart_btn": "restart.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops smooth, swap and shrink",
+  "not_colour_alone": "right and near show a check and wrong an x, each with a heading in words, and the answer line names the right form"
+ }
+}

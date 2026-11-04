@@ -1,0 +1,183 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the habit's name, the screen title"
+  },
+  {
+   "name": "question",
+   "type": "text",
+   "required": true,
+   "about": "the habit asked as a question, at the top"
+  },
+  {
+   "name": "cadence",
+   "type": "text",
+   "required": true,
+   "about": "how often, beside a calendar icon"
+  },
+  {
+   "name": "reminder",
+   "type": "text",
+   "required": false,
+   "default": "",
+   "about": "the reminder time beside a bell icon; empty hides it (one sample holds one reminder, so the hiding has no functional check: it survives by design)"
+  },
+  {
+   "name": "marks",
+   "type": "list",
+   "required": true,
+   "about": "days done: id, date"
+  },
+  {
+   "name": "overview_head",
+   "type": "text",
+   "required": true,
+   "about": "the head of the numbers card"
+  },
+  {
+   "name": "score_word",
+   "type": "text",
+   "required": true,
+   "about": "label under the 30-day share"
+  },
+  {
+   "name": "streak_word",
+   "type": "text",
+   "required": true,
+   "about": "label under the current run"
+  },
+  {
+   "name": "month_word",
+   "type": "text",
+   "required": true,
+   "about": "label under this month's count"
+  },
+  {
+   "name": "total_word",
+   "type": "text",
+   "required": true,
+   "about": "label under the count of every day done"
+  },
+  {
+   "name": "weeks_head",
+   "type": "text",
+   "required": true,
+   "about": "the head of the weeks card"
+  },
+  {
+   "name": "from_word",
+   "type": "text",
+   "required": true,
+   "about": "put before a week's first day, e.g. a word for 'from'"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in the weeks card before any day is done"
+  },
+  {
+   "name": "mark_text",
+   "type": "text",
+   "required": true,
+   "about": "the button's words while today is open"
+  },
+  {
+   "name": "done_text",
+   "type": "text",
+   "required": true,
+   "about": "the button's words once today is done"
+  },
+  {
+   "name": "mark_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the button while today is open"
+  },
+  {
+   "name": "undo_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the button once today is done"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "dataFill",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "progressRow",
+  "minTouch",
+  "body",
+  "bodyNumber",
+  "caption",
+  "sectionHeader",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "mark",
+    "gesture": "tap",
+    "event": "toggle_today"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in the weeks card, weeks_list hidden, every stat 0"
+   },
+   "attention": {
+    "shows": "mark turns to a quiet row with done_text"
+   }
+  },
+  "motion": [
+   {
+    "node": "week",
+    "enter": "rise"
+   },
+   {
+    "node": "stat_value",
+    "animate": "swap"
+   },
+   {
+    "node": "week_count",
+    "animate": "swap"
+   },
+   {
+    "node": "share_ring",
+    "animate": "smooth"
+   },
+   {
+    "node": "mark",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "mark": "mark_label or undo_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ }
+}

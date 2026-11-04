@@ -1,0 +1,9 @@
+{
+ "id": "mobile.hero_list.card-stack",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": ["quotes", "list"],
+ "line": "A stack of cards with two peeking behind; a tap sends the front one back, the list below brings any forward."
+}

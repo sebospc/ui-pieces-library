@@ -1,0 +1,21 @@
+{
+ "title": "Kitchen herbs",
+ "ask": "Which herb is this?",
+ "cards": [
+  {"id": 1, "front": "Soft, sweet leaves torn over tomatoes", "back": "Basil", "pos": 1, "known": false, "misses": 0},
+  {"id": 2, "front": "Needles on a woody stem, good with lamb", "back": "Rosemary", "pos": 2, "known": false, "misses": 0},
+  {"id": 3, "front": "Flat leaves that taste of citrus and soap to some", "back": "Coriander", "pos": 3, "known": false, "misses": 0},
+  {"id": 4, "front": "Tiny leaves stripped from thin stems for stews", "back": "Thyme", "pos": 4, "known": false, "misses": 0}
+ ],
+ "count_line": "=TEXT(known_count) & \" of \" & TEXT(total) & \" known\" & IF(left_count > 0, \", \" & TEXT(left_count) & \" to go\", \"\")",
+ "tap_text": "Tap to turn it over",
+ "seen_text": "Back again",
+ "grade_ask": "Had you got it?",
+ "done_title": "Deck learned",
+ "done_line": "=TEXT(first_try) & \" of \" & TEXT(total) & \" first time\" & IF(hardest = \"\", \".\", \". Hardest: \" & hardest & \".\")",
+ "empty_text": "No cards in this deck yet",
+ "reveal": {"event": "reveal", "value": "=0", "label": "Turn it over"},
+ "no": {"event": "no", "value": "=0", "label": "Not yet"},
+ "yes": {"event": "yes", "value": "=0", "label": "Got it"},
+ "again": {"event": "again", "value": "=0", "label": "Go through again"}
+}

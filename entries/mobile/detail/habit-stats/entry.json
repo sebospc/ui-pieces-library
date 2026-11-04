@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.habit-stats",
+ "version": "0.1.3",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "habits",
+  "stats"
+ ],
+ "line": "A habit's question and terms, one done-today button, a ring with four numbers, then a bar per week."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "web.disclosure.unfold-list",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "disclosure",
+ "kinds": [
+  "reference",
+  "notes"
+ ],
+ "line": "A card of titled rows; a tap unfolds one body under its title and folds the one open before."
+}

@@ -1,0 +1,106 @@
+{
+ "title": "Evenings",
+ "steps": [
+  {
+   "id": 1,
+   "ask": "What should your evenings help with?"
+  },
+  {
+   "id": 2,
+   "ask": "When do you start to slow down?"
+  },
+  {
+   "id": 3,
+   "ask": "What tends to keep you up?"
+  }
+ ],
+ "options": [
+  {
+   "id": 1,
+   "step": 1,
+   "group": 1,
+   "name": "Falling asleep"
+  },
+  {
+   "id": 2,
+   "step": 1,
+   "group": 1,
+   "name": "Less screen time"
+  },
+  {
+   "id": 3,
+   "step": 1,
+   "group": 2,
+   "name": "Reading"
+  },
+  {
+   "id": 4,
+   "step": 1,
+   "group": 2,
+   "name": "Stretching"
+  },
+  {
+   "id": 5,
+   "step": 1,
+   "group": 2,
+   "name": "Journaling"
+  },
+  {
+   "id": 6,
+   "step": 1,
+   "group": 2,
+   "name": "Quiet music"
+  },
+  {
+   "id": 7,
+   "step": 2,
+   "group": 2,
+   "name": "Before nine"
+  },
+  {
+   "id": 8,
+   "step": 2,
+   "group": 2,
+   "name": "Nine to ten"
+  },
+  {
+   "id": 9,
+   "step": 2,
+   "group": 2,
+   "name": "After ten"
+  },
+  {
+   "id": 10,
+   "step": 3,
+   "group": 1,
+   "name": "Late messages"
+  },
+  {
+   "id": 11,
+   "step": 3,
+   "group": 1,
+   "name": "Busy mind"
+  },
+  {
+   "id": 12,
+   "step": 3,
+   "group": 2,
+   "name": "Noise"
+  },
+  {
+   "id": 13,
+   "step": 3,
+   "group": 2,
+   "name": "Caffeine"
+  }
+ ],
+ "suggested_head": "Often picked",
+ "more_head": "Other choices",
+ "unsure_text": "Hard to say",
+ "next_text": "Continue",
+ "finish_text": "All set",
+ "back_label": "Previous step",
+ "done_text": "Your evenings are ready.",
+ "picked_word": " things picked",
+ "change_text": "Go through it again"
+}

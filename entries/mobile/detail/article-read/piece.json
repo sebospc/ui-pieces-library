@@ -1,0 +1,188 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "source",
+   "type": "text",
+   "required": true,
+   "about": "where it was published, a small line on top"
+  },
+  {
+   "name": "photo",
+   "type": "image",
+   "required": false,
+   "default": "",
+   "about": "a wide picture; empty hides it"
+  },
+  {
+   "name": "headline",
+   "type": "text",
+   "required": true,
+   "about": "the article's title, the largest text on the page"
+  },
+  {
+   "name": "summary",
+   "type": "text",
+   "required": true,
+   "about": "a short summary under the title"
+  },
+  {
+   "name": "author",
+   "type": "text",
+   "required": true,
+   "about": "who wrote it, beside a round initial"
+  },
+  {
+   "name": "published",
+   "type": "text",
+   "required": true,
+   "about": "the date as words, put before the reading time"
+  },
+  {
+   "name": "paragraphs",
+   "type": "list",
+   "required": true,
+   "about": "the body: id (1 up), text; an empty list shows no_body_text"
+  },
+  {
+   "name": "min_word",
+   "type": "text",
+   "required": true,
+   "about": "after the minutes, e.g. ' min read'"
+  },
+  {
+   "name": "no_body_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the body when there are no paragraphs"
+  },
+  {
+   "name": "likes",
+   "type": "number",
+   "required": true,
+   "about": "how many liked it before this person"
+  },
+  {
+   "name": "like_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the like button while not liked"
+  },
+  {
+   "name": "unlike_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the like button once liked"
+  },
+  {
+   "name": "save_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the save button while not saved"
+  },
+  {
+   "name": "unsave_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the save button once saved"
+  },
+  {
+   "name": "saved_text",
+   "type": "text",
+   "required": true,
+   "about": "the short line in the bar once saved"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "separator",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCover",
+  "minTouch",
+  "titleHero",
+  "body",
+  "caption"
+ ],
+ "scales": [
+  "space0",
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "like",
+    "gesture": "tap",
+    "event": "like"
+   },
+   {
+    "node": "save",
+    "gesture": "tap",
+    "event": "save"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "no_body in place of body"
+   },
+   "fallback": {
+    "shows": "photo hidden; the title leads"
+   },
+   "attention": {
+    "shows": "saved_line in the bar"
+   }
+  },
+  "motion": [
+   {
+    "node": "like_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "save_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "like_count",
+    "animate": "swap"
+   },
+   {
+    "node": "saved_line",
+    "enter": "rise"
+   },
+   {
+    "node": "like",
+    "press": "shrink"
+   },
+   {
+    "node": "save",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "like": "like_label or unlike_label",
+   "save": "save_label or unsave_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, swap, rise and the burst"
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question in the soft card on top: how is it right now"
+  },
+  {
+   "name": "steps",
+   "type": "list",
+   "required": true,
+   "about": "the points on the scale, low to high: id (1 up), name; 2 or more, or the empty note shows; the first, middle and last names are the anchors"
+  },
+  {
+   "name": "value_line",
+   "type": "formula",
+   "required": true,
+   "about": "the large line over the slider; may read touched (a point is set) and pos_name (its name)"
+  },
+  {
+   "name": "last_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the anchors; may read has_last (an earlier day was kept), last_name and last_ago (days since)"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the scale when steps has fewer than 2 points"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the footer line once today is kept and not moved since; may read saved_name and day_count (days kept)"
+  },
+  {
+   "name": "slide",
+   "type": "action",
+   "required": true,
+   "about": "{event}: the host sends the slider's position from 0 to 1 while dragging; it snaps to the nearest point"
+  },
+  {
+   "name": "pick",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: tap one point under the slider (value: the point's place from 0), the same snap without a drag"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps today's point, or replaces today's when moved; the label may read checked_in"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "radiusCard",
+  "headline",
+  "cardTitle",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "slider",
+    "gesture": "drag",
+    "event": "slide"
+   },
+   {
+    "node": "stop",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "save_btn",
+    "gesture": "tap",
+    "event": "save"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no scale and no save"
+   },
+   "fallback": {
+    "shows": "the knob rests in the middle at half strength, the value line asks for a touch, save is dimmed and does nothing; a point set on an earlier day reads as not set"
+   },
+   "attention": {
+    "shows": "done_row in place of save_btn; moving the point brings save back to replace today"
+   }
+  },
+  "motion": [
+   {
+    "node": "value_text",
+    "animate": "swap"
+   },
+   {
+    "node": "slider",
+    "animate": "snappy"
+   },
+   {
+    "node": "stop_dot",
+    "animate": "snappy"
+   },
+   {
+    "node": "stop",
+    "press": "shrink"
+   },
+   {
+    "node": "save_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "save_text",
+    "animate": "swap"
+   },
+   {
+    "node": "done_row",
+    "enter": "rise"
+   },
+   {
+    "node": "done_text",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "slider": "value_line",
+   "stop": "it.name",
+   "save_btn": "save.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, snappy, shrink and rise",
+  "not_colour_alone": "the picked point is a larger dot, the value line names it, and every point is a tap target as well as a place on the drag"
+ }
+}

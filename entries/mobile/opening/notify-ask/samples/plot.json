@@ -1,0 +1,60 @@
+{
+ "title": "Plot share",
+ "ask": "Want a heads-up from your plot?",
+ "line": "Pick what is worth a nudge. You can change it any time.",
+ "kinds": [
+  {
+   "id": 1,
+   "name": "Harvest swaps",
+   "on": true
+  },
+  {
+   "id": 2,
+   "name": "Watering turns",
+   "on": true
+  },
+  {
+   "id": 3,
+   "name": "Group news",
+   "on": false
+  }
+ ],
+ "samples": [
+  {
+   "id": 1,
+   "kind": 1,
+   "who": "Mira",
+   "line": "Has spare courgettes to swap",
+   "ago": "5m"
+  },
+  {
+   "id": 2,
+   "kind": 2,
+   "who": "Watering rota",
+   "line": "Your turn is tomorrow morning",
+   "ago": "1h"
+  },
+  {
+   "id": 3,
+   "kind": 3,
+   "who": "Allotment group",
+   "line": "The gate code changes on Monday",
+   "ago": "3h"
+  },
+  {
+   "id": 4,
+   "kind": 1,
+   "who": "Joss",
+   "line": "Took two of your marrows, left beans",
+   "ago": "1d"
+  }
+ ],
+ "none_text": "Nothing picked, so nothing would be sent.",
+ "allow_text": "Allow nudges",
+ "skip_text": "Maybe later",
+ "asked_text": "Answer the phone's question to finish.",
+ "granted_text": "Nudges are on.",
+ "denied_text": "The phone said no. You can turn nudges on in the phone's settings.",
+ "skipped_text": "No nudges for now.",
+ "again_text": "Allow nudges after all"
+}

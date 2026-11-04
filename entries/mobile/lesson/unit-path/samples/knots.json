@@ -1,0 +1,19 @@
+{
+ "title": "Sailing basics",
+ "eyebrow": "Unit 2",
+ "unit": "Knots that hold",
+ "lessons": [
+  {"id": 1, "name": "Why knots fail", "done": true},
+  {"id": 2, "name": "The bowline", "done": false},
+  {"id": 3, "name": "Cleat hitch", "done": false},
+  {"id": 4, "name": "Unit check", "done": false}
+ ],
+ "count_line": "=TEXT(done_count) & \" of \" & TEXT(total) & \" done\"",
+ "row_line": "=IF(it.step = 1, \"Done\", IF(it.step = 2, \"Start now\", \"Locked\"))",
+ "start_text": "Next",
+ "locked_line": "=\"Finish \" & current_name & \" before \" & blocked_name",
+ "done_line": "=\"All \" & TEXT(total) & \" lessons done\"",
+ "open_lesson": {"event": "open_lesson", "value": "=it.id", "label": "Open lesson"},
+ "complete": {"event": "complete", "value": "=0", "label": "Lesson finished"},
+ "fold": {"event": "fold", "value": "=0", "label": "Fold the unit"}
+}

@@ -1,0 +1,12 @@
+{
+ "id": "web.activity_grid.level-cells",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "activity_grid",
+ "kinds": [
+  "habit",
+  "log"
+ ],
+ "line": "A count over four weeks, a grid of day cells shaded by level, a tap names a day's count, one button logs today."
+}

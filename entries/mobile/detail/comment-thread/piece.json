@@ -1,0 +1,165 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "subject",
+   "type": "text",
+   "required": true,
+   "about": "what is being discussed, the largest line"
+  },
+  {
+   "name": "byline",
+   "type": "text",
+   "required": true,
+   "about": "one line under it, like who posted it"
+  },
+  {
+   "name": "comments",
+   "type": "list",
+   "required": true,
+   "about": "the thread in reading order (each reply right after its parent's branch): id, parent (0 for top level), author, date, text; up to 4 levels deep"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "the age of a comment from today"
+  },
+  {
+   "name": "days_word",
+   "type": "text",
+   "required": true,
+   "about": "after the day count for older comments, e.g. 'd'"
+  },
+  {
+   "name": "reply_one",
+   "type": "text",
+   "required": true,
+   "about": "after the count when there is one reply, e.g. ' reply'"
+  },
+  {
+   "name": "reply_many",
+   "type": "text",
+   "required": true,
+   "about": "after the count otherwise, e.g. ' replies'"
+  },
+  {
+   "name": "count_word",
+   "type": "text",
+   "required": true,
+   "about": "after the comment count under the subject"
+  },
+  {
+   "name": "more_text",
+   "type": "text",
+   "required": true,
+   "about": "the link that opens a long comment"
+  },
+  {
+   "name": "less_text",
+   "type": "text",
+   "required": true,
+   "about": "the link that clamps it again"
+  },
+  {
+   "name": "hide_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the author on a branch's fold button while open"
+  },
+  {
+   "name": "show_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the author on a branch's fold button while folded"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown before anyone has commented"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "separator",
+  "accent",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "radiusControl",
+  "minTouch",
+  "headline",
+  "body",
+  "caption"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "read_all",
+    "gesture": "tap",
+    "event": "read_all"
+   },
+   {
+    "node": "fold",
+    "gesture": "tap",
+    "event": "fold"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty under the subject"
+   },
+   "attention": {
+    "shows": "folded branches gone, their parent's chevron down"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "animate": "smooth"
+   },
+   {
+    "node": "text",
+    "animate": "smooth"
+   },
+   {
+    "node": "fold_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "read_all",
+    "press": "shrink"
+   },
+   {
+    "node": "fold",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "read_all": "more_text or less_text",
+   "fold": "hide_label or show_label + author"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops the smooth fold, shrink and swap"
+ }
+}

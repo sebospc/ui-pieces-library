@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.saved-cards",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "reading",
+  "saved"
+ ],
+ "line": "Kept items as cards with a filled bookmark that removes in place, a way to put it back, and topic chips."
+}

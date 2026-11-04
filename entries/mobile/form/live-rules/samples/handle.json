@@ -1,0 +1,22 @@
+{
+ "title": "Reading club",
+ "ask": "Pick a handle",
+ "hint": "Others in the club see it next to your notes.",
+ "field_label": "Handle",
+ "rules_head": "It needs:",
+ "rules": [
+  {"id": 1, "label": "3 to 15 characters", "kind": "length", "min": 3, "max": 15, "chars": []},
+  {"id": 2, "label": "A small letter (a to z)", "kind": "any", "min": 0, "max": 0,
+   "chars": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]},
+  {"id": 3, "label": "A number", "kind": "any", "min": 0, "max": 0,
+   "chars": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]},
+  {"id": 4, "label": "No spaces", "kind": "none", "min": 0, "max": 0, "chars": [" "]},
+  {"id": 5, "label": "No @ or #", "kind": "none", "min": 0, "max": 0, "chars": ["@", "#"]}
+ ],
+ "count_line": "=TEXT(met) & \" of \" & TEXT(total) & \" met\"",
+ "error_line": "=\"Only \" & TEXT(met) & \" of \" & TEXT(total) & \" met so far\"",
+ "done_line": "=\"You're \" & kept & \" in the club\"",
+ "set_draft": {"event": "set_draft", "value": "=value", "label": "Handle"},
+ "next": {"event": "next", "value": "=0", "label": "Next"},
+ "change": {"event": "change", "value": "=0", "label": "Change"}
+}

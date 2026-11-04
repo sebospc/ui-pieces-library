@@ -1,0 +1,98 @@
+{
+ "title": "Seed box",
+ "categories": [
+  {
+   "id": 1,
+   "name": "Herbs"
+  },
+  {
+   "id": 2,
+   "name": "Greens"
+  },
+  {
+   "id": 3,
+   "name": "Flowers"
+  }
+ ],
+ "tags": [
+  {
+   "id": 1,
+   "name": "Easy"
+  },
+  {
+   "id": 2,
+   "name": "Shade"
+  },
+  {
+   "id": 3,
+   "name": "Fast"
+  },
+  {
+   "id": 4,
+   "name": "Tall"
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "category": 1,
+   "tag": 1,
+   "name": "Basil",
+   "note": "Sow in spring",
+   "liked": false
+  },
+  {
+   "id": 2,
+   "category": 1,
+   "tag": 2,
+   "name": "Mint",
+   "note": "Keep in a pot",
+   "liked": true
+  },
+  {
+   "id": 3,
+   "category": 1,
+   "tag": 3,
+   "name": "Cress",
+   "note": "",
+   "liked": false
+  },
+  {
+   "id": 4,
+   "category": 1,
+   "tag": 1,
+   "name": "Chives",
+   "note": "Comes back yearly",
+   "liked": false
+  },
+  {
+   "id": 5,
+   "category": 2,
+   "tag": 3,
+   "name": "Rocket",
+   "note": "Cut and come again",
+   "liked": false
+  },
+  {
+   "id": 6,
+   "category": 2,
+   "tag": 2,
+   "name": "Spinach",
+   "note": "",
+   "liked": false
+  },
+  {
+   "id": 7,
+   "category": 3,
+   "tag": 1,
+   "name": "Marigold",
+   "note": "Good next to beans",
+   "liked": false
+  }
+ ],
+ "more_word": "See all",
+ "less_word": "Show less",
+ "like_word": "Like",
+ "unlike_word": "Unlike",
+ "empty_text": "Nothing on the shelves for this filter"
+}

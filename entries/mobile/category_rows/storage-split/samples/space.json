@@ -1,0 +1,18 @@
+{
+ "title": "Space",
+ "parts": [
+  {"id": 1, "name": "Voice notes", "size": 6.2, "ticked": true},
+  {"id": 2, "name": "Photos", "size": 180.4, "ticked": true},
+  {"id": 3, "name": "Documents", "size": 1.3, "ticked": false},
+  {"id": 4, "name": "Videos", "size": 42.5, "ticked": true},
+  {"id": 5, "name": "Other", "size": 0.05, "ticked": false}
+ ],
+ "unit": "MB",
+ "heading": "Saved on this phone",
+ "clear_word": "Clear",
+ "freed_word": "Freed",
+ "note_text": "Cleared files can be downloaded again from your account.",
+ "tick_word": "Include",
+ "untick_word": "Leave out",
+ "empty_text": "Nothing saved on this phone"
+}

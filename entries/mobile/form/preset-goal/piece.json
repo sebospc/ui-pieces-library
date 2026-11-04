@@ -1,0 +1,160 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "subject",
+   "type": "text",
+   "required": true,
+   "about": "what the goal is for, on the head card"
+  },
+  {
+   "name": "subject_icon",
+   "type": "text",
+   "required": true,
+   "about": "a Tabler icon for the head card"
+  },
+  {
+   "name": "amount_head",
+   "type": "text",
+   "required": true,
+   "about": "the label over the amount field"
+  },
+  {
+   "name": "amount_help",
+   "type": "text",
+   "required": true,
+   "about": "one helper line under that label"
+  },
+  {
+   "name": "amount_unit",
+   "type": "text",
+   "required": true,
+   "about": "the unit shown in the amount field"
+  },
+  {
+   "name": "due_head",
+   "type": "text",
+   "required": true,
+   "about": "the label over the date choices"
+  },
+  {
+   "name": "due_label",
+   "type": "text",
+   "required": true,
+   "about": "the spoken label of the date field"
+  },
+  {
+   "name": "presets",
+   "type": "list",
+   "required": true,
+   "about": "2 to 4 quick dates: id (1 up, in order), label, days from today"
+  },
+  {
+   "name": "goals",
+   "type": "list",
+   "required": true,
+   "about": "goals already set: id, name, amount, due"
+  },
+  {
+   "name": "save_label",
+   "type": "text",
+   "required": true,
+   "about": "the words on the save button"
+  },
+  {
+   "name": "saved_text",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the button once a goal exists"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusCard",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "amount_field",
+    "gesture": "type",
+    "event": "set_amount"
+   },
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_preset"
+   },
+   {
+    "node": "due_field",
+    "gesture": "pick",
+    "event": "pick_due"
+   },
+   {
+    "node": "save",
+    "gesture": "tap",
+    "event": "save"
+   }
+  ],
+  "states": {
+   "not_ready": {
+    "shows": "save dimmed, a tap does nothing"
+   },
+   "preset_on": {
+    "shows": "that chip filled with a tick, the date field holds its date"
+   }
+  },
+  "motion": [
+   {
+    "node": "chip",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "save",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "it.label",
+   "amount_field": "amount_head",
+   "due_field": "due_label",
+   "save": "save_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink and snappy",
+  "not_colour_alone": "the chosen chip carries a tick"
+ }
+}

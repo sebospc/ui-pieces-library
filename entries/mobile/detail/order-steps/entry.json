@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.order-steps",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "shopping",
+  "tracking"
+ ],
+ "line": "One order: a title and facts, an estimate over a stepper of done, now and later marks, and the address."
+}

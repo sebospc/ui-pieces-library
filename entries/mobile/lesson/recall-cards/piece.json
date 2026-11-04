@@ -1,0 +1,202 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question over the card"
+  },
+  {
+   "name": "cards",
+   "type": "list",
+   "required": true,
+   "about": "copied into state: id (1 up), front, back, pos (the queue place, start it at id), known (false), misses (0)"
+  },
+  {
+   "name": "count_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the bar; may read known_count, left_count and total"
+  },
+  {
+   "name": "tap_text",
+   "type": "text",
+   "required": true,
+   "about": "the faint line on the card before the answer shows"
+  },
+  {
+   "name": "seen_text",
+   "type": "text",
+   "required": true,
+   "about": "the tag on a card that was missed before and came round again"
+  },
+  {
+   "name": "grade_ask",
+   "type": "text",
+   "required": true,
+   "about": "the question over the two grade buttons"
+  },
+  {
+   "name": "done_title",
+   "type": "text",
+   "required": true,
+   "about": "the heading once every card is known"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read total, first_try and hardest (the front of the most-missed card, or \"\")"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when cards is empty"
+  },
+  {
+   "name": "reveal",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: shows the card's back; the label is the show button's words"
+  },
+  {
+   "name": "no",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: not remembered: the card goes to the back of the queue"
+  },
+  {
+   "name": "yes",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: remembered: the card is known"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the whole deck again"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "destructive",
+  "radiusCard",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "titleHero",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "card_btn",
+    "gesture": "tap",
+    "event": "reveal"
+   },
+   {
+    "node": "show_btn",
+    "gesture": "tap",
+    "event": "reveal"
+   },
+   {
+    "node": "no_btn",
+    "gesture": "tap",
+    "event": "no"
+   },
+   {
+    "node": "yes_btn",
+    "gesture": "tap",
+    "event": "yes"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no bar, card or buttons"
+   },
+   "attention": {
+    "shows": "seen_text on the card, in words, when a missed card comes round again"
+   },
+   "fallback": {
+    "shows": "a check, done_title, done_line with first-try count and the hardest card, and the again button"
+   }
+  },
+  "motion": [
+   {
+    "node": "bar_on",
+    "animate": "smooth"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "card_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "front_text",
+    "animate": "swap"
+   },
+   {
+    "node": "back_text",
+    "enter": "rise"
+   },
+   {
+    "node": "grade_box",
+    "enter": "rise"
+   },
+   {
+    "node": "result",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "card_btn": "the front, and the back once shown",
+   "show_btn": "reveal.label",
+   "no_btn": "no.label",
+   "yes_btn": "yes.label",
+   "again_btn": "again.label",
+   "bar": "count_line"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, smooth, swap and rise",
+  "not_colour_alone": "no and yes carry a cross and a check with their words; a card seen again says so in words"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "in order: id (1..n), title (one line), body (a few lines)"
+  },
+  {
+   "name": "open_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after an open item's title"
+  },
+  {
+   "name": "closed_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a closed item's title"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "separator",
+  "radiusCard",
+  "body",
+  "minTouch"
+ ],
+ "scales": [
+  "space3",
+  "space4",
+  "space5",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "head",
+    "gesture": "tap",
+    "event": "toggle"
+   }
+  ],
+  "states": {
+   "all_closed": {
+    "shows": "titles only, a down chevron on each"
+   },
+   "one_open": {
+    "shows": "that item's body under its title, its chevron up; opening another closes it"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "body",
+    "enter": "rise"
+   },
+   {
+    "node": "chev",
+    "animate": "snappy"
+   },
+   {
+    "node": "item",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "head": "title, then open_word or closed_word"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, smooth and snappy",
+  "not_colour_alone": "open state is the chevron direction, the shown body and the spoken word"
+ }
+}

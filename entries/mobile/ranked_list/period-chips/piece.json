@@ -1,0 +1,120 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "periods",
+   "type": "list",
+   "required": true,
+   "about": "id (1 today, 2 this week, 3 this month, 4 all time), label; any subset, one chip each"
+  },
+  {
+   "name": "start_period",
+   "type": "number",
+   "required": true,
+   "about": "the period id the screen opens on"
+  },
+  {
+   "name": "things",
+   "type": "list",
+   "required": true,
+   "about": "id, name; what gets ranked"
+  },
+  {
+   "name": "logs",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, date, thing, amount"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "after every amount, with a leading space if a word"
+  },
+  {
+   "name": "selected_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the chosen chip's label, with a leading comma"
+  },
+  {
+   "name": "empty_period_line",
+   "type": "text",
+   "required": true,
+   "about": "shown when nothing was logged in the chosen period"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "accent",
+  "onAccent",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "capsule",
+  "body",
+  "bodyNumber",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_period"
+   }
+  ],
+  "states": {
+   "ranked": {
+    "shows": "every thing ranked by its total in the chosen period, rank number, name, total and a bar against the top total"
+   },
+   "zero_rows": {
+    "shows": "a thing with nothing in the period sits at the bottom with a dash for its rank and no bar"
+   },
+   "empty": {
+    "shows": "empty_period_line above the zero rows"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "value",
+    "animate": "smooth"
+   },
+   {
+    "node": "bar_fill",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "label, plus selected_word on the chosen one",
+   "row": "rank, name and total"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "the chosen chip is said in words; every bar has its total in text"
+ }
+}

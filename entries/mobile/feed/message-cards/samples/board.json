@@ -1,0 +1,59 @@
+{
+ "title": "Allotment board",
+ "messages": [
+  {
+   "id": 1,
+   "sender": "Rosa",
+   "subject": "Water butts are full",
+   "preview": "The rain last night filled every butt on the east side, so no need to carry cans this week. The tap by the shed stays off until spring.",
+   "date": {
+    "date": "2026-10-31"
+   },
+   "starred": false,
+   "read": false
+  },
+  {
+   "id": 2,
+   "sender": "Tomasz",
+   "subject": "Spare seed potatoes",
+   "preview": "I have two bags left from the order. First come, first served, they are in the green box by the gate.",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "starred": true,
+   "read": true
+  },
+  {
+   "id": 3,
+   "sender": "Ines",
+   "subject": "Work day on Saturday",
+   "preview": "We clear the paths and turn the compost from ten. Bring gloves; tea and soup at one. If it pours we move to Sunday.",
+   "date": {
+    "date": "2026-10-27"
+   },
+   "starred": false,
+   "read": false
+  },
+  {
+   "id": 4,
+   "sender": "Rosa",
+   "subject": "Lost secateurs",
+   "preview": "Red handles, left near plot 12. Please leave them on the shelf in the shed if you find them.",
+   "date": {
+    "date": "2026-10-24"
+   },
+   "starred": false,
+   "read": true
+  }
+ ],
+ "search_label": "Search the board",
+ "today_word": "Today",
+ "yesterday_word": "Yesterday",
+ "days_word": " days ago",
+ "empty_text": "Nothing here. Try another word.",
+ "unread_word": " new",
+ "star_word": "Keep",
+ "unstar_word": "Stop keeping",
+ "open_word": "Read",
+ "close_word": "Close"
+}

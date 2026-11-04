@@ -1,0 +1,185 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "mark_icon",
+   "type": "icon",
+   "required": true,
+   "about": "a Tabler name drawn in the round mark on top (never the reference's logo)"
+  },
+  {
+   "name": "name",
+   "type": "text",
+   "required": true,
+   "about": "the big line under the mark: what this start is for"
+  },
+  {
+   "name": "tagline",
+   "type": "text",
+   "required": true,
+   "about": "one line under the name"
+  },
+  {
+   "name": "hint",
+   "type": "text",
+   "required": true,
+   "about": "the centred line over the field"
+  },
+  {
+   "name": "field_label",
+   "type": "text",
+   "required": true,
+   "about": "the field's label, also its spoken label"
+  },
+  {
+   "name": "valid",
+   "type": "formula",
+   "required": true,
+   "about": "true when entry (the field, trimmed) is good to keep"
+  },
+  {
+   "name": "error_text",
+   "type": "text",
+   "required": true,
+   "about": "under the field after a tap on submit with an entry that is not valid; it clears as soon as the entry is"
+  },
+  {
+   "name": "or_word",
+   "type": "text",
+   "required": true,
+   "about": "the short word between the two paths, set between two hairlines"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once the start is done; may read kept (blank after skip)"
+  },
+  {
+   "name": "set_draft",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the field's text as it is typed"
+  },
+  {
+   "name": "submit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the entry when it is valid, else shows the error; the label is the filled button's words"
+  },
+  {
+   "name": "skip",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the second path, done with nothing kept; the label is the second button's words"
+  },
+  {
+   "name": "change",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: brings the field back holding what was kept"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "separator",
+  "titleHero",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space0",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "set_draft"
+   },
+   {
+    "node": "submit_btn",
+    "gesture": "tap",
+    "event": "submit"
+   },
+   {
+    "node": "skip_btn",
+    "gesture": "tap",
+    "event": "skip"
+   },
+   {
+    "node": "change_btn",
+    "gesture": "tap",
+    "event": "change"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the field with its label only; submit shows the error rather than keeping a blank"
+   },
+   "attention": {
+    "shows": "error_text under the field until the entry is valid"
+   },
+   "fallback": {
+    "shows": "done_line for a skipped start (kept is blank), change still brings the field back"
+   }
+  },
+  "motion": [
+   {
+    "node": "submit_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "skip_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "field",
+    "animate": "swap"
+   },
+   {
+    "node": "done",
+    "enter": "rise"
+   },
+   {
+    "node": "change_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "field": "field_label",
+   "submit_btn": "submit.label",
+   "skip_btn": "skip.label",
+   "change_btn": "change.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, swap and rise",
+  "not_colour_alone": "the error is words under the field, and done carries a check and a line"
+ }
+}

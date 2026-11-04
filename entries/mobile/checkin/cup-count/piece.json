@@ -1,0 +1,214 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "goal",
+   "type": "number",
+   "required": true,
+   "about": "the day's goal in units; 0 means no goal, and the ring and goal line give way to the count alone"
+  },
+  {
+   "name": "max_back",
+   "type": "number",
+   "required": true,
+   "about": "how many days back the day arrows reach"
+  },
+  {
+   "name": "quick",
+   "type": "list",
+   "required": true,
+   "about": "quick-add amounts: id (1 up), amount (more than 0); 0 or more, with none the quick row is left out"
+  },
+  {
+   "name": "day_line",
+   "type": "formula",
+   "required": true,
+   "about": "the day between the arrows; may read offset (days back from today)"
+  },
+  {
+   "name": "unit_line",
+   "type": "formula",
+   "required": true,
+   "about": "the unit under the count; may read count"
+  },
+  {
+   "name": "goal_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the dial; may read count, goal, pct (share of the goal, not capped), met and over_by"
+  },
+  {
+   "name": "no_goal_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the dial when goal is 0; may read count"
+  },
+  {
+   "name": "week_line",
+   "type": "formula",
+   "required": true,
+   "about": "the quiet line under the goal line; may read week_met (days in the last 7 that met the goal)"
+  },
+  {
+   "name": "quick_ask",
+   "type": "text",
+   "required": true,
+   "about": "the heading over the quick-add row"
+  },
+  {
+   "name": "quick_label",
+   "type": "formula",
+   "required": true,
+   "about": "each quick button's words; may read it.amount"
+  },
+  {
+   "name": "add",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one more on the shown day"
+  },
+  {
+   "name": "take",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one less on the shown day, never under 0"
+  },
+  {
+   "name": "quick_add",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: adds the button's amount (value: it.amount) on the shown day"
+  },
+  {
+   "name": "back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one day back, up to max_back"
+  },
+  {
+   "name": "forward",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one day forward, never past today"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "radiusControl",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "add_btn",
+    "gesture": "tap",
+    "event": "add"
+   },
+   {
+    "node": "take_btn",
+    "gesture": "tap",
+    "event": "take"
+   },
+   {
+    "node": "quick_btn",
+    "gesture": "tap",
+    "event": "quick_add"
+   },
+   {
+    "node": "back_btn",
+    "gesture": "tap",
+    "event": "back"
+   },
+   {
+    "node": "fwd_btn",
+    "gesture": "tap",
+    "event": "forward"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the count reads 0, the ring is empty and minus is dimmed and does nothing"
+   },
+   "attention": {
+    "shows": "the ring is full, a check sits under the unit, and the goal line says met or how far over"
+   },
+   "fallback": {
+    "shows": "no ring and no share; the count and the no-goal line only"
+   }
+  },
+  "motion": [
+   {
+    "node": "dial_ring",
+    "animate": "smooth"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "met_icon",
+    "enter": "rise"
+   },
+   {
+    "node": "goal_text",
+    "animate": "swap"
+   },
+   {
+    "node": "day_text",
+    "animate": "swap"
+   },
+   {
+    "node": "add_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "take_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "quick_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "add_btn": "add.label",
+   "take_btn": "take.label",
+   "quick_btn": "quick_label",
+   "back_btn": "back.label",
+   "fwd_btn": "forward.label",
+   "dial": "goal_line"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops smooth, swap, rise and shrink",
+  "not_colour_alone": "the goal met is a check plus words, the share is said in the goal line, and a dimmed arrow or minus does nothing"
+ }
+}

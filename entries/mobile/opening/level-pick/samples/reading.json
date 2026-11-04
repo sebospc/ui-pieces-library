@@ -1,0 +1,32 @@
+{
+ "title": "Reading habit",
+ "step": 2,
+ "steps": 5,
+ "ask": "How much do you read now?",
+ "options": [
+  {
+   "id": 1,
+   "name": "Hardly at all",
+   "line": "A book or two a year, if that"
+  },
+  {
+   "id": 2,
+   "name": "Now and then",
+   "line": "A few pages on some evenings"
+  },
+  {
+   "id": 3,
+   "name": "Most weeks",
+   "line": "A book every month or so"
+  },
+  {
+   "id": 4,
+   "name": "Every day",
+   "line": "Reading is part of each day"
+  }
+ ],
+ "next_text": "Continue",
+ "picked_word": ", picked",
+ "done_line": "You picked:",
+ "change_text": "Change answer"
+}

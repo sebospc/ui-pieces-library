@@ -1,0 +1,9 @@
+{
+ "id": "mobile.checkin.chip-grid",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": ["daily", "feeling"],
+ "line": "Pick a level from a grid, add what played a part, and save today in one tap."
+}

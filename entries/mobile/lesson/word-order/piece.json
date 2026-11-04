@@ -1,0 +1,213 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "task",
+   "type": "text",
+   "required": true,
+   "about": "the instruction over the prompt"
+  },
+  {
+   "name": "prompt",
+   "type": "text",
+   "required": true,
+   "about": "the sentence to put into words"
+  },
+  {
+   "name": "words",
+   "type": "list",
+   "required": true,
+   "about": "copied into state: id (1 up, the bank order, so a shuffle: the engine has no random), word, right (its place in the answer, 1 up), at (0, in the bank)"
+  },
+  {
+   "name": "tries",
+   "type": "number",
+   "required": true,
+   "about": "wrong checks allowed before the order is shown"
+  },
+  {
+   "name": "answer_empty",
+   "type": "text",
+   "required": true,
+   "about": "the faint line in the answer box before any tile is placed"
+  },
+  {
+   "name": "tries_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the answer; may read left (tries left) and max_tries"
+  },
+  {
+   "name": "wrong_text",
+   "type": "text",
+   "required": true,
+   "about": "the line after a wrong check; the tiles out of place are marked"
+  },
+  {
+   "name": "key_text",
+   "type": "text",
+   "required": true,
+   "about": "the heading over the right order once the tries run out"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once solved or out of tries; may read solved, used (wrong checks), hints and max_tries"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when words is empty"
+  },
+  {
+   "name": "place",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: a tap on a bank tile puts it at the end of the answer"
+  },
+  {
+   "name": "back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: takes the last tile back to the bank"
+  },
+  {
+   "name": "check",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: checks a full answer"
+  },
+  {
+   "name": "hint",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the right start, sends the rest back and places the next right tile"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: every tile back, tries and hints cleared"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accent",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "destructive",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "b_tile",
+    "gesture": "tap",
+    "event": "place"
+   },
+   {
+    "node": "back_btn",
+    "gesture": "tap",
+    "event": "back"
+   },
+   {
+    "node": "check_btn",
+    "gesture": "tap",
+    "event": "check"
+   },
+   {
+    "node": "hint_btn",
+    "gesture": "tap",
+    "event": "hint"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no answer box, no bank, no buttons"
+   },
+   "attention": {
+    "shows": "the tiles out of place in the destructive colour with a cross, and wrong_note, until the next tile moves"
+   },
+   "fallback": {
+    "shows": "the right order under key_text, the result line and the again button"
+   }
+  },
+  "motion": [
+   {
+    "node": "a_tile",
+    "enter": "rise",
+    "animate": "smooth"
+   },
+   {
+    "node": "b_tile",
+    "press": "shrink",
+    "animate": "smooth"
+   },
+   {
+    "node": "tries_text",
+    "animate": "swap"
+   },
+   {
+    "node": "wrong_note",
+    "enter": "rise"
+   },
+   {
+    "node": "key_box",
+    "enter": "rise"
+   },
+   {
+    "node": "result_text",
+    "enter": "rise"
+   },
+   {
+    "node": "check_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "b_tile": "it.word",
+   "back_btn": "back.label",
+   "check_btn": "check.label",
+   "hint_btn": "hint.label",
+   "again_btn": "again.label",
+   "answer_box": "placed of total"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, smooth, swap and rise",
+  "not_colour_alone": "a tile out of place carries a cross, a solved answer a check, and both come with a line"
+ }
+}

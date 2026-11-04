@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: week rows from first_weekday, a span bar placed on a time track, tap for times"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "added boundary and flipped-condition checks found by a self-review flip of every comparison"}

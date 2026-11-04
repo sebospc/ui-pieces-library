@@ -1,0 +1,28 @@
+{
+ "title": "Rest log",
+ "ask": "How rested are you right now?",
+ "steps": [
+  {"id": 1, "name": "Drained"},
+  {"id": 2, "name": "Tired"},
+  {"id": 3, "name": "Okay"},
+  {"id": 4, "name": "Rested"},
+  {"id": 5, "name": "Fresh"}
+ ],
+ "value_line": "=IF(touched, pos_name, \"Slide or tap a point\")",
+ "last_line": "=\"Last time: \" & last_name & IF(last_ago = 1, \", yesterday\", \", \" & TEXT(last_ago) & \" days ago\")",
+ "empty_text": "No scale set up yet",
+ "done_line": "=\"Kept as \" & saved_name & \", \" & TEXT(day_count) & IF(day_count = 1, \" day\", \" days\") & \" logged\"",
+ "slide": {
+  "event": "slide"
+ },
+ "pick": {
+  "event": "pick",
+  "value": "=it.id - 1",
+  "label": "Set"
+ },
+ "save": {
+  "event": "save",
+  "value": "=0",
+  "label": "=IF(checked_in, \"Update today\", \"Save\")"
+ }
+}

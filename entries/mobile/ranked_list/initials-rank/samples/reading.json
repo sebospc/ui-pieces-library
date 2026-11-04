@@ -1,0 +1,13 @@
+{
+ "title": "Reading club",
+ "items": [
+  {"id": 1, "name": "Marta", "sub": "Poetry", "value": 412},
+  {"id": 2, "name": "Tomas", "sub": "", "value": 655},
+  {"id": 3, "name": "Ines", "sub": "History", "value": 380},
+  {"id": 4, "name": "Pablo", "sub": "Novels", "value": 540},
+  {"id": 5, "name": "Lucia", "sub": "", "value": 129}
+ ],
+ "value_unit": "pages",
+ "empty_text": "No one has logged pages yet",
+ "open_event": {"event": "open", "value": "=it.id", "label": "Open"}
+}

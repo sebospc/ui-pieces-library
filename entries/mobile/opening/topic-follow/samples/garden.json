@@ -1,0 +1,91 @@
+{
+ "title": "Garden notes",
+ "ask": "Which parts of the garden matter to you?",
+ "hint": "Pick a few. Your home shows news from them, and you can change them later.",
+ "topics": [
+  {
+   "id": 1,
+   "name": "Vegetables",
+   "icon": "plant",
+   "on": false
+  },
+  {
+   "id": 2,
+   "name": "Trees",
+   "icon": "tree",
+   "on": false
+  },
+  {
+   "id": 3,
+   "name": "Flowers",
+   "icon": "flower",
+   "on": false
+  },
+  {
+   "id": 4,
+   "name": "Weather",
+   "icon": "cloud-rain",
+   "on": false
+  },
+  {
+   "id": 5,
+   "name": "Tools",
+   "icon": "tool",
+   "on": false
+  },
+  {
+   "id": 6,
+   "name": "Birds",
+   "icon": "feather",
+   "on": false
+  }
+ ],
+ "items": [
+  {
+   "id": 21,
+   "topic": 1,
+   "title": "Sowing garlic before the first frost",
+   "date": {
+    "date": "2026-10-30"
+   }
+  },
+  {
+   "id": 22,
+   "topic": 4,
+   "title": "A dry, cold week ahead",
+   "date": {
+    "date": "2026-10-31"
+   }
+  },
+  {
+   "id": 23,
+   "topic": 2,
+   "title": "When to prune apple trees",
+   "date": {
+    "date": "2026-10-28"
+   }
+  },
+  {
+   "id": 24,
+   "topic": 1,
+   "title": "Keeping kale going into winter",
+   "date": {
+    "date": "2026-10-25"
+   }
+  },
+  {
+   "id": 25,
+   "topic": 3,
+   "title": "Lifting dahlias for storage",
+   "date": {
+    "date": "2026-10-29"
+   }
+  }
+ ],
+ "done_text": "Show my home",
+ "change_text": "Change",
+ "feed_head": "Latest",
+ "empty_text": "Nothing from these topics yet. New posts land here.",
+ "follow_word": "Follow",
+ "unfollow_word": "Stop following"
+}

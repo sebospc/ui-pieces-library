@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.address-add",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["address", "several fields"],
+ "line": "Labelled fields on one edge, errors in words after a save that clear one by one, a by-hand split, a first-choice switch."
+}

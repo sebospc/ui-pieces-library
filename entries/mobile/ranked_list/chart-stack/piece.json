@@ -1,0 +1,188 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "regions",
+   "type": "list",
+   "required": true,
+   "about": "where a chart can be from: id, name"
+  },
+  {
+   "name": "start_region",
+   "type": "number",
+   "required": true,
+   "about": "the region id shown first"
+  },
+  {
+   "name": "charts",
+   "type": "list",
+   "required": true,
+   "about": "the stacked charts in order: id, name"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "chart rows: id, chart, region, name, credit (a short second line), rank, last_rank (0 when new)"
+  },
+  {
+   "name": "top_count",
+   "type": "number",
+   "required": true,
+   "about": "rows shown per chart before More"
+  },
+  {
+   "name": "more_word",
+   "type": "text",
+   "required": true,
+   "about": "the chart's More button while short"
+  },
+  {
+   "name": "less_word",
+   "type": "text",
+   "required": true,
+   "about": "the chart's button while it shows every row"
+  },
+  {
+   "name": "region_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the region on the picker"
+  },
+  {
+   "name": "up_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a rise, before the steps"
+  },
+  {
+   "name": "down_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a drop, before the steps"
+  },
+  {
+   "name": "same_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for no move"
+  },
+  {
+   "name": "new_word",
+   "type": "text",
+   "required": true,
+   "about": "shown and spoken for a row that was not in the last chart"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when the region has no chart yet"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "destructive",
+  "separator",
+  "radiusThumbnail",
+  "titleHero",
+  "sectionHeader",
+  "chipLabel",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "region_button",
+    "gesture": "tap",
+    "event": "toggle_picker"
+   },
+   {
+    "node": "choice",
+    "gesture": "tap",
+    "event": "pick_region"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "open_chart"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty when the region has no chart; a chart with no rows hides"
+   },
+   "attention": {
+    "shows": "a move icon under every rank (rise, drop, same) or the new word, each spoken, never colour alone"
+   },
+   "fallback": {
+    "shows": "a chart with top_count rows or fewer has no More"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "region_button",
+    "press": "shrink"
+   },
+   {
+    "node": "choice",
+    "press": "shrink"
+   },
+   {
+    "node": "more",
+    "press": "shrink"
+   },
+   {
+    "node": "region_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "more_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "region_button": "region_word and the region",
+   "choice": "the region name",
+   "more": "more_word or less_word and the chart name",
+   "row": "rank, name, credit and the move in words"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Ranks come from the data (a chart publishes them); the move compares rank with last_rank. Picking a region closes the picker and every open chart."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "mobile.opening.notify-ask",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "opening",
+ "kinds": [
+  "first-run",
+  "permission"
+ ],
+ "line": "Ask for notices by showing samples that follow what is picked; one allow, a quiet skip, an honest state."
+}

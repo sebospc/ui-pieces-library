@@ -1,0 +1,31 @@
+{
+ "title": "Cookbook",
+ "sections": [
+  {"id": 1, "name": "Cook by cuisine", "form": "chips"},
+  {"id": 2, "name": "Quick dinners", "form": "cards"},
+  {"id": 3, "name": "Pick a diet", "form": "chips"},
+  {"id": 4, "name": "Weekend bakes", "form": "cards"}
+ ],
+ "items": [
+  {"id": 1, "section": 1, "name": "Italian", "meta": "", "kind": 0, "added": false},
+  {"id": 2, "section": 1, "name": "Mexican", "meta": "", "kind": 0, "added": false},
+  {"id": 3, "section": 1, "name": "Thai", "meta": "", "kind": 0, "added": false},
+  {"id": 4, "section": 1, "name": "Greek", "meta": "", "kind": 0, "added": false},
+  {"id": 5, "section": 3, "name": "Vegan", "meta": "", "kind": 0, "added": false},
+  {"id": 6, "section": 3, "name": "Veggie", "meta": "", "kind": 0, "added": false},
+  {"id": 7, "section": 3, "name": "Fish", "meta": "", "kind": 0, "added": false},
+  {"id": 10, "section": 2, "name": "Lemon orzo", "meta": "20 minutes", "kind": 1, "added": false},
+  {"id": 11, "section": 2, "name": "Black bean tacos", "meta": "25 minutes", "kind": 2, "added": true},
+  {"id": 12, "section": 2, "name": "Green curry", "meta": "30 minutes", "kind": 3, "added": false},
+  {"id": 13, "section": 2, "name": "Pesto gnocchi", "meta": "15 minutes", "kind": 1, "added": false},
+  {"id": 14, "section": 2, "name": "Halloumi wraps", "meta": "", "kind": 4, "added": false},
+  {"id": 20, "section": 4, "name": "Focaccia", "meta": "Saturday", "kind": 1, "added": false},
+  {"id": 21, "section": 4, "name": "Baklava", "meta": "Sunday", "kind": 4, "added": false}
+ ],
+ "open_after": 3,
+ "add_word": "Add",
+ "remove_word": "Remove",
+ "open_word": "Open",
+ "close_word": "Close",
+ "empty_text": "No recipes yet"
+}

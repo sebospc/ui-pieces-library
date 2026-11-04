@@ -1,0 +1,147 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "lists",
+   "type": "list",
+   "required": true,
+   "about": "the rankings to switch between: id, name"
+  },
+  {
+   "name": "start_list",
+   "type": "number",
+   "required": true,
+   "about": "the list id shown first"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "ranked rows: id, list, rank (the source's own order), title, points, source, age (a short text), comments, read"
+  },
+  {
+   "name": "points_word",
+   "type": "text",
+   "required": true,
+   "about": "after the points"
+  },
+  {
+   "name": "comments_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the comment count"
+  },
+  {
+   "name": "read_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a read title"
+  },
+  {
+   "name": "switch_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the list name on the switch"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when the list has nothing"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "radiusControl",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "switch",
+    "gesture": "tap",
+    "event": "toggle_menu"
+   },
+   {
+    "node": "choice",
+    "gesture": "tap",
+    "event": "pick_list"
+   },
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "read"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty under the switch"
+   },
+   "attention": {
+    "shows": "a read title fades and is spoken as read; the rank and meta stay"
+   }
+  },
+  "motion": [
+   {
+    "node": "row_line",
+    "enter": "rise"
+   },
+   {
+    "node": "switch",
+    "press": "shrink"
+   },
+   {
+    "node": "choice",
+    "press": "shrink"
+   },
+   {
+    "node": "row",
+    "press": "shrink"
+   },
+   {
+    "node": "switch_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "row_title",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "switch": "switch_label and the list",
+   "choice": "the list name",
+   "row": "rank, title and read_word once read",
+   "talk": "the count and comments_word"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "The order is the source's own rank, not the points: a ranking the app is shown, not one it computes (ties keep the lower id). Reading is one way: a read title stays read (undo takes it back)."
+}

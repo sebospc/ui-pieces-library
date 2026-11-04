@@ -1,0 +1,165 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "heading",
+   "type": "text",
+   "required": true,
+   "about": "the card's small heading"
+  },
+  {
+   "name": "questions",
+   "type": "list",
+   "required": true,
+   "about": "in order: id (1..n), ask, hint (may be empty), options (2 to 5 records: key A..E, text)"
+  },
+  {
+   "name": "answers",
+   "type": "list",
+   "required": true,
+   "about": "saved answers: id, date, q, key; empty at first"
+  },
+  {
+   "name": "of_word",
+   "type": "text",
+   "required": true,
+   "about": "joins the two counts, with spaces"
+  },
+  {
+   "name": "answered_word",
+   "type": "text",
+   "required": true,
+   "about": "after the counts, with a leading space"
+  },
+  {
+   "name": "picked_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the chosen option"
+  },
+  {
+   "name": "skip_label",
+   "type": "text",
+   "required": true,
+   "about": "moves on without an answer"
+  },
+  {
+   "name": "next_label",
+   "type": "text",
+   "required": true,
+   "about": "saves the choice and moves on"
+  },
+  {
+   "name": "done_label",
+   "type": "text",
+   "required": true,
+   "about": "the same button on the last question"
+  },
+  {
+   "name": "finished_text",
+   "type": "text",
+   "required": true,
+   "about": "shows after the last question"
+  },
+  {
+   "name": "again_label",
+   "type": "text",
+   "required": true,
+   "about": "starts the round over"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusCard",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "opt",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "skip",
+    "gesture": "tap",
+    "event": "skip"
+   },
+   {
+    "node": "next",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "again",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "asking": {
+    "shows": "one question, its lettered options, skip and next"
+   },
+   "nothing_picked": {
+    "shows": "next at low opacity; a tap does nothing"
+   },
+   "finished": {
+    "shows": "a tick, the closing line and a button to start over"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "opt",
+    "animate": "snappy",
+    "press": "shrink"
+   },
+   {
+    "node": "done",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "opt": "letter, option words, and picked_word when chosen",
+   "skip": "skip_label",
+   "next": "next_label or done_label",
+   "again": "again_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, snappy and shrink",
+  "not_colour_alone": "the chosen option carries a tick and picked_word in its label"
+ }
+}

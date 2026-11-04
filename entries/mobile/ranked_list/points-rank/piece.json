@@ -1,0 +1,128 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the ranked things: id, title, source, by, points (votes, the person's own included), comments (a count), voted (true or false), last_rank (the rank at the last visit, 0 when new)"
+  },
+  {
+   "name": "hot_points",
+   "type": "number",
+   "required": true,
+   "about": "points from which an item gets the hot mark"
+  },
+  {
+   "name": "new_word",
+   "type": "text",
+   "required": true,
+   "about": "shown beside the rank of an item that was not ranked at the last visit"
+  },
+  {
+   "name": "vote_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on the vote button when not voted"
+  },
+  {
+   "name": "unvote_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on the vote button when voted"
+  },
+  {
+   "name": "comments_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the comment count"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is nothing to rank"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "separator",
+  "radiusControl",
+  "headline",
+  "body",
+  "bodyNumber",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "vote",
+    "gesture": "tap",
+    "event": "vote"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty"
+   },
+   "attention": {
+    "shows": "a flame under the points from hot_points up; the move since the last visit beside the rank, up or new in accent"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "vote",
+    "press": "shrink"
+   },
+   {
+    "node": "rank_text",
+    "animate": "swap"
+   },
+   {
+    "node": "points_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "vote": "vote_word or unvote_word and the title",
+   "talk": "the count and comments_word"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Equal points keep the lower id first: the inner SORTBY orders by id and the outer one is stable."
+}

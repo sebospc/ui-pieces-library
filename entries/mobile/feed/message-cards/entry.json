@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.message-cards",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "messages",
+  "community"
+ ],
+ "line": "A search field over filled cards: sender, time, a round star, a subject and a preview that opens in place."
+}

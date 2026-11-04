@@ -1,0 +1,39 @@
+{
+ "title": "Corner pantry",
+ "name": "Ginger oat bar",
+ "tagline": "Baked this morning",
+ "price": 2.4,
+ "currency": "EUR",
+ "photo": "",
+ "icon": "bread",
+ "about_head": "About it",
+ "about": "Rolled oats, honey and a lot of fresh ginger, pressed into a tray and cut while warm. Soft in the middle and crisp at the edges. It keeps for three days in a tin, longer in the fridge, and travels well in a bag. Ask at the counter if you want a box of six with a paper wrap.",
+ "more_text": "Read all",
+ "less_text": "Show less",
+ "parts_head": "In it",
+ "parts": [
+  {
+   "id": 1,
+   "name": "Oats"
+  },
+  {
+   "id": 2,
+   "name": "Honey"
+  },
+  {
+   "id": 3,
+   "name": "Fresh ginger"
+  },
+  {
+   "id": 4,
+   "name": "Sunflower oil"
+  }
+ ],
+ "stock": 3,
+ "qty_word": "Count",
+ "add_word": "Add",
+ "sold_out_text": "None left today",
+ "basket_word": " in your bag",
+ "fewer_label": "One fewer",
+ "more_label": "One more"
+}

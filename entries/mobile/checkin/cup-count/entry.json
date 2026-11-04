@@ -1,0 +1,9 @@
+{
+ "id": "mobile.checkin.cup-count",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": ["count", "daily", "goal"],
+ "line": "A count in a goal ring with minus and plus on either side, quick adds under it, and arrows to fix a past day."
+}

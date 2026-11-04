@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.date-question",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["steps", "date"],
+ "line": "One question a step with a date field held to a range per step; forward waits for a fitting day unless optional."
+}

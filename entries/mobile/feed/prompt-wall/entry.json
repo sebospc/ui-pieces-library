@@ -1,0 +1,9 @@
+{
+ "id": "mobile.feed.prompt-wall",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": ["journal", "prompt"],
+ "line": "A daily question, a writing field and one button, then what was written, newest first."
+}

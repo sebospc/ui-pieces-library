@@ -1,0 +1,9 @@
+{
+ "id": "mobile.hero_list.top-story",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": ["reading", "list"],
+ "line": "The newest item as a large card on top, the rest as rows with a save button; read titles fade."
+}

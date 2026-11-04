@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: hero band and round picture, clamped description, pinned count and add bar with stock"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "parts held in state (part_list, outside history); minimum: parts-hidden-when-empty"}

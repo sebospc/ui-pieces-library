@@ -1,0 +1,54 @@
+{
+ "title": "Night shift circle",
+ "me": "You",
+ "posts": [
+  {
+   "id": 1,
+   "who": "Dara",
+   "text": "Third week of nights and my sleep is all over the place.",
+   "hearts": 9,
+   "hearted": false,
+   "parent": 0
+  },
+  {
+   "id": 2,
+   "who": "Femi",
+   "text": "Blackout curtains and the same bedtime on days off helped me.",
+   "hearts": 4,
+   "hearted": false,
+   "parent": 1
+  },
+  {
+   "id": 3,
+   "who": "Noor",
+   "text": "Does anyone else feel guilty saying no to day plans?",
+   "hearts": 6,
+   "hearted": true,
+   "parent": 0
+  },
+  {
+   "id": 4,
+   "who": "Lee",
+   "text": "Every week. Saying I am on nights usually ends it.",
+   "hearts": 2,
+   "hearted": false,
+   "parent": 3
+  },
+  {
+   "id": 5,
+   "who": "Dara",
+   "text": "Thanks, trying the curtains.",
+   "hearts": 1,
+   "hearted": false,
+   "parent": 1
+  }
+ ],
+ "empty_text": "Nothing here yet. Start the first post.",
+ "field_label": "Write a post",
+ "replying_word": "Replying to",
+ "cancel_text": "Cancel",
+ "send_label": "Send",
+ "heart_label": "Heart it, hearts so far:",
+ "unheart_label": "Take back heart, hearts so far:",
+ "reply_label": "Reply to"
+}

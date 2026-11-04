@@ -1,0 +1,9 @@
+{
+ "id": "mobile.ranked_list.vote-board",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": ["ranking", "community"],
+ "line": "Ideas ranked by votes with the count in a narrow left column; sort by votes or date, search by title."
+}

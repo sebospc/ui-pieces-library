@@ -1,0 +1,9 @@
+{
+ "id": "mobile.week_list.plan-days",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": ["plan", "daily"],
+ "line": "A week paged by arrows, one section per day with its planned items; add opens quick picks under a day."
+}

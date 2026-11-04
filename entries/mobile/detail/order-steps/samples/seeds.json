@@ -1,0 +1,69 @@
+{
+ "title": "Seed orders",
+ "heading": "Spring seed box",
+ "facts": [
+  {
+   "id": 1,
+   "label": "Box",
+   "value": "Twelve packets"
+  },
+  {
+   "id": 2,
+   "label": "Ordered",
+   "value": "Oct 27"
+  }
+ ],
+ "steps": [
+  {
+   "id": 1,
+   "name": "Ordered"
+  },
+  {
+   "id": 2,
+   "name": "Packed"
+  },
+  {
+   "id": 3,
+   "name": "On the way"
+  },
+  {
+   "id": 4,
+   "name": "At your door"
+  }
+ ],
+ "current": 2,
+ "reached": [
+  {
+   "step": 1,
+   "date": {
+    "date": "2026-10-27"
+   }
+  },
+  {
+   "step": 2,
+   "date": {
+    "date": "2026-10-30"
+   }
+  }
+ ],
+ "eta": "=DATE(2026, 11, 3)",
+ "section_head": "Where it is",
+ "eta_word": "Expected",
+ "arrived_word": "Arrived",
+ "done_word": "done",
+ "now_word": "now",
+ "later_word": "still to come",
+ "place_head": "Going to",
+ "place": [
+  {
+   "id": 1,
+   "text": "The garden shed"
+  },
+  {
+   "id": 2,
+   "text": "12 Orchard Lane"
+  }
+ ],
+ "watch_text": "Nudge me at each step",
+ "watching_text": "Nudges on for this box"
+}

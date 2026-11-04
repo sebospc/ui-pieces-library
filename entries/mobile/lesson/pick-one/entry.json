@@ -1,0 +1,9 @@
+{
+ "id": "mobile.lesson.pick-one",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": ["quiz", "review"],
+ "line": "One question at a time with full-width options, a bar in segments, back keeps your pick, a scored review at the end."
+}

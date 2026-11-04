@@ -1,0 +1,165 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "topics",
+   "type": "list",
+   "required": true,
+   "about": "every topic: id, name"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "what was saved: id, title, date, kind, summary, topics (topic ids), photo ('' for none), saved"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when nothing is saved"
+  },
+  {
+   "name": "empty_topic_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when nothing saved is left under the picked topic"
+  },
+  {
+   "name": "showing_word",
+   "type": "text",
+   "required": true,
+   "about": "put before the picked topic's name over the cards"
+  },
+  {
+   "name": "clear_text",
+   "type": "text",
+   "required": true,
+   "about": "the button that drops the topic filter"
+  },
+  {
+   "name": "removed_word",
+   "type": "text",
+   "required": true,
+   "about": "put before the title in the line after an item is removed"
+  },
+  {
+   "name": "put_back_text",
+   "type": "text",
+   "required": true,
+   "about": "the button in that line that saves it again"
+  },
+  {
+   "name": "unsave_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on a card's bookmark button"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "radiusControl",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "unsave",
+    "gesture": "tap",
+    "event": "unsave"
+   },
+   {
+    "node": "put_back",
+    "gesture": "tap",
+    "event": "put_back"
+   },
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_topic"
+   },
+   {
+    "node": "clear",
+    "gesture": "tap",
+    "event": "clear_topic"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty: nothing saved, or nothing under the topic"
+   },
+   "attention": {
+    "shows": "removed_bar with put_back"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "removed_bar",
+    "enter": "rise"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   },
+   {
+    "node": "unsave",
+    "press": "shrink"
+   },
+   {
+    "node": "chip",
+    "press": "shrink"
+   },
+   {
+    "node": "put_back",
+    "press": "shrink"
+   },
+   {
+    "node": "clear",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "unsave": "unsave_word + title",
+   "put_back": "put_back_text",
+   "chip": "it.name",
+   "clear": "clear_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and the smooth fold"
+ }
+}

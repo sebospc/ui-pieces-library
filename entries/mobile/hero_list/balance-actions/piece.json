@@ -1,0 +1,117 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "hero_caption",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the big total"
+  },
+  {
+   "name": "hero_note",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the big total"
+  },
+  {
+   "name": "actions",
+   "type": "list",
+   "required": true,
+   "about": "2 to 4 quick adds: id (1 up, in order), name, icon (Tabler), amount (signed number)"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "what was added: id, name, amount (signed), date"
+  },
+  {
+   "name": "list_head",
+   "type": "text",
+   "required": true,
+   "about": "the header over the list"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows with no records"
+  },
+  {
+   "name": "add",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: adds one record from a quick add"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "surfaceRow",
+  "separator",
+  "radiusCard",
+  "radiusControl",
+  "displayCounter",
+  "caption",
+  "body",
+  "bodyNumber",
+  "chipLabel",
+  "sectionHeader",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "tile",
+    "gesture": "tap",
+    "event": "add"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of the list, the total reads 0"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero_value",
+    "animate": "swap"
+   },
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "tile",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "tile": "it.name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, swap and shrink",
+  "not_colour_alone": "a plus sign marks a positive amount"
+ }
+}

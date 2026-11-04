@@ -1,0 +1,134 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the cards in order: id, text (a short passage), by, role (a short line, may be blank)"
+  },
+  {
+   "name": "stack_title",
+   "type": "text",
+   "required": true,
+   "about": "the section title over the stack"
+  },
+  {
+   "name": "list_title",
+   "type": "text",
+   "required": true,
+   "about": "the section title over the list"
+  },
+  {
+   "name": "next_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the front card's author on the stack: what a tap does"
+  },
+  {
+   "name": "front_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the name of the row whose card is in front"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is no card"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "radiusCard",
+  "sectionHeader",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "front",
+    "gesture": "tap",
+    "event": "next_card"
+   },
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "bring_front"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; the stack and the list hide"
+   },
+   "fallback": {
+    "shows": "with one card there is no card behind and no list; with two, one card peeks"
+   },
+   "attention": {
+    "shows": "the front card's row gets an accent mark and name, and says front_word when spoken"
+   }
+  },
+  "motion": [
+   {
+    "node": "front_box",
+    "enter": "rise",
+    "animate": "swap"
+   },
+   {
+    "node": "row_line",
+    "enter": "rise"
+   },
+   {
+    "node": "front",
+    "press": "shrink"
+   },
+   {
+    "node": "row",
+    "press": "shrink"
+   },
+   {
+    "node": "stack_count",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "front": "next_word and the author",
+   "row": "the author, and front_word on the front card's row"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap; the stack still steps on tap"
+ },
+ "notes": "Source 1 technique (aceternity Card Stack), mobile and tap driven: the two cards behind peek above the front one, a tap sends the front card back (the next by id comes forward), a row brings its card to the front. No timer: the web demo cycles on an interval, a phone screen should not move on its own."
+}

@@ -1,0 +1,71 @@
+{
+ "title": "Neighbours",
+ "subject": "Should the bins rota go back to weekly?",
+ "byline": "Posted by the residents' group",
+ "comments": [
+  {
+   "id": 1,
+   "parent": 0,
+   "author": "Ines",
+   "date": {
+    "date": "2026-10-28"
+   },
+   "text": "We tried a shared rota at our building for two years. It only worked once we stopped assigning whole weeks and split it into small jobs anyone could pick up on the day, with a board by the door to sign."
+  },
+  {
+   "id": 2,
+   "parent": 1,
+   "author": "Ravi",
+   "date": {
+    "date": "2026-10-29"
+   },
+   "text": "A board by the door sounds easy. Who keeps the pen?"
+  },
+  {
+   "id": 3,
+   "parent": 2,
+   "author": "Ines",
+   "date": {
+    "date": "2026-10-29"
+   },
+   "text": "Tied to the board with string, it has not gone missing yet."
+  },
+  {
+   "id": 4,
+   "parent": 3,
+   "author": "Sam",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "text": "Ours went missing twice."
+  },
+  {
+   "id": 5,
+   "parent": 1,
+   "author": "Theo",
+   "date": {
+    "date": "2026-10-31"
+   },
+   "text": "Weekly was fine for us."
+  },
+  {
+   "id": 6,
+   "parent": 0,
+   "author": "Ana",
+   "date": {
+    "date": "2026-10-30"
+   },
+   "text": "Can we try it for a month first?"
+  }
+ ],
+ "today_word": "today",
+ "days_word": "d",
+ "reply_one": " reply",
+ "reply_many": " replies",
+ "count_word": " comments",
+ "more_text": "Read all",
+ "less_text": "Show less",
+ "hide_label": "Fold the replies to",
+ "show_label": "Show the replies to",
+ "empty_text": "No comments yet."
+}

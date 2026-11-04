@@ -1,0 +1,158 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "task",
+   "type": "text",
+   "required": true,
+   "about": "the bold instruction over the tiles"
+  },
+  {
+   "name": "pairs",
+   "type": "list",
+   "required": true,
+   "about": "copied into state: id (1 up), left, right, rpos (the right word's place in its column, a shuffle of the ids: the engine has no random), done (false)"
+  },
+  {
+   "name": "miss_text",
+   "type": "text",
+   "required": true,
+   "about": "the line under the tiles after two words that are not a pair"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once every pair is matched; may read misses and total"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when pairs is empty"
+  },
+  {
+   "name": "pick_left",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: a tap on a left tile: picks it, or makes a pair with the picked right tile"
+  },
+  {
+   "name": "pick_right",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: a tap on a right tile: picks it, or makes a pair with the picked left tile"
+  },
+  {
+   "name": "again",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: clears every match and the misses; the label is the button's words"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "dataFill",
+  "destructive",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "l_tile",
+    "gesture": "tap",
+    "event": "pick_left"
+   },
+   {
+    "node": "r_tile",
+    "gesture": "tap",
+    "event": "pick_right"
+   },
+   {
+    "node": "again_btn",
+    "gesture": "tap",
+    "event": "again"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note only; no bar, no tiles"
+   },
+   "attention": {
+    "shows": "both tiles of the miss in the destructive colour with a cross, and miss_note, until the next tap"
+   },
+   "fallback": {
+    "shows": "every tile dimmed and checked, the result line and the again button"
+   }
+  },
+  "motion": [
+   {
+    "node": "l_tile",
+    "press": "shrink",
+    "animate": "smooth"
+   },
+   {
+    "node": "r_tile",
+    "press": "shrink",
+    "animate": "smooth"
+   },
+   {
+    "node": "bar_on",
+    "animate": "smooth"
+   },
+   {
+    "node": "miss_note",
+    "enter": "rise"
+   },
+   {
+    "node": "result",
+    "enter": "rise"
+   },
+   {
+    "node": "again_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "l_tile": "it.left",
+   "r_tile": "it.right",
+   "again_btn": "again.label",
+   "bar": "matched of total"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, smooth and rise",
+  "not_colour_alone": "a miss carries a cross and a line, a match a check and a dimmed tile"
+ }
+}

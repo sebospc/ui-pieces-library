@@ -1,0 +1,17 @@
+{
+ "title": "Workshop words",
+ "task": "Join each tool to what it does",
+ "pairs": [
+  {"id": 1, "left": "Saw", "right": "Cuts wood", "rpos": 3, "done": false},
+  {"id": 2, "left": "Level", "right": "Shows flat", "rpos": 5, "done": false},
+  {"id": 3, "left": "Clamp", "right": "Holds tight", "rpos": 1, "done": false},
+  {"id": 4, "left": "Chisel", "right": "Shaves edges", "rpos": 4, "done": false},
+  {"id": 5, "left": "Awl", "right": "Starts holes", "rpos": 2, "done": false}
+ ],
+ "miss_text": "Those two don't go together",
+ "done_line": "=\"All joined, \" & IF(misses = 0, \"no misses\", TEXT(misses) & IF(misses = 1, \" miss\", \" misses\"))",
+ "empty_text": "No pairs in this set yet",
+ "pick_left": {"event": "pick_left", "value": "=it.id", "label": "Pick"},
+ "pick_right": {"event": "pick_right", "value": "=it.id", "label": "Pick"},
+ "again": {"event": "again", "value": "=0", "label": "Start over"}
+}

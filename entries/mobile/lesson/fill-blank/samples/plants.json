@@ -1,0 +1,15 @@
+{
+ "title": "Plant words",
+ "kicker": "Review",
+ "task": "Pick the missing word",
+ "cards": [
+  {"id": 1, "before": "A plant turns light into food through", "after": "in its leaves.", "answer": "photosynthesis", "words": ["photosynthesis", "pollination", "erosion"]},
+  {"id": 2, "before": "Water climbs from the roots to the leaves through the", "after": ".", "answer": "stem", "words": ["petal", "stem", "seed"]}
+ ],
+ "gap_mark": "_____",
+ "right_text": "Right",
+ "wrong_lead": "Not quite. It was",
+ "check_label": "Check",
+ "next_label": "Next",
+ "done_text": "=\"Done: \" & TEXT(score) & \" of \" & TEXT(total) & \" right\""
+}

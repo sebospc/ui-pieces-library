@@ -1,0 +1,12 @@
+{
+ "id": "web.stat_grid.delta-tiles",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "stat_grid",
+ "kinds": [
+  "measure",
+  "summary"
+ ],
+ "line": "Two-column tiles: a total over the window, a change pill against the window before, small day bars, window chips."
+}

@@ -1,0 +1,180 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "goal_label",
+   "type": "text",
+   "required": true,
+   "about": "names what the day's goal counts"
+  },
+  {
+   "name": "goal",
+   "type": "number",
+   "required": true,
+   "about": "the day's goal"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "after every amount, with a leading space if a word"
+  },
+  {
+   "name": "parts",
+   "type": "list",
+   "required": true,
+   "about": "1..3 of id (1..3), label, target; what the total splits into"
+  },
+  {
+   "name": "day_slots",
+   "type": "list",
+   "required": true,
+   "about": "id (1..n), label, preset_name, preset_part, preset_amount; one diary row each"
+  },
+  {
+   "name": "entries",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, date, slot, part, name, amount"
+  },
+  {
+   "name": "of_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken between total and goal, with spaces"
+  },
+  {
+   "name": "left_word",
+   "type": "text",
+   "required": true,
+   "about": "after what is left, with a leading space"
+  },
+  {
+   "name": "over_word",
+   "type": "text",
+   "required": true,
+   "about": "after how far past the goal, with a leading space"
+  },
+  {
+   "name": "diary_title",
+   "type": "text",
+   "required": true,
+   "about": "heading over the day's rows"
+  },
+  {
+   "name": "empty_slot_line",
+   "type": "text",
+   "required": true,
+   "about": "a row with nothing logged yet"
+  },
+  {
+   "name": "and_word",
+   "type": "text",
+   "required": true,
+   "about": "between the first name and the count of the others, with spaces"
+  },
+  {
+   "name": "more_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count of the others, with a leading space"
+  },
+  {
+   "name": "log_word",
+   "type": "text",
+   "required": true,
+   "about": "the button on each row"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "destructive",
+  "series1",
+  "series2",
+  "series3",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "capsule",
+  "body",
+  "bodyNumber",
+  "caption",
+  "chipLabel",
+  "displayCounter",
+  "sectionHeader",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "log",
+    "gesture": "tap",
+    "event": "log_slot"
+   }
+  ],
+  "states": {
+   "under": {
+    "shows": "today's total against the goal, a bar, what is left; each part against its own target; each day slot with its first entry and a count of the rest"
+   },
+   "over": {
+    "shows": "the bar and the left line turn destructive and say how far past the goal"
+   },
+   "empty_slot": {
+    "shows": "a slot with nothing logged shows empty_slot_line and no amount"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero",
+    "enter": "rise"
+   },
+   {
+    "node": "hero_total",
+    "animate": "smooth"
+   },
+   {
+    "node": "hero_fill",
+    "animate": "smooth"
+   },
+   {
+    "node": "part_fill",
+    "animate": "smooth"
+   },
+   {
+    "node": "slot",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "hero": "total of_word goal, then what is left or over",
+   "part": "label and amount of target",
+   "log": "log_word, the preset name and the slot"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "every bar has its numbers in text beside it; over the goal is said in words"
+ }
+}

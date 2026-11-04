@@ -1,0 +1,13 @@
+{
+ "id": "mobile.lesson.typed-answer",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": [
+  "recall",
+  "typed",
+  "feedback"
+ ],
+ "line": "Type the answer, then check: exact passes, near passes but shows the right form, wrong shows it; a streak and a score."
+}

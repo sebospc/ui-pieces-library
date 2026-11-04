@@ -1,0 +1,10 @@
+{
+ "title": "Thanks",
+ "kicker": "One line a day",
+ "prompt": "What went right today?",
+ "field_label": "Write it here",
+ "post_label": "Keep it",
+ "mark_icon": "heart",
+ "entries": [{"id": 1, "text": "Coffee on the balcony before the rain", "date": {"date": "2026-10-30"}}, {"id": 2, "text": "Finished the long book", "date": {"date": "2026-10-31"}}],
+ "empty_text": "Your first line goes at the top"
+}

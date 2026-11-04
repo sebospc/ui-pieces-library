@@ -1,0 +1,66 @@
+{
+ "title": "Garden notes",
+ "items": [
+  {
+   "id": 1,
+   "title": "Saving seed from this year's beans",
+   "by": "Ana Ruiz",
+   "meta": "6 minutes",
+   "published": {
+    "date": "2026-10-28"
+   },
+   "picture": "",
+   "read": true,
+   "saved": false
+  },
+  {
+   "id": 2,
+   "title": "Why the tomatoes split after rain",
+   "by": "Leo Park",
+   "meta": "4 minutes",
+   "published": {
+    "date": "2026-10-30"
+   },
+   "picture": "",
+   "read": false,
+   "saved": true
+  },
+  {
+   "id": 3,
+   "title": "A cold frame from old windows, step by step",
+   "by": "Mia Holt",
+   "meta": "9 minutes",
+   "published": {
+    "date": "2026-10-31"
+   },
+   "picture": "",
+   "read": false,
+   "saved": false
+  },
+  {
+   "id": 4,
+   "title": "Leaf mould: the slow compost worth the wait",
+   "by": "Ana Ruiz",
+   "meta": "5 minutes",
+   "published": {
+    "date": "2026-10-25"
+   },
+   "picture": "",
+   "read": false,
+   "saved": false
+  }
+ ],
+ "head_text": "Picked for this week",
+ "new_word": "new",
+ "empty_text": "Nothing to read yet",
+ "read_event": {
+  "event": "read",
+  "value": "=it.id",
+  "label": "=it.title"
+ },
+ "save_event": {
+  "event": "save",
+  "value": "=it.id",
+  "label": "=\"Save, \" & it.title"
+ }
+}

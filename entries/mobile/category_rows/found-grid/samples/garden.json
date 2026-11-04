@@ -1,0 +1,20 @@
+{
+ "title": "Garden log",
+ "collection_title": "Spotted so far",
+ "categories": [
+  {"id": 1, "name": "Birds", "icon": "feather", "found": 7, "total": 40, "open": true},
+  {"id": 2, "name": "Bugs", "icon": "bug", "found": 12, "total": 60, "open": true},
+  {"id": 3, "name": "Trees", "icon": "tree", "found": 3, "total": 25, "open": true},
+  {"id": 4, "name": "Flowers", "icon": "flower", "found": 9, "total": 80, "open": true},
+  {"id": 5, "name": "Fungi", "icon": "leaf", "found": 0, "total": 30, "open": false},
+  {"id": 6, "name": "Mammals", "icon": "paw", "found": 0, "total": 20, "open": false}
+ ],
+ "info_label": "About this card",
+ "info_text": "Log a find in any category to open the next one.",
+ "locked_name": "Not yet",
+ "locked_word": "Locked category",
+ "locked_hint": "Log five more finds to open this one",
+ "of_word": "of",
+ "found_word": "spotted",
+ "empty_text": "No categories to collect yet"
+}

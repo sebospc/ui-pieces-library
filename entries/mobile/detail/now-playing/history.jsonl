@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: cover, centred heads, progress and clocks, five controls, playhead from the host"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "previous: one derived boundary just_started (pos <= 3); minimum: previous-at-3-steps-back, previous-at-3-resets-clock, previous-just-past-3-restarts"}

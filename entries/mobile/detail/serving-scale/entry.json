@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.serving-scale",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "recipe",
+  "kit"
+ ],
+ "line": "Optional photo, a name, a count stepper, a facts row and a parts card whose amounts follow the count."
+}

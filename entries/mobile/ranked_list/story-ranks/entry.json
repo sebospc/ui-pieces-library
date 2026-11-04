@@ -1,0 +1,9 @@
+{
+ "id": "mobile.ranked_list.story-ranks",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": ["ranking", "reading"],
+ "line": "A source's own ranking with a switch between lists; numbered compact rows, read titles fade."
+}

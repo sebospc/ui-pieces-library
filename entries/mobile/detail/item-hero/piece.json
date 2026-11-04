@@ -1,0 +1,235 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "name",
+   "type": "text",
+   "required": true,
+   "about": "the item's name, the largest line"
+  },
+  {
+   "name": "tagline",
+   "type": "text",
+   "required": true,
+   "about": "one short line under the name"
+  },
+  {
+   "name": "price",
+   "type": "number",
+   "required": true,
+   "about": "the price of one"
+  },
+  {
+   "name": "currency",
+   "type": "text",
+   "required": true,
+   "about": "an ISO currency code for MONEY, like EUR"
+  },
+  {
+   "name": "photo",
+   "type": "image",
+   "required": false,
+   "default": "",
+   "about": "the item's picture; empty shows the icon in a round placeholder"
+  },
+  {
+   "name": "icon",
+   "type": "icon",
+   "required": true,
+   "about": "a Tabler icon for the placeholder"
+  },
+  {
+   "name": "about_head",
+   "type": "text",
+   "required": true,
+   "about": "the small head over the description"
+  },
+  {
+   "name": "about",
+   "type": "text",
+   "required": true,
+   "about": "the description, clamped to 4 lines until opened"
+  },
+  {
+   "name": "more_text",
+   "type": "text",
+   "required": true,
+   "about": "the link that opens the description"
+  },
+  {
+   "name": "less_text",
+   "type": "text",
+   "required": true,
+   "about": "the link that closes it again"
+  },
+  {
+   "name": "parts_head",
+   "type": "text",
+   "required": true,
+   "about": "the small head over what is in it"
+  },
+  {
+   "name": "parts",
+   "type": "list",
+   "required": true,
+   "about": "what is in it: id, name; an empty list hides the section"
+  },
+  {
+   "name": "stock",
+   "type": "number",
+   "required": true,
+   "about": "how many are left at the start"
+  },
+  {
+   "name": "qty_word",
+   "type": "text",
+   "required": true,
+   "about": "the label before the count in the bottom bar"
+  },
+  {
+   "name": "add_word",
+   "type": "text",
+   "required": true,
+   "about": "the add button's word, put before the total"
+  },
+  {
+   "name": "sold_out_text",
+   "type": "text",
+   "required": true,
+   "about": "the add button's words once none are left"
+  },
+  {
+   "name": "basket_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count in the line that shows what was added"
+  },
+  {
+   "name": "fewer_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the minus button"
+  },
+  {
+   "name": "more_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the plus button"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusControl",
+  "minTouch",
+  "titleHero",
+  "body",
+  "bodyNumber",
+  "caption",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space0",
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "about_toggle",
+    "gesture": "tap",
+    "event": "toggle_about"
+   },
+   {
+    "node": "fewer",
+    "gesture": "tap",
+    "event": "fewer"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "more"
+   },
+   {
+    "node": "add",
+    "gesture": "tap",
+    "event": "add"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "parts_box hidden"
+   },
+   "fallback": {
+    "shows": "placeholder in place of picture"
+   },
+   "attention": {
+    "shows": "add dimmed with sold_out_text, doing nothing"
+   }
+  },
+  "motion": [
+   {
+    "node": "about",
+    "animate": "smooth"
+   },
+   {
+    "node": "qty",
+    "animate": "swap"
+   },
+   {
+    "node": "add_text",
+    "animate": "swap"
+   },
+   {
+    "node": "added",
+    "enter": "rise"
+   },
+   {
+    "node": "fewer",
+    "press": "shrink"
+   },
+   {
+    "node": "more",
+    "press": "shrink"
+   },
+   {
+    "node": "add",
+    "press": "shrink"
+   },
+   {
+    "node": "about_toggle",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "about_toggle": "more_text or less_text",
+   "fewer": "fewer_label",
+   "more": "more_label",
+   "add": "add_word + total, or sold_out_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, swap and the smooth open"
+ }
+}

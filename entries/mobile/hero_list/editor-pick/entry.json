@@ -1,0 +1,13 @@
+{
+ "id": "mobile.hero_list.editor-pick",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": [
+  "collection",
+  "hero",
+  "list"
+ ],
+ "line": "A picked collection: art, an eyebrow, a big heading and a folding note, then its items as rows with a save button each."
+}

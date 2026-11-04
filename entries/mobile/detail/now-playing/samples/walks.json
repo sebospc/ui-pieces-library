@@ -1,0 +1,32 @@
+{
+ "title": "Walks",
+ "episodes": [
+  {
+   "id": 1,
+   "title": "The canal path at dawn",
+   "source": "Slow Routes",
+   "seconds": 1325
+  },
+  {
+   "id": 2,
+   "title": "Up the old quarry track",
+   "source": "Slow Routes",
+   "seconds": 1810
+  },
+  {
+   "id": 3,
+   "title": "Ten minutes of birdsong",
+   "source": "Field Sounds",
+   "seconds": 600
+  }
+ ],
+ "back_seconds": 10,
+ "forward_seconds": 30,
+ "next_word": "Then:",
+ "play_label": "Play",
+ "pause_label": "Pause",
+ "previous_label": "Start again or go to the one before",
+ "next_label": "Skip to the next one",
+ "back_label": "Back 10 seconds",
+ "forward_label": "Forward 30 seconds"
+}

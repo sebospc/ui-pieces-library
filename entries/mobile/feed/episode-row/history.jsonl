@@ -1,0 +1,3 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: topic chips, follow shelf, newest-first rows with play and queue, staggered rise"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "row delay drops its MIN clamp (the engine clamps to 0.6 s); mutant row-stagger-unrounded added"}
+{"version": "0.1.2", "date": "2026-10-31", "change": "minimum: a check for each branch of every colour that follows a picked or unpicked state"}

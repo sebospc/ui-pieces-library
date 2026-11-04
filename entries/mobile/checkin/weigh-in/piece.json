@@ -1,0 +1,222 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "start",
+   "type": "number",
+   "required": true,
+   "about": "the starting value in tenths of the base unit, used before anything is logged (650 is 65.0)"
+  },
+  {
+   "name": "span",
+   "type": "number",
+   "required": true,
+   "about": "how far the slider reaches each way from where it starts, in tenths"
+  },
+  {
+   "name": "max_back",
+   "type": "number",
+   "required": true,
+   "about": "how many days back the day arrows reach"
+  },
+  {
+   "name": "units",
+   "type": "list",
+   "required": true,
+   "about": "units to show the value in: id (1 up), short (its word), per (how many of it make one base unit, 1 for the base); 1 or more, the first is chosen at the start"
+  },
+  {
+   "name": "day_line",
+   "type": "formula",
+   "required": true,
+   "about": "the day between the arrows; may read offset (days back from today)"
+  },
+  {
+   "name": "change_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the value; may read has_prev, is_up, is_down, change_text and unit_short"
+  },
+  {
+   "name": "save_line",
+   "type": "formula",
+   "required": true,
+   "about": "the save button's words; may read has_day, value_text and unit_short"
+  },
+  {
+   "name": "step_up",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one tenth more"
+  },
+  {
+   "name": "step_down",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one tenth less, never under one tenth"
+  },
+  {
+   "name": "slide",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the slider (value: its place from 0 to 1)"
+  },
+  {
+   "name": "pick_unit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: shows the value in that unit (value: it.id)"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the value for the day shown, when it is new or changed"
+  },
+  {
+   "name": "remove",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: deletes the day shown's entry"
+  },
+  {
+   "name": "back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one day back, up to max_back"
+  },
+  {
+   "name": "forward",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: one day forward, never past today"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "surfaceRow",
+  "radiusControl",
+  "titleHero",
+  "headline",
+  "body",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "slider",
+    "gesture": "drag",
+    "event": "slide"
+   },
+   {
+    "node": "up_btn",
+    "gesture": "tap",
+    "event": "step_up"
+   },
+   {
+    "node": "down_btn",
+    "gesture": "tap",
+    "event": "step_down"
+   },
+   {
+    "node": "unit_btn",
+    "gesture": "tap",
+    "event": "pick_unit"
+   },
+   {
+    "node": "save_btn",
+    "gesture": "tap",
+    "event": "save"
+   },
+   {
+    "node": "remove_btn",
+    "gesture": "tap",
+    "event": "remove"
+   },
+   {
+    "node": "back_btn",
+    "gesture": "tap",
+    "event": "back"
+   },
+   {
+    "node": "fwd_btn",
+    "gesture": "tap",
+    "event": "forward"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the value starts from the start slot (or the day's entry) and the change line has nothing to compare"
+   },
+   "attention": {
+    "shows": "the save button is bright and says log or update with the value and unit"
+   },
+   "fallback": {
+    "shows": "the day's entry is already saved: save is dimmed and does nothing, and delete shows"
+   }
+  },
+  "motion": [
+   {
+    "node": "value_text",
+    "animate": "swap"
+   },
+   {
+    "node": "slider",
+    "animate": "snappy"
+   },
+   {
+    "node": "change_text",
+    "animate": "swap"
+   },
+   {
+    "node": "day_text",
+    "animate": "swap"
+   },
+   {
+    "node": "save_text",
+    "animate": "swap"
+   },
+   {
+    "node": "save_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "slider": "value_text and unit_short",
+   "up_btn": "step_up.label",
+   "down_btn": "step_down.label",
+   "unit_btn": "pick_unit.label",
+   "save_btn": "save.label",
+   "remove_btn": "remove.label",
+   "back_btn": "back.label",
+   "fwd_btn": "forward.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, snappy and shrink",
+  "not_colour_alone": "the chosen unit has a fill and the value names it, the change line says up, down or same in words, and delete is a word"
+ }
+}

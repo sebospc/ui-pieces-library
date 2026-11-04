@@ -1,0 +1,258 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "night_text",
+   "type": "text",
+   "required": true,
+   "about": "the line over the times, naming the night"
+  },
+  {
+   "name": "start",
+   "type": "number",
+   "required": true,
+   "about": "copied into state: the bedtime to start from, minutes after midnight (0 to 1439)"
+  },
+  {
+   "name": "end",
+   "type": "number",
+   "required": true,
+   "about": "copied into state: the wake time to start from, minutes after midnight"
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "required": true,
+   "about": "minutes one tap moves a time"
+  },
+  {
+   "name": "min_len",
+   "type": "number",
+   "required": true,
+   "about": "the shortest night in minutes, more than 0"
+  },
+  {
+   "name": "max_len",
+   "type": "number",
+   "required": true,
+   "about": "the longest night in minutes, under 1440"
+  },
+  {
+   "name": "goal",
+   "type": "number",
+   "required": true,
+   "about": "the night length aimed for, in minutes"
+  },
+  {
+   "name": "from_label",
+   "type": "text",
+   "required": true,
+   "about": "the bedtime row's name"
+  },
+  {
+   "name": "to_label",
+   "type": "text",
+   "required": true,
+   "about": "the wake row's name"
+  },
+  {
+   "name": "from_clock",
+   "type": "formula",
+   "required": true,
+   "about": "the bedtime in words; may read start_h (0 to 23) and start_m"
+  },
+  {
+   "name": "to_clock",
+   "type": "formula",
+   "required": true,
+   "about": "the wake time in words; may read end_h and end_m"
+  },
+  {
+   "name": "len_line",
+   "type": "formula",
+   "required": true,
+   "about": "the worked-out length; may read len_h and len_m"
+  },
+  {
+   "name": "goal_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read met, short_h, short_m and goal"
+  },
+  {
+   "name": "limit_line",
+   "type": "formula",
+   "required": true,
+   "about": "why a stepper is dim; may read at_longest and at_shortest"
+  },
+  {
+   "name": "kept_title",
+   "type": "text",
+   "required": true,
+   "about": "the heading once kept"
+  },
+  {
+   "name": "week_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under it; may read nights, avg_h, avg_m and nights_met"
+  },
+  {
+   "name": "from_back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: bedtime one step earlier"
+  },
+  {
+   "name": "from_on",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: bedtime one step later"
+  },
+  {
+   "name": "to_back",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: wake time one step earlier"
+  },
+  {
+   "name": "to_on",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: wake time one step later"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the night for today, replacing today's if there is one"
+  },
+  {
+   "name": "edit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: back to the steppers"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "separator",
+  "radiusCard",
+  "headline",
+  "body",
+  "caption",
+  "buttonLabel",
+  "titleHero",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "from_back_btn",
+    "gesture": "tap",
+    "event": "from_back"
+   },
+   {
+    "node": "from_on_btn",
+    "gesture": "tap",
+    "event": "from_on"
+   },
+   {
+    "node": "to_back_btn",
+    "gesture": "tap",
+    "event": "to_back"
+   },
+   {
+    "node": "to_on_btn",
+    "gesture": "tap",
+    "event": "to_on"
+   },
+   {
+    "node": "save_btn",
+    "gesture": "tap",
+    "event": "save"
+   },
+   {
+    "node": "edit_btn",
+    "gesture": "tap",
+    "event": "edit"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "the steppers from the slot times; once kept, week_line reads one night"
+   },
+   "attention": {
+    "shows": "the two steppers that would pass the limit dimmed, and limit_line saying which limit"
+   },
+   "fallback": {
+    "shows": "a check, kept_title, the length and the 7-night line, and the edit button"
+   }
+  },
+  "motion": [
+   {
+    "node": "from_time",
+    "animate": "swap"
+   },
+   {
+    "node": "to_time",
+    "animate": "swap"
+   },
+   {
+    "node": "len_text",
+    "animate": "swap"
+   },
+   {
+    "node": "goal_text",
+    "animate": "swap"
+   },
+   {
+    "node": "limit_text",
+    "enter": "rise"
+   },
+   {
+    "node": "kept_box",
+    "enter": "rise"
+   },
+   {
+    "node": "save_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "from_back_btn": "from_back.label",
+   "from_on_btn": "from_on.label",
+   "to_back_btn": "to_back.label",
+   "to_on_btn": "to_on.label",
+   "save_btn": "save.label",
+   "edit_btn": "edit.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, swap and rise",
+  "not_colour_alone": "a stepper at its limit is dimmed and limit_line says why; the goal line says short or met in words"
+ }
+}

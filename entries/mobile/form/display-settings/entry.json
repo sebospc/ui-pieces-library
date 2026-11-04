@@ -1,0 +1,9 @@
+{
+ "id": "mobile.form.display-settings",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": ["settings", "look"],
+ "line": "Swatches, picker rows and switch rows on one left edge, help that opens in place, and a reset once anything changed."
+}

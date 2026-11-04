@@ -1,0 +1,10 @@
+{
+ "title": "Water",
+ "hero_caption": "Glasses today",
+ "hero_note": "=\"Goal 8 · \" & TEXT(MAX([8 - total, 0])) & \" to go\"",
+ "actions": [{"id": 1, "name": "Glass", "icon": "glass-full", "amount": 1}, {"id": 2, "name": "Bottle", "icon": "bottle", "amount": 2}, {"id": 3, "name": "Spilled", "icon": "minus", "amount": -1}],
+ "records": [{"id": 1, "name": "Glass", "amount": 1, "date": {"date": "2026-10-31"}}, {"id": 2, "name": "Bottle", "amount": 2, "date": {"date": "2026-10-31"}}],
+ "list_head": "Today",
+ "empty_text": "Nothing yet today",
+ "add": {"event": "add", "value": "=it.id", "label": "Add"}
+}

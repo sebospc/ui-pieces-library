@@ -1,0 +1,127 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "groups",
+   "type": "list",
+   "required": true,
+   "about": "id, label; one section each, in this order"
+  },
+  {
+   "name": "habits",
+   "type": "list",
+   "required": true,
+   "about": "id (1..9), group (a group id), label, target per week"
+  },
+  {
+   "name": "marks",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, habit, date; one per habit per done day"
+  },
+  {
+   "name": "day_letters",
+   "type": "list",
+   "required": true,
+   "about": "7 short day names, Sunday first; the row starts where the phone's locale starts the week"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a done day"
+  },
+  {
+   "name": "open_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a past or today day not done"
+  },
+  {
+   "name": "later_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken for a day still to come"
+  },
+  {
+   "name": "of_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken between count and target, with spaces"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "separator",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "body",
+  "caption",
+  "sectionHeader",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "day",
+    "gesture": "tap",
+    "event": "toggle_day"
+   }
+  ],
+  "states": {
+   "week": {
+    "shows": "each group as a section, each habit a card with count/target ring and the week's days: done filled with a tick, today tinted, later days faded"
+   },
+   "tap": {
+    "shows": "a tap on today or a past day of this week marks or unmarks it; later days do nothing; undoable"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "day_bg",
+    "animate": "smooth"
+   },
+   {
+    "node": "count_ring",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "day": "day name and done_word, open_word or later_word",
+   "count": "count of_word target"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "a done day carries a tick and is spoken done; later days are spoken later"
+ }
+}

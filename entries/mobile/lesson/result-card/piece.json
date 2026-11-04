@@ -1,0 +1,187 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title (shown inline, quiet)"
+  },
+  {
+   "name": "right",
+   "type": "number",
+   "required": true,
+   "about": "how many answers were right in the run just finished"
+  },
+  {
+   "name": "total",
+   "type": "number",
+   "required": true,
+   "about": "how many were asked; 0 shows the empty note"
+  },
+  {
+   "name": "bands",
+   "type": "list",
+   "required": true,
+   "about": "result bands: id, min (share right from 0 to 1, the first band's min is 0), word (the big result), verdict (one line), why (a short paragraph)"
+  },
+  {
+   "name": "missed",
+   "type": "list",
+   "required": true,
+   "about": "the questions missed: id (1 up), ask, answer; 0 or more"
+  },
+  {
+   "name": "score_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line under the verdict; may read right, total and share (0 to 1, capped)"
+  },
+  {
+   "name": "best_tag",
+   "type": "text",
+   "required": true,
+   "about": "the small tag shown when this run beats every earlier kept run"
+  },
+  {
+   "name": "missed_label",
+   "type": "formula",
+   "required": true,
+   "about": "the toggle that shows the missed questions; may read miss_count and open"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of the result when total is 0"
+  },
+  {
+   "name": "kept_line",
+   "type": "formula",
+   "required": true,
+   "about": "the footer line once kept; may read best, total and tries"
+  },
+  {
+   "name": "toggle",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: opens or closes the missed questions"
+  },
+  {
+   "name": "finish",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps this run (best and tries) once; the host then leaves the lesson"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusCard",
+  "radiusControl",
+  "titleHero",
+  "cardTitle",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "missed_btn",
+    "gesture": "tap",
+    "event": "toggle"
+   },
+   {
+    "node": "finish_btn",
+    "gesture": "tap",
+    "event": "finish"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_note in place of the result and the missed list; finish keeps nothing"
+   },
+   "attention": {
+    "shows": "best_chip under the word: this run beats every earlier kept run (never on the first)"
+   },
+   "fallback": {
+    "shows": "no missed toggle; a clean run is the word, verdict, score and paragraph only"
+   }
+  },
+  "motion": [
+   {
+    "node": "word_text",
+    "enter": "rise"
+   },
+   {
+    "node": "best_chip",
+    "enter": "rise",
+    "delay": "0.1"
+   },
+   {
+    "node": "verdict_text",
+    "enter": "rise",
+    "delay": "0.15"
+   },
+   {
+    "node": "score_text",
+    "enter": "rise",
+    "delay": "0.15"
+   },
+   {
+    "node": "why_text",
+    "enter": "rise",
+    "delay": "0.3"
+   },
+   {
+    "node": "missed_btn",
+    "enter": "rise",
+    "delay": "0.4",
+    "press": "shrink"
+   },
+   {
+    "node": "miss_row",
+    "enter": "rise",
+    "delay": "it.id * 0.05"
+   },
+   {
+    "node": "missed_text",
+    "animate": "swap"
+   },
+   {
+    "node": "finish_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "kept_row",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "missed_btn": "missed_label",
+   "finish_btn": "finish.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, delays, swap and shrink",
+  "not_colour_alone": "the new best is a star plus words, the missed toggle turns its chevron, each missed answer carries a check icon"
+ }
+}

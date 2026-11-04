@@ -1,0 +1,168 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the screen title"
+  },
+  {
+   "name": "ask",
+   "type": "text",
+   "required": true,
+   "about": "the question over the field"
+  },
+  {
+   "name": "hint",
+   "type": "text",
+   "required": true,
+   "about": "one line under the question"
+  },
+  {
+   "name": "field_label",
+   "type": "text",
+   "required": true,
+   "about": "the field's label"
+  },
+  {
+   "name": "rules_head",
+   "type": "text",
+   "required": true,
+   "about": "the line over the rules"
+  },
+  {
+   "name": "rules",
+   "type": "list",
+   "required": true,
+   "about": "the rules in order: id (1 up), label, kind (length: min to max characters; any: has one of chars; none: has none of chars), min, max (0 unless length), chars (a list of single characters, [] for length); 1 or more"
+  },
+  {
+   "name": "count_line",
+   "type": "formula",
+   "required": true,
+   "about": "the quiet line under the rules once something is typed; may read met and total"
+  },
+  {
+   "name": "error_line",
+   "type": "formula",
+   "required": true,
+   "about": "the field's error after a try with rules unmet; may read met and total"
+  },
+  {
+   "name": "done_line",
+   "type": "formula",
+   "required": true,
+   "about": "the line once saved; may read kept"
+  },
+  {
+   "name": "set_draft",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the field's typing (value: the text)"
+  },
+  {
+   "name": "next",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: saves when every rule is met, otherwise marks the unmet ones"
+  },
+  {
+   "name": "change",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: reopens the field with the saved text"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "surfaceRow",
+  "radiusControl",
+  "titleHost",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "set_draft"
+   },
+   {
+    "node": "next_btn",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "change_btn",
+    "gesture": "tap",
+    "event": "change"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "every rule unmet in the quiet role with a cross, no count line, Next dimmed"
+   },
+   "attention": {
+    "shows": "unmet rules and their crosses turn to the warning role and the field says how many are met"
+   },
+   "fallback": {
+    "shows": "the form and Next give way to a check, the done line and Change"
+   }
+  },
+  "motion": [
+   {
+    "node": "rule_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "count_text",
+    "animate": "swap"
+   },
+   {
+    "node": "field",
+    "animate": "swap"
+   },
+   {
+    "node": "done_box",
+    "enter": "rise"
+   },
+   {
+    "node": "next_btn",
+    "press": "shrink"
+   },
+   {
+    "node": "change_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "field": "field_label",
+   "next_btn": "next.label",
+   "change_btn": "change.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops swap, rise and shrink",
+  "not_colour_alone": "a met rule has a check and an unmet one a cross, the count line says how many are met, and the error says it in words"
+ }
+}

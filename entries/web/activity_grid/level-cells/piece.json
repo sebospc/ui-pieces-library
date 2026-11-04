@@ -1,0 +1,122 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "total_text",
+   "type": "formula",
+   "required": true,
+   "about": "the head line, can use in_range (records in the last 4 weeks)"
+  },
+  {
+   "name": "range_text",
+   "type": "text",
+   "required": true,
+   "about": "the small line naming the span"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "what was logged: id, date"
+  },
+  {
+   "name": "add_label",
+   "type": "text",
+   "required": true,
+   "about": "the button that logs today"
+  },
+  {
+   "name": "count_one",
+   "type": "text",
+   "required": true,
+   "about": "the word after a count of 1"
+  },
+  {
+   "name": "count_word",
+   "type": "text",
+   "required": true,
+   "about": "the word after a day's count in the picked-day line"
+  },
+  {
+   "name": "pick_hint",
+   "type": "text",
+   "required": true,
+   "about": "the line before a day is picked"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "dataFill",
+  "surfacePlaceholder",
+  "surfaceRow",
+  "accentFill",
+  "onAccentFill",
+  "radiusCard",
+  "radiusControl",
+  "headline",
+  "caption",
+  "body",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "cell",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "add",
+    "gesture": "tap",
+    "event": "add"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "every cell in the placeholder fill, the head line reads 0"
+   },
+   "picked": {
+    "shows": "a bar under that cell and its count in words"
+   }
+  },
+  "motion": [
+   {
+    "node": "cell_box",
+    "enter": "rise"
+   },
+   {
+    "node": "total",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "cell": "the day and its count in words",
+   "add": "add_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, swap and shrink",
+  "not_colour_alone": "each cell speaks its count; a picked day shows its count in words under the grid"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "title": "Night sky",
+ "questions": [
+  {"id": 1, "ask": "What lights up the Moon?", "answer": 2, "options": [
+   {"id": 1, "name": "Its own glow"},
+   {"id": 2, "name": "Sunlight"},
+   {"id": 3, "name": "Earth's cities"}
+  ]},
+  {"id": 2, "ask": "About how long is one lunar cycle?", "answer": 3, "options": [
+   {"id": 1, "name": "A week"},
+   {"id": 2, "name": "A fortnight"},
+   {"id": 3, "name": "A month"},
+   {"id": 4, "name": "A season"}
+  ]},
+  {"id": 3, "ask": "Which phase shows no lit side to us?", "answer": 1, "options": [
+   {"id": 1, "name": "New moon"},
+   {"id": 2, "name": "Half moon"},
+   {"id": 3, "name": "Full moon"}
+  ]}
+ ],
+ "step_line": "=\"Question \" & TEXT(MIN([step, total])) & \" / \" & TEXT(total)",
+ "hint": "Pick the one you think is right",
+ "done_line": "=TEXT(score) & \" right out of \" & TEXT(total)",
+ "wrong_lead": "It was",
+ "empty_text": "No questions here yet",
+ "pick": {"event": "pick", "value": "=it.id", "label": "Pick"},
+ "next": {"event": "next", "value": "=0", "label": "Next"},
+ "finish_label": "See how I did",
+ "back": {"event": "back", "value": "=0", "label": "Back"},
+ "again": {"event": "again", "value": "=0", "label": "Try again"}
+}

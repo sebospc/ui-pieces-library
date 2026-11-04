@@ -1,0 +1,16 @@
+{
+ "title": "Kitchen radio",
+ "episodes": [
+  {"id": 1, "show": "Slow Dough", "title": "Why rye behaves so differently from wheat", "date": {"date": "2026-10-29"}, "minutes": 32},
+  {"id": 2, "show": "Market Day", "title": "Squash season and how to store it", "date": {"date": "2026-10-30"}, "minutes": 18},
+  {"id": 3, "show": "Slow Dough", "title": "Starters that survive a holiday", "date": {"date": "2026-10-24"}, "minutes": 41},
+  {"id": 4, "show": "Table Talk", "title": "Cooking for twelve in a small flat", "date": {"date": "2026-10-30"}, "minutes": 27}
+ ],
+ "today_word": "New today",
+ "yesterday_word": "New yesterday",
+ "days_ago_word": "days since the last one",
+ "minutes_word": "min",
+ "play_word": "Play",
+ "pause_word": "Pause",
+ "empty_text": "Follow a show to see its newest here"
+}

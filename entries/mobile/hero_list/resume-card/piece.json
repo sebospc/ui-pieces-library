@@ -1,0 +1,185 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the things: id, title, sub (a short line such as a part), done_min, total_min, last_at (the date last opened), plays (how popular), dropped (false; true once taken out of the resume card)"
+  },
+  {
+   "name": "resume_title",
+   "type": "text",
+   "required": true,
+   "about": "the section title over the resume card"
+  },
+  {
+   "name": "popular_title",
+   "type": "text",
+   "required": true,
+   "about": "the section title over the list"
+  },
+  {
+   "name": "left_word",
+   "type": "text",
+   "required": true,
+   "about": "after the minutes still to go"
+  },
+  {
+   "name": "playing_word",
+   "type": "text",
+   "required": true,
+   "about": "on the card while it plays"
+  },
+  {
+   "name": "resume_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on the card"
+  },
+  {
+   "name": "more_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the card's more button"
+  },
+  {
+   "name": "drop_word",
+   "type": "text",
+   "required": true,
+   "about": "the menu action that takes the item out of the resume card"
+  },
+  {
+   "name": "finish_word",
+   "type": "text",
+   "required": true,
+   "about": "the menu action that marks the item finished"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is nothing in the list"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "radiusCard",
+  "radiusCover",
+  "sectionHeader",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "play",
+    "gesture": "tap",
+    "event": "resume"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "open_menu"
+   },
+   {
+    "node": "drop",
+    "gesture": "tap",
+    "event": "drop"
+   },
+   {
+    "node": "finish",
+    "gesture": "tap",
+    "event": "finish"
+   },
+   {
+    "node": "tile",
+    "gesture": "tap",
+    "event": "resume"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; with nothing half done the resume section is left out and the list moves up"
+   },
+   "fallback": {
+    "shows": "no resume card: its title hides too"
+   },
+   "attention": {
+    "shows": "the card's line says playing_word in accent and its icon shows pause; a playing tile fills"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "tile_box",
+    "enter": "rise"
+   },
+   {
+    "node": "play",
+    "press": "shrink"
+   },
+   {
+    "node": "more",
+    "press": "shrink"
+   },
+   {
+    "node": "tile",
+    "press": "shrink"
+   },
+   {
+    "node": "bar_done",
+    "animate": "smooth"
+   },
+   {
+    "node": "card_sub",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "play": "resume_word and the title",
+   "more": "more_label",
+   "drop": "drop_word",
+   "finish": "finish_word",
+   "tile": "resume_word and the title"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "The card is the half-done item opened last (ties to the lower id). Dropping or finishing it promotes the next half-done one; the list below never repeats the card's item."
+}

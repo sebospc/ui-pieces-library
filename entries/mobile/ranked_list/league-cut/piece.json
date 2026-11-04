@@ -1,0 +1,148 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "tier_name",
+   "type": "text",
+   "required": true,
+   "about": "the name of the current league or tier"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the people in the league: id, name, points, is_me (true on the person's own row)"
+  },
+  {
+   "name": "move_share",
+   "type": "number",
+   "required": true,
+   "about": "the share of the league that moves up, 0 to 1; rounded to a count, at least one"
+  },
+  {
+   "name": "rule_word",
+   "type": "text",
+   "required": true,
+   "about": "after the percent in the rule line, e.g. move up this week"
+  },
+  {
+   "name": "day_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count when one day is left"
+  },
+  {
+   "name": "days_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count when more days are left"
+  },
+  {
+   "name": "points_unit",
+   "type": "text",
+   "required": true,
+   "about": "after every points value"
+  },
+  {
+   "name": "me_word",
+   "type": "text",
+   "required": true,
+   "about": "beside the person's own name, so the own row is not told by colour alone"
+  },
+  {
+   "name": "inside_word",
+   "type": "text",
+   "required": true,
+   "about": "the gap line of a row inside the move-up share"
+  },
+  {
+   "name": "to_cut_word",
+   "type": "text",
+   "required": true,
+   "about": "after the points still needed to reach the move-up share"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when no one is ranked yet"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "titleHero",
+  "headline",
+  "body",
+  "bodyNumber",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "select"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; the card hides"
+   },
+   "attention": {
+    "shows": "the own row filled and tagged with me_word, its gap to the move-up share always shown; ranks inside the share in accent, the top three on a disc"
+   }
+  },
+  "motion": [
+   {
+    "node": "row_box",
+    "enter": "rise"
+   },
+   {
+    "node": "row",
+    "press": "shrink"
+   },
+   {
+    "node": "points",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row": "rank, name, points and me_word on the own row"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Equal points share a rank (1, 2, 2, 4) and stay in id order. The move-up count is the rounded share, at least one, so ties at the line all move up. Days left run to the end of the week from the phone's first_weekday."
+}

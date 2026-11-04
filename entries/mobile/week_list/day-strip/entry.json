@@ -1,0 +1,9 @@
+{
+ "id": "mobile.week_list.day-strip",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": ["checklist", "daily"],
+ "line": "Today's big date, a strip of the week around it, and the day's items to tick off."
+}

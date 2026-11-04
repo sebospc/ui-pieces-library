@@ -1,0 +1,144 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "measure_name",
+   "type": "text",
+   "required": true,
+   "about": "what the number is, above it"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "the unit after a value, no leading space"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "id, date (a date), value (a number)"
+  },
+  {
+   "name": "spans",
+   "type": "list",
+   "required": true,
+   "about": "2 or 3 windows in days, shortest first: span, label (short), phrase (for the change line)"
+  },
+  {
+   "name": "month_names",
+   "type": "list",
+   "required": true,
+   "about": "12 short month names for the day axis"
+  },
+  {
+   "name": "empty_value",
+   "type": "text",
+   "required": true,
+   "about": "the big line with nothing logged"
+  },
+  {
+   "name": "empty_window",
+   "type": "text",
+   "required": true,
+   "about": "the chart line with nothing in the window"
+  },
+  {
+   "name": "show_data_label",
+   "type": "text",
+   "required": true,
+   "about": "the button that lists the values"
+  },
+  {
+   "name": "input_hint",
+   "type": "text",
+   "required": true,
+   "about": "the field's hint and spoken label"
+  },
+  {
+   "name": "log_label",
+   "type": "text",
+   "required": true,
+   "about": "saves today's value"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "surfaceRow",
+  "radiusCard",
+  "displayCounter",
+  "caption",
+  "chipLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space3",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chart",
+    "gesture": "tap",
+    "event": "pick_span"
+   },
+   {
+    "node": "entry",
+    "gesture": "type",
+    "event": "type_value"
+   },
+   {
+    "node": "log",
+    "gesture": "tap",
+    "event": "log"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty_value as the big line, empty_window on the chart"
+   },
+   "one_point": {
+    "shows": "no change line"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "latest",
+    "animate": "smooth"
+   },
+   {
+    "node": "log",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "entry": "input_hint",
+   "log": "log_label",
+   "chart": "summary_text; show_data lists every day"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, smooth and shrink",
+  "not_colour_alone": "the change line carries its sign and words; the chart has a spoken summary and a data list"
+ }
+}

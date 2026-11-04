@@ -1,0 +1,160 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "levels",
+   "type": "list",
+   "required": true,
+   "about": "the levels to pick from, worst to best: id (1 up), name"
+  },
+  {
+   "name": "tags",
+   "type": "list",
+   "required": true,
+   "about": "what can go with it: id, name, on (false at the start)"
+  },
+  {
+   "name": "ask_level",
+   "type": "text",
+   "required": true,
+   "about": "the question over the levels"
+  },
+  {
+   "name": "ask_tags",
+   "type": "text",
+   "required": true,
+   "about": "the question over the tags"
+  },
+  {
+   "name": "lead",
+   "type": "text",
+   "required": true,
+   "about": "the small line over the picked level's name"
+  },
+  {
+   "name": "none_yet",
+   "type": "text",
+   "required": true,
+   "about": "shown in place of a level's name before one is picked"
+  },
+  {
+   "name": "save_text",
+   "type": "text",
+   "required": true,
+   "about": "the button's words"
+  },
+  {
+   "name": "saved_text",
+   "type": "text",
+   "required": true,
+   "about": "the line once today is saved"
+  },
+  {
+   "name": "pick_level",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: picks a level"
+  },
+  {
+   "name": "toggle_tag",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: adds or removes a tag"
+  },
+  {
+   "name": "save",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: saves today's check-in"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "surfaceRow",
+  "radiusControl",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel",
+  "minTouch",
+  "accentFill",
+  "onAccentFill"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "level_chip",
+    "gesture": "tap",
+    "event": "pick_level"
+   },
+   {
+    "node": "tag_chip",
+    "gesture": "tap",
+    "event": "toggle_tag"
+   },
+   {
+    "node": "save",
+    "gesture": "tap",
+    "event": "save"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "none_yet in level_name, save dimmed and doing nothing"
+   },
+   "attention": {
+    "shows": "saved"
+   }
+  },
+  "motion": [
+   {
+    "node": "level_name",
+    "animate": "swap"
+   },
+   {
+    "node": "level_chip",
+    "press": "shrink"
+   },
+   {
+    "node": "tag_chip",
+    "press": "shrink"
+   },
+   {
+    "node": "save",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "level_chip": "it.name",
+   "tag_chip": "it.name",
+   "save": "save.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink and swap"
+ }
+}

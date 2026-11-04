@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.now-playing",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "listening",
+  "player"
+ ],
+ "line": "One cover, a centred title and source, a thin progress bar with clocks, and one row of controls."
+}

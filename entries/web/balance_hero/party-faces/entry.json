@@ -1,0 +1,12 @@
+{
+ "id": "web.balance_hero.party-faces",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "balance_hero",
+ "kinds": [
+  "summary",
+  "ledger"
+ ],
+ "line": "A big balance on a coloured card, a row of faces that narrow it to one party, the last entry with a way to open all."
+}

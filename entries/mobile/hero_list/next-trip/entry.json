@@ -1,0 +1,13 @@
+{
+ "id": "mobile.hero_list.next-trip",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": [
+  "upcoming",
+  "countdown",
+  "dated"
+ ],
+ "line": "The trip under way or the next one as a big card with a countdown, later ones as rows, past ones folded below."
+}

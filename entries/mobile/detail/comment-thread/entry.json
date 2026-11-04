@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.comment-thread",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "discussion",
+  "community"
+ ],
+ "line": "A subject over a comment tree: one indent and rule per level, long text clamped, and branches that fold."
+}

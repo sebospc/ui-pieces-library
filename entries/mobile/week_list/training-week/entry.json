@@ -1,0 +1,9 @@
+{
+ "id": "mobile.week_list.training-week",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": ["plan", "tracker"],
+ "line": "One plan week as seven rows: rest days in place, sessions done, missed or up next, paged week by week."
+}

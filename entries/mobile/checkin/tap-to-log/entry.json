@@ -1,0 +1,9 @@
+{
+ "id": "mobile.checkin.tap-to-log",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": ["daily", "feeling"],
+ "line": "One tap logs a level for the day, the middle level sits largest, and a day field lets you log a past day."
+}

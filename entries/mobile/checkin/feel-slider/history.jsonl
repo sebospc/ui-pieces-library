@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: a question card, a slider that snaps to named points (dragged or tapped through a stop under each), three anchors, a value line, save waits for a touch, keeps one point per day and replaces it when moved, a last-time line"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "minimum: pick-fills-current, pick-current-tall, pick-others-short, pick-below-short (the dots fill up to and with the current point; only the current dot grows in height)"}

@@ -1,0 +1,102 @@
+{
+ "title": "Move",
+ "greeting": "Good to see you, Rae",
+ "today_label": "On the plan",
+ "sessions": [
+  {
+   "id": 1,
+   "weekday": 2,
+   "kind": 1,
+   "name": "Upper body basics",
+   "minutes": 35,
+   "about": "dumbbells and a bench",
+   "coach": "Nadia"
+  },
+  {
+   "id": 2,
+   "weekday": 4,
+   "kind": 3,
+   "name": "Easy spin",
+   "minutes": 45,
+   "about": "flat route, low effort",
+   "coach": "Joel"
+  },
+  {
+   "id": 3,
+   "weekday": 7,
+   "kind": 2,
+   "name": "Hill repeats",
+   "minutes": 28,
+   "about": "six climbs, walk down",
+   "coach": "Nadia"
+  },
+  {
+   "id": 4,
+   "weekday": 6,
+   "kind": 4,
+   "name": "Hips and back",
+   "minutes": 15,
+   "about": "on the floor, no kit",
+   "coach": "Joel"
+  }
+ ],
+ "kinds": [
+  {
+   "id": 1,
+   "name": "Strength",
+   "icon": "barbell"
+  },
+  {
+   "id": 2,
+   "name": "Running",
+   "icon": "run"
+  },
+  {
+   "id": 3,
+   "name": "Cycling",
+   "icon": "bike"
+  },
+  {
+   "id": 4,
+   "name": "Stretching",
+   "icon": "stretching"
+  },
+  {
+   "id": 5,
+   "name": "Swimming",
+   "icon": "swimming"
+  }
+ ],
+ "done": [
+  {
+   "date": {
+    "date": "2026-10-24"
+   }
+  },
+  {
+   "date": {
+    "date": "2026-10-25"
+   }
+  },
+  {
+   "date": {
+    "date": "2026-10-26"
+   }
+  },
+  {
+   "date": {
+    "date": "2026-10-28"
+   }
+  }
+ ],
+ "more_label": "Something else today",
+ "swapped_word": "Picked instead of the plan",
+ "minutes_word": "min",
+ "start_word": "Start",
+ "done_word": "Done for today",
+ "undo_word": "Not done yet,",
+ "rest_text": "Rest day. Nothing planned.",
+ "week_title": "This week",
+ "week_goal": 4,
+ "week_word": "sessions"
+}

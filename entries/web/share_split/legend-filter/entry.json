@@ -1,0 +1,12 @@
+{
+ "id": "web.share_split.legend-filter",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "share_split",
+ "kinds": [
+  "summary",
+  "budget"
+ ],
+ "line": "A total in the middle, one bar split by share, legend rows with amount and share; a tap leaves a slice out."
+}

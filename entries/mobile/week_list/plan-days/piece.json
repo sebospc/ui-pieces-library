@@ -1,0 +1,176 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "planned things: id, date, name, tag (a short word, may be blank)"
+  },
+  {
+   "name": "picks",
+   "type": "list",
+   "required": true,
+   "about": "quick picks offered under a day after its add: id, name, tag"
+  },
+  {
+   "name": "day_names",
+   "type": "list",
+   "required": true,
+   "about": "seven short day names, Sunday first, in the app's language; the week starts on the phone's first_weekday"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "before today's day name, so today is not told by colour alone"
+  },
+  {
+   "name": "nothing_text",
+   "type": "text",
+   "required": true,
+   "about": "under a day with nothing planned"
+  },
+  {
+   "name": "add_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the day on its add button while closed"
+  },
+  {
+   "name": "close_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the day on its add button while the picks are open"
+  },
+  {
+   "name": "previous_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the previous week button"
+  },
+  {
+   "name": "next_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the next week button"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "radiusThumbnail",
+  "headline",
+  "body",
+  "chipLabel",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "previous",
+    "gesture": "tap",
+    "event": "previous_week"
+   },
+   {
+    "node": "next",
+    "gesture": "tap",
+    "event": "next_week"
+   },
+   {
+    "node": "add",
+    "gesture": "tap",
+    "event": "add_day"
+   },
+   {
+    "node": "pick",
+    "gesture": "tap",
+    "event": "add_pick"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "nothing_text under a day with nothing planned; every day keeps its header"
+   },
+   "attention": {
+    "shows": "today's header in accent and led by today_word, only on the current week"
+   },
+   "fallback": {
+    "shows": "the quick picks open under that day; paging the week closes them"
+   }
+  },
+  "motion": [
+   {
+    "node": "pick",
+    "enter": "rise"
+   },
+   {
+    "node": "item",
+    "enter": "rise"
+   },
+   {
+    "node": "previous",
+    "press": "shrink"
+   },
+   {
+    "node": "next",
+    "press": "shrink"
+   },
+   {
+    "node": "add",
+    "press": "shrink"
+   },
+   {
+    "node": "pick",
+    "press": "shrink"
+   },
+   {
+    "node": "range",
+    "animate": "swap"
+   },
+   {
+    "node": "add_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "previous": "previous_label",
+   "next": "next_label",
+   "add": "add_word or close_word and the day",
+   "pick": "the pick name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Days come from first_weekday and a week offset in state, so paging never assumes Monday. A pick lands on the opened day of the shown week. The add_pick guard (adding > 0) has no check that can fail: see mutants.json pick-without-day."
+}

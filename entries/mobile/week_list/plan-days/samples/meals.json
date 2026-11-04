@@ -1,0 +1,22 @@
+{
+ "title": "Dinners",
+ "items": [
+  {"id": 1, "date": {"date": "2026-10-26"}, "name": "Lentil soup with lemon", "tag": "batch"},
+  {"id": 2, "date": {"date": "2026-10-28"}, "name": "Baked squash and feta", "tag": ""},
+  {"id": 3, "date": {"date": "2026-10-31"}, "name": "Pizza night", "tag": "friends"},
+  {"id": 4, "date": {"date": "2026-10-31"}, "name": "Apple crumble", "tag": "sweet"},
+  {"id": 5, "date": {"date": "2026-11-03"}, "name": "Fish pie", "tag": ""}
+ ],
+ "picks": [
+  {"id": 1, "name": "Leftovers", "tag": "quick"},
+  {"id": 2, "name": "Omelette", "tag": "quick"},
+  {"id": 3, "name": "Eat out", "tag": ""}
+ ],
+ "day_names": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+ "today_word": "Today",
+ "nothing_text": "Nothing planned",
+ "add_word": "Plan",
+ "close_word": "Close picks for",
+ "previous_label": "Previous week",
+ "next_label": "Next week"
+}

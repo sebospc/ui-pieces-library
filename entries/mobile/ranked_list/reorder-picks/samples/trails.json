@@ -1,0 +1,19 @@
+{
+ "title": "My top walks",
+ "items": [
+  {"id": 1, "name": "Ridge loop", "pos": 1},
+  {"id": 2, "name": "Old mill path", "pos": 2},
+  {"id": 3, "name": "Heron lake", "pos": 3},
+  {"id": 4, "name": "Beech wood", "pos": 4},
+  {"id": 5, "name": "Cliff steps", "pos": 5}
+ ],
+ "status_line": "=IF(changed, \"Order changed\", \"Saved order\")",
+ "picked_line": "=\"Moving \" & picked_name & \", now \" & TEXT(picked_pos) & \" of \" & TEXT(count)",
+ "hint_line": "Tap a walk to move it",
+ "pick": {"event": "pick", "value": "=it.id", "label": "Pick to move"},
+ "up": {"event": "up", "value": "=0", "label": "Move up"},
+ "down": {"event": "down", "value": "=0", "label": "Move down"},
+ "to_top": {"event": "to_top", "value": "=0", "label": "To top"},
+ "save": {"event": "save", "value": "=0", "label": "Save"},
+ "cancel": {"event": "cancel", "value": "=0", "label": "Cancel"}
+}

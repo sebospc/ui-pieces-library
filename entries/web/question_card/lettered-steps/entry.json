@@ -1,0 +1,12 @@
+{
+ "id": "web.question_card.lettered-steps",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "web",
+ "pattern": "question_card",
+ "kinds": [
+  "check_in",
+  "survey"
+ ],
+ "line": "One question at a time with lettered options, skip or next, a running count, a closing card."
+}

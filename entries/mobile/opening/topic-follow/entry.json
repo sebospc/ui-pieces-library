@@ -1,0 +1,12 @@
+{
+ "id": "mobile.opening.topic-follow",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "opening",
+ "kinds": [
+  "first-run",
+  "news"
+ ],
+ "line": "The real home with a pick-your-topics block on top; one button closes it once something is followed."
+}

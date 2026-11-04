@@ -1,0 +1,15 @@
+{
+ "title": "Routine",
+ "items": [
+  {"id": 1, "name": "Stretch", "note": "7:30", "last": {"date": "2026-10-31"}},
+  {"id": 2, "name": "Read twenty pages", "note": "", "last": {"date": "2026-10-29"}},
+  {"id": 3, "name": "Water the herbs", "note": "", "last": {"date": "2026-10-30"}},
+  {"id": 4, "name": "Call home", "note": "Sunday", "last": {"date": "2026-10-25"}},
+  {"id": 5, "name": "Lights out", "note": "23:00", "last": {"date": "2026-10-30"}}
+ ],
+ "weekday_names": ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
+ "date_line": "=\"Month \" & TEXT(MONTH(TODAY()))",
+ "empty_text": "Nothing planned for today",
+ "done_event": {"event": "done", "value": "=it.id", "label": "Done"},
+ "done_label": "Mark done"
+}

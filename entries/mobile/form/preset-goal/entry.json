@@ -1,0 +1,12 @@
+{
+ "id": "mobile.form.preset-goal",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": [
+  "goal",
+  "setup"
+ ],
+ "line": "A head card, an amount with a helper line, quick date chips over a date field, one save that waits."
+}

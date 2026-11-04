@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: a day between back and forward arrows (never past today, back up to max_back), a count in a goal ring with minus (never under 0) and plus beside it, a check and words once the goal is met, how far over past it, a line counting the days met in the last 7, quick adds, no goal shows the count alone"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "no piece change: the quick-add 0 mutant is named by design in mutants.json (no button sends 0, and a 0 row reads the same as no row on screen)"}

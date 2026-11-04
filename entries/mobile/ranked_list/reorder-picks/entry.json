@@ -1,0 +1,13 @@
+{
+ "id": "mobile.ranked_list.reorder-picks",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": [
+  "reorder",
+  "personal",
+  "edit"
+ ],
+ "line": "A personal ranking you reorder: tap a row to lift it, move it up, down or to the top, then save or cancel."
+}

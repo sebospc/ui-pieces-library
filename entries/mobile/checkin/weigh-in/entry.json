@@ -1,0 +1,13 @@
+{
+ "id": "mobile.checkin.weigh-in",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": [
+  "measure",
+  "daily",
+  "log"
+ ],
+ "line": "One number a day: starts at the last entry, nudge it by slider or tenths, pick a unit, save or delete any recent day."
+}

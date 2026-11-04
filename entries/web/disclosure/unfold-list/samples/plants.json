@@ -1,0 +1,22 @@
+{
+ "title": "Plant care",
+ "items": [
+  {
+   "id": 1,
+   "title": "How often to water?",
+   "body": "When the top two fingers of soil feel dry. Less in winter."
+  },
+  {
+   "id": 2,
+   "title": "Where should it sit?",
+   "body": "Bright room, out of direct afternoon sun."
+  },
+  {
+   "id": 3,
+   "title": "Yellow leaves?",
+   "body": "Usually too much water. Let it dry out and check the drainage hole."
+  }
+ ],
+ "open_word": "open",
+ "closed_word": "closed"
+}

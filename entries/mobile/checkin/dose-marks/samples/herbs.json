@@ -1,0 +1,19 @@
+{
+ "title": "Remedies",
+ "section": "Today's cups",
+ "doses": [
+  {"id": 1, "name": "Ginger tea", "when": "8:00", "mark": 0},
+  {"id": 2, "name": "Nettle tonic", "when": "13:00", "mark": 0},
+  {"id": 3, "name": "Chamomile", "when": "21:00", "mark": 0}
+ ],
+ "empty_line": "Nothing planned for today",
+ "card_line": "=IF(it.mark = 1, \"Taken\", IF(it.mark = 2, \"Missed\", \"Due at \" & it.when))",
+ "taken_text": "Taken",
+ "missed_text": "Missed",
+ "today_line": "=TEXT(taken_today) & \" of \" & TEXT(total) & \" taken\" & IF(missed_today > 0, \", \" & TEXT(missed_today) & \" missed\", \"\")",
+ "done_line": "=IF(missed_today = 0, \"All taken today\", \"Every cup marked for today\")",
+ "week_line": "=IF(week_marked = 0, \"Nothing marked this week yet\", TEXT(week_taken) & \" of \" & TEXT(week_marked) & \" marked this week were taken\")",
+ "take": {"event": "take", "value": "=it.id", "label": "Taken"},
+ "miss": {"event": "miss", "value": "=it.id", "label": "Missed"},
+ "took_all": {"event": "took_all", "value": "=0", "label": "Took all"}
+}

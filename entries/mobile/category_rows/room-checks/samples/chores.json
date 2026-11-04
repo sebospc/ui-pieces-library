@@ -1,0 +1,71 @@
+{
+ "title": "Weekend chores",
+ "groups": [
+  {
+   "id": 1,
+   "label": "Kitchen"
+  },
+  {
+   "id": 2,
+   "label": "Bathroom"
+  },
+  {
+   "id": 3,
+   "label": "Bedroom"
+  },
+  {
+   "id": 4,
+   "label": "Garden"
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "group": 1,
+   "name": "Wipe counters",
+   "note": "",
+   "done": true
+  },
+  {
+   "id": 2,
+   "group": 1,
+   "name": "Empty dishwasher",
+   "note": "",
+   "done": false
+  },
+  {
+   "id": 3,
+   "group": 1,
+   "name": "Mop floor",
+   "note": "Blue bucket under the sink",
+   "done": false
+  },
+  {
+   "id": 4,
+   "group": 2,
+   "name": "Scrub basin",
+   "note": "",
+   "done": false
+  },
+  {
+   "id": 5,
+   "group": 2,
+   "name": "Swap towels",
+   "note": "",
+   "done": true
+  },
+  {
+   "id": 6,
+   "group": 3,
+   "name": "Change sheets",
+   "note": "Spare set in the hall cupboard",
+   "done": false
+  }
+ ],
+ "left_word": " left",
+ "all_done_line": "All done",
+ "done_word": "done",
+ "not_done_word": "not done",
+ "clear_label": "Clear done",
+ "empty_text": "Nothing on the list yet"
+}

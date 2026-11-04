@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.folder-groups",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["folders", "list"],
+ "line": "A pinned block of rows, then named groups that fold; counts only above zero, off rows dimmed, edit to pin."
+}

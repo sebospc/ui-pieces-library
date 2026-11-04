@@ -1,0 +1,13 @@
+{
+ "id": "mobile.checkin.dose-marks",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": [
+  "daily",
+  "list",
+  "adherence"
+ ],
+ "line": "Today's doses as cards with missed and taken buttons, a took-all beside the heading, and a week line."
+}

@@ -1,0 +1,25 @@
+{
+ "title": "Spanish, unit 3",
+ "task": "Put the words in order",
+ "prompt": "The cat sleeps on the chair",
+ "words": [
+  {"id": 1, "word": "silla", "right": 6, "at": 0},
+  {"id": 2, "word": "El", "right": 1, "at": 0},
+  {"id": 3, "word": "duerme", "right": 3, "at": 0},
+  {"id": 4, "word": "la", "right": 5, "at": 0},
+  {"id": 5, "word": "gato", "right": 2, "at": 0},
+  {"id": 6, "word": "en", "right": 4, "at": 0}
+ ],
+ "tries": 3,
+ "answer_empty": "Tap the words below",
+ "tries_line": "=IF(left = 1, \"Last try\", TEXT(left) & \" tries left\")",
+ "wrong_text": "Not quite. The crossed words are out of place",
+ "key_text": "The right order",
+ "done_line": "=IF(solved, IF(used = 0, \"Right first time\", \"Right after \" & TEXT(used) & IF(used = 1, \" miss\", \" misses\")), \"No tries left\") & IF(hints > 0, \", \" & TEXT(hints) & IF(hints = 1, \" hint\", \" hints\"), \"\") & \".\"",
+ "empty_text": "No sentence in this set yet",
+ "place": {"event": "place", "value": "=it.id", "label": "Place"},
+ "back": {"event": "back", "value": "=0", "label": "Take back the last word"},
+ "check": {"event": "check", "value": "=0", "label": "Check"},
+ "hint": {"event": "hint", "value": "=0", "label": "Show me the next word"},
+ "again": {"event": "again", "value": "=0", "label": "Try it again"}
+}

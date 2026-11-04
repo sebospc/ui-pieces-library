@@ -1,0 +1,106 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "today's items: id, name, note (blank or a short text such as a time), last (the date it was last done)"
+  },
+  {
+   "name": "weekday_names",
+   "type": "list",
+   "required": true,
+   "about": "seven short day names, Sunday first, in the app's language"
+  },
+  {
+   "name": "date_line",
+   "type": "formula",
+   "required": true,
+   "about": "the trailing line beside the big day number, e.g. the month"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there are no items"
+  },
+  {
+   "name": "done_event",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: marks an item done today"
+  },
+  {
+   "name": "done_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the check"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "separator",
+  "radiusControl",
+  "displayCounter",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "check",
+    "gesture": "tap",
+    "event": "done_event"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "check",
+    "press": "shrink"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "check": "done_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and shrink"
+ }
+}

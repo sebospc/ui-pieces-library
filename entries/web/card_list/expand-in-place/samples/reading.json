@@ -1,0 +1,12 @@
+{
+ "title": "To read",
+ "items": [
+  {"id": 1, "name": "The quiet orchard", "by": "A novel, 320 pages", "icon": "book", "about": "A family keeps an old apple orchard going through one hard year. Slow, warm and full of weather. Picked up after a friend said the last chapter made them call home.", "done": false},
+  {"id": 2, "name": "Field notes on birds", "by": "Essays, 190 pages", "icon": "feather", "about": "Short pieces on watching birds from a city window. Good for ten minutes before sleep.", "done": true},
+  {"id": 3, "name": "Bread by hand", "by": "Cooking, 240 pages", "icon": "bread", "about": "Starter, folding and baking without a mixer. The weekend project.", "done": false}
+ ],
+ "act_label": "Start",
+ "done_label": "Read",
+ "close_label": "Close",
+ "empty_text": "Nothing on the list yet"
+}

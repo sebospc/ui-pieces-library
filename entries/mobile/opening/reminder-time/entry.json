@@ -1,0 +1,12 @@
+{
+ "id": "mobile.opening.reminder-time",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "opening",
+ "kinds": [
+  "first-run",
+  "reminder"
+ ],
+ "line": "One coarse pick from equal tiles fills in an exact, editable time; one main button and a quiet skip."
+}

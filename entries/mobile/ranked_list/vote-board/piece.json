@@ -1,0 +1,168 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "the ideas: id, title, excerpt, votes (the person's own included), voted (true or false), comments (a count), posted (a date)"
+  },
+  {
+   "name": "top_word",
+   "type": "text",
+   "required": true,
+   "about": "the sort button while ranked by votes"
+  },
+  {
+   "name": "new_word",
+   "type": "text",
+   "required": true,
+   "about": "the sort button while ranked by date"
+  },
+  {
+   "name": "sort_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the sort on its button"
+  },
+  {
+   "name": "search_label",
+   "type": "text",
+   "required": true,
+   "about": "the search field's label and placeholder"
+  },
+  {
+   "name": "vote_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on the vote button when not voted"
+  },
+  {
+   "name": "unvote_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the title on the vote button when voted"
+  },
+  {
+   "name": "comments_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after the comment count"
+  },
+  {
+   "name": "no_match_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when the search matches nothing"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is no idea yet"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "separator",
+  "radiusControl",
+  "headline",
+  "chipLabel",
+  "body",
+  "bodyNumber",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "sort",
+    "gesture": "tap",
+    "event": "toggle_sort"
+   },
+   {
+    "node": "search",
+    "gesture": "tap",
+    "event": "search"
+   },
+   {
+    "node": "vote",
+    "gesture": "tap",
+    "event": "vote"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; the sort and search row hides"
+   },
+   "fallback": {
+    "shows": "no_match_text when the search finds nothing"
+   },
+   "attention": {
+    "shows": "the own vote as a check icon (not colour alone) and the label says unvote"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "sort",
+    "press": "shrink"
+   },
+   {
+    "node": "vote",
+    "press": "shrink"
+   },
+   {
+    "node": "vote_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "vote_count",
+    "animate": "swap"
+   },
+   {
+    "node": "sort_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "sort": "sort_label and the sort",
+   "search": "search_label",
+   "vote": "vote_word or unvote_word, the title and the count",
+   "talk": "the count and comments_word"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Top sorts by votes, New by date, both with the lower id first on ties. Search matches the title, case does not matter. The add button and the sheet header are left out."
+}

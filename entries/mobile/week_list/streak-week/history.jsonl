@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first draft, streak ring over a week row"}
+{"version": "0.2.0", "date": "2026-10-31", "change": "week start and day names follow the phone's locale (first_weekday); Sunday-first checks added"}

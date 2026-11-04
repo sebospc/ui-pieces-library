@@ -1,0 +1,21 @@
+{
+ "title": "Front page",
+ "lists": [
+  {"id": 1, "name": "Popular"},
+  {"id": 2, "name": "Latest"},
+  {"id": 3, "name": "Questions"}
+ ],
+ "start_list": 1,
+ "items": [
+  {"id": 11, "list": 1, "rank": 2, "title": "A small town builds its own fibre network", "points": 412, "source": "localnews.example", "age": "5 h", "comments": 188, "read": false},
+  {"id": 12, "list": 1, "rank": 1, "title": "How a bakery cut its energy bill in half", "points": 95, "source": "bakers.example", "age": "2 h", "comments": 40, "read": true},
+  {"id": 13, "list": 1, "rank": 3, "title": "Restoring a 1970s calculator, key by key", "points": 230, "source": "workbench.example", "age": "9 h", "comments": 61, "read": false},
+  {"id": 14, "list": 2, "rank": 1, "title": "Notes on keeping bees in a city flat", "points": 3, "source": "hive.example", "age": "4 min", "comments": 0, "read": false},
+  {"id": 15, "list": 2, "rank": 2, "title": "A map of every public bench in one city", "points": 7, "source": "benches.example", "age": "12 min", "comments": 2, "read": false}
+ ],
+ "points_word": "points",
+ "comments_word": "comments",
+ "read_word": "read",
+ "switch_label": "Showing",
+ "empty_text": "Nothing here yet"
+}

@@ -1,0 +1,113 @@
+{
+ "title": "Flat kitty",
+ "parties": [
+  {
+   "id": 1,
+   "label": "Mia"
+  },
+  {
+   "id": 2,
+   "label": "Leo"
+  },
+  {
+   "id": 3,
+   "label": "Sam"
+  },
+  {
+   "id": 4,
+   "label": "Kai"
+  }
+ ],
+ "records": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "party": 1,
+   "title": "Groceries",
+   "amount": -42
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "party": 2,
+   "title": "Rent share",
+   "amount": 600
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "party": 3,
+   "title": "Internet",
+   "amount": -30
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "party": 1,
+   "title": "Rent share",
+   "amount": 600
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "party": 4,
+   "title": "Cleaning kit",
+   "amount": -18
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "party": 3,
+   "title": "Rent share",
+   "amount": 600
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-23"
+   },
+   "party": 2,
+   "title": "Pizza night",
+   "amount": -36
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-22"
+   },
+   "party": 4,
+   "title": "Rent share",
+   "amount": 600
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-19"
+   },
+   "party": 1,
+   "title": "Electricity",
+   "amount": -95
+  }
+ ],
+ "unit_before": "€",
+ "unit_after": "",
+ "balance_word": "In the kitty",
+ "with_word": "With ",
+ "picked_word": "picked",
+ "recent_title": "Latest",
+ "all_word": "All",
+ "less_word": "Less",
+ "empty_line": "Nothing with them yet"
+}

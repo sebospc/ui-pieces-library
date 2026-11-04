@@ -1,0 +1,9 @@
+{
+ "id": "mobile.lesson.word-order",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": ["quiz", "order"],
+ "line": "Tap shuffled word tiles into an answer row; a wrong check marks the tiles out of place and costs a try."
+}

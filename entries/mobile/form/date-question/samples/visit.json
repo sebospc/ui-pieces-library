@@ -1,0 +1,24 @@
+{
+ "title": "Before your visit",
+ "steps": [
+  {"id": 1, "ask": "When did you last see a dentist?", "back": 3650, "ahead": 0, "optional": false},
+  {"id": 2, "ask": "When did the ache start?", "back": 365, "ahead": 0, "optional": false},
+  {"id": 3, "ask": "When did you last take a painkiller?", "back": 30, "ahead": 0, "optional": true},
+  {"id": 4, "ask": "Which day suits you to come in?", "back": 0, "ahead": 60, "optional": false}
+ ],
+ "step_line": "=\"Step \" & TEXT(cur) & \" / \" & TEXT(total)",
+ "hint_line": "=IF(cur_optional, \"Pick a day, or leave it blank\", \"Pick a day\")",
+ "date_label": "Day",
+ "early_error": "=IF(cur_back = 0, \"Today or later, please\", \"No more than \" & TEXT(cur_back) & \" days back\")",
+ "late_error": "=IF(cur_ahead = 0, \"Today or earlier, please\", \"No more than \" & TEXT(cur_ahead) & \" days ahead\")",
+ "next_word": "Go on",
+ "finish_word": "Send answers",
+ "done_title": "Answers sent",
+ "done_line": "=TEXT(answered) & \" of \" & TEXT(total) & \" answered\" & IF(skipped > 0, \", \" & TEXT(skipped) & \" left blank\", \"\") & \".\"",
+ "empty_text": "No questions for this visit",
+ "set_date": {"event": "set_date", "value": "=value", "label": "Day"},
+ "clear": {"event": "clear", "value": "=0", "label": "Leave this one blank"},
+ "prev": {"event": "prev", "value": "=0", "label": "Back a step"},
+ "next": {"event": "next", "value": "=0", "label": "Go on"},
+ "edit": {"event": "edit", "value": "=0", "label": "Change an answer"}
+}

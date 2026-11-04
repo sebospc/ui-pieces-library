@@ -1,0 +1,201 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "notices",
+   "type": "list",
+   "required": true,
+   "about": "id (newer is higher), title, body, date, icon (Tabler), action (the step's words), read"
+  },
+  {
+   "name": "all_text",
+   "type": "text",
+   "required": true,
+   "about": "the left half of the switch"
+  },
+  {
+   "name": "unread_text",
+   "type": "text",
+   "required": true,
+   "about": "the right half, put before the unread count"
+  },
+  {
+   "name": "read_all_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the mark-all-read button"
+  },
+  {
+   "name": "read_text",
+   "type": "text",
+   "required": true,
+   "about": "the link on each unread notice that marks it read"
+  },
+  {
+   "name": "unread_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after an unread notice's title"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "the day heading for today"
+  },
+  {
+   "name": "yesterday_word",
+   "type": "text",
+   "required": true,
+   "about": "the day heading for yesterday"
+  },
+  {
+   "name": "bulk_line",
+   "type": "text",
+   "required": true,
+   "about": "put before the count after marking all read"
+  },
+  {
+   "name": "undo_text",
+   "type": "text",
+   "required": true,
+   "about": "the button in that line that brings them back"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when there are no notices"
+  },
+  {
+   "name": "caught_up_text",
+   "type": "text",
+   "required": true,
+   "about": "shown in the unread view when everything is read"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusControl",
+  "minTouch",
+  "body",
+  "caption",
+  "chipLabel"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "all",
+    "gesture": "tap",
+    "event": "show_all"
+   },
+   {
+    "node": "unread",
+    "gesture": "tap",
+    "event": "show_unread"
+   },
+   {
+    "node": "read_all",
+    "gesture": "tap",
+    "event": "read_all"
+   },
+   {
+    "node": "undo",
+    "gesture": "tap",
+    "event": "undo_bulk"
+   },
+   {
+    "node": "act",
+    "gesture": "tap",
+    "event": "act"
+   },
+   {
+    "node": "mark_read",
+    "gesture": "tap",
+    "event": "mark_read"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty: no notices, or all read in the unread view"
+   },
+   "attention": {
+    "shows": "dots, semibold titles, the count in the switch"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "animate": "smooth"
+   },
+   {
+    "node": "bulk_bar",
+    "enter": "rise"
+   },
+   {
+    "node": "unread_name",
+    "animate": "swap"
+   },
+   {
+    "node": "all",
+    "press": "shrink"
+   },
+   {
+    "node": "unread",
+    "press": "shrink"
+   },
+   {
+    "node": "read_all",
+    "press": "shrink"
+   },
+   {
+    "node": "undo",
+    "press": "shrink"
+   },
+   {
+    "node": "act",
+    "press": "shrink"
+   },
+   {
+    "node": "mark_read",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "all": "all_text",
+   "unread": "unread_text + count",
+   "read_all": "read_all_label",
+   "undo": "undo_text",
+   "act": "it.action",
+   "mark_read": "read_text + title"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, swap and the smooth fold"
+ }
+}

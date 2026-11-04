@@ -1,0 +1,176 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "updated_text",
+   "type": "text",
+   "required": true,
+   "about": "the quiet line under the title"
+  },
+  {
+   "name": "groups",
+   "type": "list",
+   "required": true,
+   "about": "the named groups in order: id (1 or more), name; group 0 is the pinned block on top, it has no header and does not fold"
+  },
+  {
+   "name": "rows",
+   "type": "list",
+   "required": true,
+   "about": "the rows: id, group (where it is now, 0 when pinned), home (its named group), name, icon (a Tabler icon name), count, off (true dims it and it does nothing)"
+  },
+  {
+   "name": "edit_word",
+   "type": "text",
+   "required": true,
+   "about": "the top button while not editing"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "the top button while editing"
+  },
+  {
+   "name": "pin_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's name on its pin button"
+  },
+  {
+   "name": "unpin_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's name on its unpin button"
+  },
+  {
+   "name": "fold_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a group's name on its header while open"
+  },
+  {
+   "name": "unfold_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a group's name on its header while folded"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is no row"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "separator",
+  "radiusCard",
+  "sectionHeader",
+  "chipLabel",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "edit",
+    "gesture": "tap",
+    "event": "toggle_edit"
+   },
+   {
+    "node": "header",
+    "gesture": "tap",
+    "event": "fold"
+   },
+   {
+    "node": "open",
+    "gesture": "tap",
+    "event": "open_row"
+   },
+   {
+    "node": "pin",
+    "gesture": "tap",
+    "event": "pin"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; an empty pinned block is left out, a named group keeps its header"
+   },
+   "fallback": {
+    "shows": "an off row is dimmed and its tap does nothing"
+   },
+   "attention": {
+    "shows": "a count only where there is something to count"
+   }
+  },
+  "motion": [
+   {
+    "node": "edit",
+    "press": "shrink"
+   },
+   {
+    "node": "header",
+    "press": "shrink"
+   },
+   {
+    "node": "open",
+    "press": "shrink"
+   },
+   {
+    "node": "pin",
+    "press": "shrink"
+   },
+   {
+    "node": "header_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "pin_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "edit_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "edit": "edit_word or done_word",
+   "header": "fold_word or unfold_word and the group",
+   "open": "the name and the count when above 0",
+   "pin": "pin_word or unpin_word and the name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink and swap"
+ },
+ "notes": "Group 0 is the pinned block: no header, never folds, left out while empty. Pinning moves a row to group 0 and unpinning sends it back to its home group."
+}

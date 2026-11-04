@@ -1,0 +1,13 @@
+{
+ "id": "mobile.form.confirm-info",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": [
+  "review",
+  "consent",
+  "edit"
+ ],
+ "line": "A last look before sending: each answer with its own inline edit, a consent tick, and send held until all is filled."
+}

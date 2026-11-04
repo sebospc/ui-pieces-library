@@ -1,0 +1,13 @@
+{
+ "id": "mobile.category_rows.room-checks",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": [
+  "chores",
+  "care",
+  "shopping"
+ ],
+ "line": "Items in sections by group with a check mark each; done rows sink below the open ones and can be cleared."
+}

@@ -1,0 +1,190 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "episodes",
+   "type": "list",
+   "required": true,
+   "about": "what plays, in order: id (1 up, the position), title, source, seconds"
+  },
+  {
+   "name": "back_seconds",
+   "type": "number",
+   "required": true,
+   "about": "how far the back button jumps, like 10"
+  },
+  {
+   "name": "forward_seconds",
+   "type": "number",
+   "required": true,
+   "about": "how far the forward button jumps, like 30"
+  },
+  {
+   "name": "next_word",
+   "type": "text",
+   "required": true,
+   "about": "put before the next item's title under the controls"
+  },
+  {
+   "name": "play_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the big button while paused"
+  },
+  {
+   "name": "pause_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the big button while playing"
+  },
+  {
+   "name": "previous_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the previous button"
+  },
+  {
+   "name": "next_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the next button"
+  },
+  {
+   "name": "back_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the back jump"
+  },
+  {
+   "name": "forward_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the forward jump"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfacePlaceholder",
+  "accentFill",
+  "onAccentFill",
+  "textPrimary",
+  "textSecondary",
+  "radiusCover",
+  "minTouch",
+  "titleHero",
+  "headline",
+  "caption",
+  "bodyNumber"
+ ],
+ "scales": [
+  "space2",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "previous",
+    "gesture": "tap",
+    "event": "previous"
+   },
+   {
+    "node": "jump_back",
+    "gesture": "tap",
+    "event": "jump_back"
+   },
+   {
+    "node": "play",
+    "gesture": "tap",
+    "event": "toggle_play"
+   },
+   {
+    "node": "jump_forward",
+    "gesture": "tap",
+    "event": "jump_forward"
+   },
+   {
+    "node": "next",
+    "gesture": "tap",
+    "event": "next"
+   }
+  ],
+  "host_events": [
+   {
+    "event": "playhead",
+    "value": "seconds into the item, sent by the host's player"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "up_next hidden, next dimmed and doing nothing"
+   },
+   "attention": {
+    "shows": "play shows pause"
+   }
+  },
+  "motion": [
+   {
+    "node": "play",
+    "press": "shrink"
+   },
+   {
+    "node": "play_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "track_title",
+    "animate": "swap"
+   },
+   {
+    "node": "cover_letter",
+    "animate": "swap"
+   },
+   {
+    "node": "bar_on",
+    "animate": "smooth"
+   },
+   {
+    "node": "up_next",
+    "enter": "rise"
+   },
+   {
+    "node": "previous",
+    "press": "shrink"
+   },
+   {
+    "node": "next",
+    "press": "shrink"
+   },
+   {
+    "node": "jump_back",
+    "press": "shrink"
+   },
+   {
+    "node": "jump_forward",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "play": "play_label or pause_label",
+   "previous": "previous_label",
+   "next": "next_label",
+   "jump_back": "back_label",
+   "jump_forward": "forward_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink, swap, rise and the smooth bar"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "id": "mobile.opening.goal-cloud",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "opening",
+ "kinds": [
+  "first-run",
+  "setup"
+ ],
+ "line": "First-run steps under a segmented bar: grouped choice chips, an escape chip, and a next that waits."
+}

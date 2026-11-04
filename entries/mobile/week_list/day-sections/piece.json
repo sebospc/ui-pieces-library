@@ -1,0 +1,158 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "this week's to-dos: id, date, text, done"
+  },
+  {
+   "name": "day_names",
+   "type": "list",
+   "required": true,
+   "about": "seven day names, Sunday first, in the app's language; the week starts on the phone's first_weekday"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "after today's day name, so today is not told by colour alone"
+  },
+  {
+   "name": "week_word",
+   "type": "text",
+   "required": true,
+   "about": "after the week's done of total on top"
+  },
+  {
+   "name": "nothing_text",
+   "type": "text",
+   "required": true,
+   "about": "the faint line under a day with nothing"
+  },
+  {
+   "name": "add_word",
+   "type": "text",
+   "required": true,
+   "about": "the faint add row under each day"
+  },
+  {
+   "name": "add_label",
+   "type": "text",
+   "required": true,
+   "about": "label of the text field that opens under a day"
+  },
+  {
+   "name": "tick_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a to-do when not done"
+  },
+  {
+   "name": "untick_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a to-do when done"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "radiusControl",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "todo",
+    "gesture": "tap",
+    "event": "check_todo"
+   },
+   {
+    "node": "add",
+    "gesture": "tap",
+    "event": "start_add"
+   },
+   {
+    "node": "field",
+    "gesture": "tap",
+    "event": "add_text"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "nothing_text under a day with nothing, and its add row; the header keeps its place"
+   },
+   "attention": {
+    "shows": "today's header in accent with today_word after the name"
+   },
+   "fallback": {
+    "shows": "the add row turns into a text field under that day; a blank entry adds nothing"
+   }
+  },
+  "motion": [
+   {
+    "node": "todo_line",
+    "enter": "rise"
+   },
+   {
+    "node": "todo",
+    "press": "shrink"
+   },
+   {
+    "node": "add",
+    "press": "shrink"
+   },
+   {
+    "node": "todo_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "band_count",
+    "animate": "swap"
+   },
+   {
+    "node": "week_line",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "todo": "tick_word or untick_word and the text",
+   "add": "add_word and the day",
+   "field": "add_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "This week only, from first_weekday. A to-do is typed under its day: the add row opens one text field there, and the entry lands on that day."
+}

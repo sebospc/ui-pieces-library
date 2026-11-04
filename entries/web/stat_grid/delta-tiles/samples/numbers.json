@@ -1,0 +1,512 @@
+{
+ "title": "My numbers",
+ "measures": [
+  {
+   "id": 1,
+   "key": "pages",
+   "label": "Pages read",
+   "unit": "",
+   "better": "up"
+  },
+  {
+   "id": 2,
+   "key": "coffee",
+   "label": "Coffees",
+   "unit": "",
+   "better": "down"
+  },
+  {
+   "id": 3,
+   "key": "run",
+   "label": "Running",
+   "unit": " km",
+   "better": "up"
+  }
+ ],
+ "records": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "measure": "pages",
+   "value": 30
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "measure": "pages",
+   "value": 12
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "measure": "pages",
+   "value": 25
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-27"
+   },
+   "measure": "pages",
+   "value": 40
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "measure": "pages",
+   "value": 18
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "measure": "pages",
+   "value": 22
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-24"
+   },
+   "measure": "pages",
+   "value": 35
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-23"
+   },
+   "measure": "pages",
+   "value": 10
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-21"
+   },
+   "measure": "pages",
+   "value": 28
+  },
+  {
+   "id": 10,
+   "date": {
+    "date": "2026-10-20"
+   },
+   "measure": "pages",
+   "value": 31
+  },
+  {
+   "id": 11,
+   "date": {
+    "date": "2026-10-19"
+   },
+   "measure": "pages",
+   "value": 15
+  },
+  {
+   "id": 12,
+   "date": {
+    "date": "2026-10-18"
+   },
+   "measure": "pages",
+   "value": 20
+  },
+  {
+   "id": 13,
+   "date": {
+    "date": "2026-10-17"
+   },
+   "measure": "pages",
+   "value": 20
+  },
+  {
+   "id": 14,
+   "date": {
+    "date": "2026-10-16"
+   },
+   "measure": "pages",
+   "value": 10
+  },
+  {
+   "id": 15,
+   "date": {
+    "date": "2026-10-14"
+   },
+   "measure": "pages",
+   "value": 15
+  },
+  {
+   "id": 16,
+   "date": {
+    "date": "2026-10-13"
+   },
+   "measure": "pages",
+   "value": 22
+  },
+  {
+   "id": 17,
+   "date": {
+    "date": "2026-10-12"
+   },
+   "measure": "pages",
+   "value": 18
+  },
+  {
+   "id": 18,
+   "date": {
+    "date": "2026-10-11"
+   },
+   "measure": "pages",
+   "value": 12
+  },
+  {
+   "id": 19,
+   "date": {
+    "date": "2026-10-10"
+   },
+   "measure": "pages",
+   "value": 25
+  },
+  {
+   "id": 20,
+   "date": {
+    "date": "2026-10-08"
+   },
+   "measure": "pages",
+   "value": 10
+  },
+  {
+   "id": 21,
+   "date": {
+    "date": "2026-10-07"
+   },
+   "measure": "pages",
+   "value": 14
+  },
+  {
+   "id": 22,
+   "date": {
+    "date": "2026-10-06"
+   },
+   "measure": "pages",
+   "value": 16
+  },
+  {
+   "id": 23,
+   "date": {
+    "date": "2026-10-05"
+   },
+   "measure": "pages",
+   "value": 20
+  },
+  {
+   "id": 24,
+   "date": {
+    "date": "2026-10-04"
+   },
+   "measure": "pages",
+   "value": 8
+  },
+  {
+   "id": 25,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 26,
+   "date": {
+    "date": "2026-10-30"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 27,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 28,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "measure": "coffee",
+   "value": 1
+  },
+  {
+   "id": 29,
+   "date": {
+    "date": "2026-10-27"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 30,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 31,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 32,
+   "date": {
+    "date": "2026-10-24"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 33,
+   "date": {
+    "date": "2026-10-23"
+   },
+   "measure": "coffee",
+   "value": 1
+  },
+  {
+   "id": 34,
+   "date": {
+    "date": "2026-10-22"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 35,
+   "date": {
+    "date": "2026-10-21"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 36,
+   "date": {
+    "date": "2026-10-20"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 37,
+   "date": {
+    "date": "2026-10-19"
+   },
+   "measure": "coffee",
+   "value": 1
+  },
+  {
+   "id": 38,
+   "date": {
+    "date": "2026-10-18"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 39,
+   "date": {
+    "date": "2026-10-17"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 40,
+   "date": {
+    "date": "2026-10-16"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 41,
+   "date": {
+    "date": "2026-10-15"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 42,
+   "date": {
+    "date": "2026-10-14"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 43,
+   "date": {
+    "date": "2026-10-13"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 44,
+   "date": {
+    "date": "2026-10-12"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 45,
+   "date": {
+    "date": "2026-10-11"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 46,
+   "date": {
+    "date": "2026-10-10"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 47,
+   "date": {
+    "date": "2026-10-09"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 48,
+   "date": {
+    "date": "2026-10-08"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 49,
+   "date": {
+    "date": "2026-10-07"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 50,
+   "date": {
+    "date": "2026-10-06"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 51,
+   "date": {
+    "date": "2026-10-05"
+   },
+   "measure": "coffee",
+   "value": 2
+  },
+  {
+   "id": 52,
+   "date": {
+    "date": "2026-10-04"
+   },
+   "measure": "coffee",
+   "value": 3
+  },
+  {
+   "id": 53,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "measure": "run",
+   "value": 5
+  },
+  {
+   "id": 54,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "measure": "run",
+   "value": 6
+  },
+  {
+   "id": 55,
+   "date": {
+    "date": "2026-10-26"
+   },
+   "measure": "run",
+   "value": 4
+  },
+  {
+   "id": 56,
+   "date": {
+    "date": "2026-10-23"
+   },
+   "measure": "run",
+   "value": 7
+  },
+  {
+   "id": 57,
+   "date": {
+    "date": "2026-10-21"
+   },
+   "measure": "run",
+   "value": 5
+  },
+  {
+   "id": 58,
+   "date": {
+    "date": "2026-10-18"
+   },
+   "measure": "run",
+   "value": 3
+  }
+ ],
+ "windows": [
+  {
+   "id": 14,
+   "label": "2 weeks"
+  },
+  {
+   "id": 7,
+   "label": "1 week"
+  },
+  {
+   "id": 30,
+   "label": "30 days"
+  }
+ ],
+ "picked_word": "chosen",
+ "window_prefix": "Last ",
+ "window_suffix": " days",
+ "new_word": "New",
+ "better_word": "better",
+ "worse_word": "worse"
+}

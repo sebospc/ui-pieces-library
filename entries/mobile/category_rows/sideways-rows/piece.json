@@ -1,0 +1,169 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "sections",
+   "type": "list",
+   "required": true,
+   "about": "the rows in order: id, name, form (\"chips\": kinds to pick; \"cards\": things)"
+  },
+  {
+   "name": "items",
+   "type": "list",
+   "required": true,
+   "about": "everything in the rows: id, section (a section id), name, meta (a short second line on a card, may be blank), kind (on a card: the id of the chip it belongs to; 0 on a chip), added (true or false, cards only)"
+  },
+  {
+   "name": "open_after",
+   "type": "number",
+   "required": true,
+   "about": "a card row with more items than this gets a chevron that opens it as a list"
+  },
+  {
+   "name": "add_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a card's name when not added"
+  },
+  {
+   "name": "remove_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a card's name when added"
+  },
+  {
+   "name": "open_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's name on its chevron while closed"
+  },
+  {
+   "name": "close_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a row's name on its chevron while open"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when no row has anything"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "accentFill",
+  "onAccentFill",
+  "radiusCard",
+  "sectionHeader",
+  "chipLabel",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "chip",
+    "gesture": "tap",
+    "event": "pick_kind"
+   },
+   {
+    "node": "chevron",
+    "gesture": "tap",
+    "event": "open_row"
+   },
+   {
+    "node": "card",
+    "gesture": "tap",
+    "event": "add"
+   },
+   {
+    "node": "line",
+    "gesture": "tap",
+    "event": "add"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; a row with nothing (or nothing of the picked kind) hides"
+   },
+   "fallback": {
+    "shows": "a short card row has no chevron"
+   },
+   "attention": {
+    "shows": "the picked chip fills and every card row keeps only that kind; chip rows stay whole"
+   }
+  },
+  "motion": [
+   {
+    "node": "card_box",
+    "enter": "rise"
+   },
+   {
+    "node": "chip",
+    "press": "shrink"
+   },
+   {
+    "node": "chevron",
+    "press": "shrink"
+   },
+   {
+    "node": "card",
+    "press": "shrink"
+   },
+   {
+    "node": "line",
+    "press": "shrink"
+   },
+   {
+    "node": "chevron_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "line_mark",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "chip": "the kind name",
+   "chevron": "open_word or close_word and the row name",
+   "card": "add_word or remove_word and the name",
+   "line": "add_word or remove_word and the name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Cards hug their content: the size roles hold no card width, so a fixed poster or 16:9 tile needs a core size role first. The chip rows run off the edge the same way the reference does."
+}

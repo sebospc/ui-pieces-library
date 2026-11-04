@@ -1,0 +1,191 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "greeting",
+   "type": "text",
+   "required": true,
+   "about": "the big line on top, e.g. a hello with the person's name"
+  },
+  {
+   "name": "today_label",
+   "type": "text",
+   "required": true,
+   "about": "the section title over the hero card"
+  },
+  {
+   "name": "sessions",
+   "type": "list",
+   "required": true,
+   "about": "the plan: id, weekday (1 Sunday to 7 Saturday), kind (a kind id), name, minutes, about (a short line), coach (a name)"
+  },
+  {
+   "name": "kinds",
+   "type": "list",
+   "required": true,
+   "about": "the tray of other kinds: id, name, icon (a Tabler icon name)"
+  },
+  {
+   "name": "done",
+   "type": "list",
+   "required": true,
+   "about": "the days a session was done: date"
+  },
+  {
+   "name": "more_label",
+   "type": "text",
+   "required": true,
+   "about": "the title of the tray"
+  },
+  {
+   "name": "swapped_word",
+   "type": "text",
+   "required": true,
+   "about": "the hero's note when a kind from the tray replaced today's plan"
+  },
+  {
+   "name": "minutes_word",
+   "type": "text",
+   "required": true,
+   "about": "after the minutes on the hero"
+  },
+  {
+   "name": "start_word",
+   "type": "text",
+   "required": true,
+   "about": "the hero button before today is done"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "the hero button once today is done"
+  },
+  {
+   "name": "undo_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the hero button once today is done"
+  },
+  {
+   "name": "rest_text",
+   "type": "text",
+   "required": true,
+   "about": "what the hero says on a day with nothing planned"
+  },
+  {
+   "name": "week_title",
+   "type": "text",
+   "required": true,
+   "about": "the title of the week card"
+  },
+  {
+   "name": "week_goal",
+   "type": "number",
+   "required": true,
+   "about": "sessions wanted per week"
+  },
+  {
+   "name": "week_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count on the week card"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "accentFill",
+  "onAccentFill",
+  "radiusCard",
+  "titleHero",
+  "sectionHeader",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "log",
+    "gesture": "tap",
+    "event": "log_today"
+   },
+   {
+    "node": "kind",
+    "gesture": "tap",
+    "event": "swap_kind"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "rest: nothing planned today (or nothing of the picked kind), the hero gives way to rest_text; an empty tray hides"
+   },
+   "fallback": {
+    "shows": "the hero shows the first session of the picked kind with swapped_word; the same kind again goes back to today's plan"
+   },
+   "attention": {
+    "shows": "the hero button turns to done with a check; the week count and bar move"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero",
+    "enter": "rise"
+   },
+   {
+    "node": "log",
+    "press": "shrink"
+   },
+   {
+    "node": "kind",
+    "press": "shrink"
+   },
+   {
+    "node": "log_text",
+    "animate": "swap"
+   },
+   {
+    "node": "week_fill",
+    "animate": "smooth"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "log": "start_word or undo_word and the session name",
+   "kind": "the kind name"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "The hero follows the date: the plan for today's weekday, or a picked kind. Done is per day, so a swapped session counts for today too. The week count starts on the phone's first_weekday."
+}

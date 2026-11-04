@@ -1,0 +1,9 @@
+{
+ "id": "mobile.lesson.match-pairs",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": ["quiz", "pairs"],
+ "line": "Two columns of equal tiles, one side shuffled: tap one on each side to pair; misses are marked and counted."
+}

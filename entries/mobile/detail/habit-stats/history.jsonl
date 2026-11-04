@@ -1,0 +1,4 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: question head, done-today toggle, ring + four stats, a bar per week from first_weekday"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "minimum: future-day-ignored-week (a mark for tomorrow leaves this week's bar unchanged)"}
+{"version": "0.1.2", "date": "2026-10-31", "change": "minimum: week-bar-floor-empty and week-bar-floor-full (an empty or full week keeps both bar weights above 0)"}
+{"version": "0.1.3", "date": "2026-10-31", "change": "minimum: a check for each branch of every colour that follows a picked or unpicked state"}

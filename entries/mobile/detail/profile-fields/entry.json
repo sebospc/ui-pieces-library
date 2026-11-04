@@ -1,0 +1,12 @@
+{
+ "id": "mobile.detail.profile-fields",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "detail",
+ "kinds": [
+  "people",
+  "contact"
+ ],
+ "line": "One big picture, a name and a line, then plain label-over-value facts and one round floating action."
+}

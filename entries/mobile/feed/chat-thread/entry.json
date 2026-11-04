@@ -1,0 +1,12 @@
+{
+ "id": "mobile.feed.chat-thread",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "feed",
+ "kinds": [
+  "messages",
+  "group"
+ ],
+ "line": "A thread grouped by author and day, own messages told by fill on one edge, and a send that waits for text."
+}

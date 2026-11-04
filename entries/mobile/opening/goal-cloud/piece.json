@@ -1,0 +1,212 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "steps",
+   "type": "list",
+   "required": true,
+   "about": "the first-run steps in order: id (1 up), ask"
+  },
+  {
+   "name": "options",
+   "type": "list",
+   "required": true,
+   "about": "every choice: id (unique over all steps), step (a step id), group (1 suggested, 2 more), name"
+  },
+  {
+   "name": "suggested_head",
+   "type": "text",
+   "required": true,
+   "about": "the small label over group 1"
+  },
+  {
+   "name": "more_head",
+   "type": "text",
+   "required": true,
+   "about": "the small label over group 2"
+  },
+  {
+   "name": "unsure_text",
+   "type": "text",
+   "required": true,
+   "about": "the escape chip on every step; it counts as an answer and clears the step's picks"
+  },
+  {
+   "name": "next_text",
+   "type": "text",
+   "required": true,
+   "about": "the wide button's words before the last step"
+  },
+  {
+   "name": "finish_text",
+   "type": "text",
+   "required": true,
+   "about": "the wide button's words on the last step"
+  },
+  {
+   "name": "back_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the round back button"
+  },
+  {
+   "name": "done_text",
+   "type": "text",
+   "required": true,
+   "about": "the line shown once every step is answered"
+  },
+  {
+   "name": "picked_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count of picks under that line"
+  },
+  {
+   "name": "change_text",
+   "type": "text",
+   "required": true,
+   "about": "the button that starts the steps again, answers kept"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "minTouch",
+  "headline",
+  "body",
+  "caption",
+  "chipLabel",
+  "buttonLabel"
+ ],
+ "scales": [
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "suggested_chip",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "more_chip",
+    "gesture": "tap",
+    "event": "pick"
+   },
+   {
+    "node": "unsure",
+    "gesture": "tap",
+    "event": "not_sure"
+   },
+   {
+    "node": "back",
+    "gesture": "tap",
+    "event": "back"
+   },
+   {
+    "node": "next",
+    "gesture": "tap",
+    "event": "next"
+   },
+   {
+    "node": "change",
+    "gesture": "tap",
+    "event": "change"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "both groups hidden (a group with no choices hides alone); unsure stays"
+   },
+   "fallback": {
+    "shows": "next dimmed and doing nothing"
+   },
+   "attention": {
+    "shows": "finished in place of the steps"
+   }
+  },
+  "motion": [
+   {
+    "node": "suggested_chip",
+    "enter": "rise"
+   },
+   {
+    "node": "more_chip",
+    "enter": "rise"
+   },
+   {
+    "node": "seg",
+    "animate": "smooth"
+   },
+   {
+    "node": "ask",
+    "animate": "swap"
+   },
+   {
+    "node": "next_name",
+    "animate": "swap"
+   },
+   {
+    "node": "finished",
+    "enter": "rise"
+   },
+   {
+    "node": "suggested_chip",
+    "press": "shrink"
+   },
+   {
+    "node": "more_chip",
+    "press": "shrink"
+   },
+   {
+    "node": "unsure",
+    "press": "shrink"
+   },
+   {
+    "node": "back",
+    "press": "shrink"
+   },
+   {
+    "node": "next",
+    "press": "shrink"
+   },
+   {
+    "node": "change",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "suggested_chip": "it.name",
+   "more_chip": "it.name",
+   "unsure": "unsure_text",
+   "back": "back_label",
+   "next": "next_text or finish_text",
+   "change": "change_text"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, swap and the smooth fill"
+ }
+}

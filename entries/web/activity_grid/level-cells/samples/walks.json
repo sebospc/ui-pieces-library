@@ -1,0 +1,65 @@
+{
+ "title": "Walks",
+ "total_text": "=TEXT(in_range) & IF(in_range = 1, \" walk\", \" walks\") & \" in four weeks\"",
+ "range_text": "Oldest first, today last",
+ "records": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-05"
+   }
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-08"
+   }
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-08"
+   }
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-12"
+   }
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-10-19"
+   }
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-19"
+   }
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-19"
+   }
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-24"
+   }
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-30"
+   }
+  }
+ ],
+ "add_label": "Log a walk today",
+ "count_word": "walks",
+ "pick_hint": "Tap a day to see its count",
+ "count_one": "walk"
+}

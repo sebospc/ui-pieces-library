@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: newest item as the top card, the rest newest first, read on tap, save toggle"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "added boundary and flipped-condition checks found by a self-review flip of every comparison"}

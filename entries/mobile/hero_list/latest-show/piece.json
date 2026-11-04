@@ -1,0 +1,145 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "episodes",
+   "type": "list",
+   "required": true,
+   "about": "the latest things from what the person follows: id, show (the name of the thing it belongs to), title, date (published), minutes"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "the hero's update line when the newest came out today"
+  },
+  {
+   "name": "yesterday_word",
+   "type": "text",
+   "required": true,
+   "about": "the hero's update line when it came out yesterday"
+  },
+  {
+   "name": "days_ago_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count of days on the hero's update line"
+  },
+  {
+   "name": "minutes_word",
+   "type": "text",
+   "required": true,
+   "about": "after the minutes on a row"
+  },
+  {
+   "name": "play_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a title on its play button when not playing"
+  },
+  {
+   "name": "pause_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a title on its play button when playing"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when nothing came out yet"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accentFill",
+  "onAccentFill",
+  "separator",
+  "radiusCover",
+  "radiusThumbnail",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "hero",
+    "gesture": "tap",
+    "event": "play"
+   },
+   {
+    "node": "play",
+    "gesture": "tap",
+    "event": "play"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; the hero and the list hide"
+   },
+   "attention": {
+    "shows": "the playing item's buttons fill and show pause, in the hero and in its row"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero_box",
+    "enter": "rise"
+   },
+   {
+    "node": "row",
+    "enter": "rise"
+   },
+   {
+    "node": "hero",
+    "press": "shrink"
+   },
+   {
+    "node": "play",
+    "press": "shrink"
+   },
+   {
+    "node": "hero_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "play_icon",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "hero": "play_word or pause_word and the newest title",
+   "play": "play_word or pause_word and the title"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "The hero is the thing that updated last, made from the newest row, so it can never disagree with the list. Equal dates keep the lower id first."
+}

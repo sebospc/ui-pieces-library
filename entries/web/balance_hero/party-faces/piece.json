@@ -1,0 +1,158 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "parties",
+   "type": "list",
+   "required": true,
+   "about": "id (1..n), label; who or what an entry is with"
+  },
+  {
+   "name": "records",
+   "type": "list",
+   "required": true,
+   "about": "saved: id, date, party, title, amount (+ in, - out)"
+  },
+  {
+   "name": "unit_before",
+   "type": "text",
+   "required": true,
+   "about": "before every amount, empty if none"
+  },
+  {
+   "name": "unit_after",
+   "type": "text",
+   "required": true,
+   "about": "after every amount, with a leading space if a word"
+  },
+  {
+   "name": "balance_word",
+   "type": "text",
+   "required": true,
+   "about": "above the balance when nobody is picked"
+  },
+  {
+   "name": "with_word",
+   "type": "text",
+   "required": true,
+   "about": "before a picked party's name above the balance, with a trailing space"
+  },
+  {
+   "name": "picked_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken after a picked face"
+  },
+  {
+   "name": "recent_title",
+   "type": "text",
+   "required": true,
+   "about": "heading of the entries card"
+  },
+  {
+   "name": "all_word",
+   "type": "text",
+   "required": true,
+   "about": "opens the full list"
+  },
+  {
+   "name": "less_word",
+   "type": "text",
+   "required": true,
+   "about": "goes back to the last entry only"
+  },
+  {
+   "name": "empty_line",
+   "type": "text",
+   "required": true,
+   "about": "shown when the picked party has no entries"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "body",
+  "bodyNumber",
+  "caption",
+  "chipLabel",
+  "displayCounter",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space5",
+  "space6",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "face",
+    "gesture": "tap",
+    "event": "pick_party"
+   },
+   {
+    "node": "more",
+    "gesture": "tap",
+    "event": "toggle_all"
+   }
+  ],
+  "states": {
+   "everyone": {
+    "shows": "the balance of every entry, the last entry, a count to open all"
+   },
+   "one_party": {
+    "shows": "the balance with that party, its last entry; a tap on the same face goes back"
+   },
+   "all_open": {
+    "shows": "every matching entry, newest first"
+   }
+  },
+  "motion": [
+   {
+    "node": "hero",
+    "enter": "rise"
+   },
+   {
+    "node": "balance",
+    "animate": "smooth"
+   },
+   {
+    "node": "face_bg",
+    "animate": "smooth"
+   },
+   {
+    "node": "row",
+    "enter": "rise"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "face": "the party's name, and picked_word when picked",
+   "more": "all_word with the count, or less_word",
+   "hero": "the label and the balance"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise and smooth",
+  "not_colour_alone": "a picked face is spoken as picked; every amount carries its sign"
+ }
+}

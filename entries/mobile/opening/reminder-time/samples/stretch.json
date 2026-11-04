@@ -1,0 +1,45 @@
+{
+ "title": "Stretch",
+ "step": 5,
+ "steps": 6,
+ "ask": "Which part of the day suits a stretch?",
+ "parts": [
+  {
+   "id": 1,
+   "name": "Early",
+   "icon": "sunrise",
+   "times": [
+    "06:30",
+    "07:00",
+    "07:30"
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Lunch",
+   "icon": "sun",
+   "times": [
+    "12:00",
+    "12:30",
+    "13:00"
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Night",
+   "icon": "moon",
+   "times": [
+    "20:30",
+    "21:00",
+    "21:30"
+   ]
+  }
+ ],
+ "lead": "A nudge comes at",
+ "set_text": "Turn on the nudge",
+ "skip_text": "Not now",
+ "set_line": "A nudge is on for",
+ "at_word": " at ",
+ "skipped_line": "No nudge for now. You can add one later.",
+ "change_text": "Change this"
+}

@@ -1,0 +1,41 @@
+{
+ "title": "Tea log",
+ "goal": 4,
+ "max_back": 6,
+ "quick": [
+  {"id": 1, "amount": 2},
+  {"id": 2, "amount": 3}
+ ],
+ "day_line": "=IF(offset = 0, \"Today\", IF(offset = 1, \"Yesterday\", TEXT(offset) & \" days back\"))",
+ "unit_line": "=IF(count = 1, \"pot\", \"pots\")",
+ "goal_line": "=IF(count = 0, \"None yet, aim for \" & TEXT(goal), IF(over_by > 0, \"Aim met, \" & TEXT(over_by) & \" past it\", IF(met, \"Aim met\", TEXT(pct) & \" percent of \" & TEXT(goal))))",
+ "no_goal_line": "=IF(count = 0, \"None yet\", \"Logged so far\")",
+ "week_line": "=TEXT(week_met) & \" of the last 7 days met\"",
+ "quick_ask": "Several at once",
+ "quick_label": "=\"Add \" & TEXT(it.amount)",
+ "add": {
+  "event": "add",
+  "value": "=0",
+  "label": "One more pot"
+ },
+ "take": {
+  "event": "take",
+  "value": "=0",
+  "label": "One less pot"
+ },
+ "quick_add": {
+  "event": "quick_add",
+  "value": "=it.amount",
+  "label": "Add several"
+ },
+ "back": {
+  "event": "back",
+  "value": "=0",
+  "label": "Day before"
+ },
+ "forward": {
+  "event": "forward",
+  "value": "=0",
+  "label": "Day after"
+ }
+}

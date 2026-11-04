@@ -1,0 +1,199 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "plan_start",
+   "type": "formula",
+   "required": true,
+   "about": "the plan's first day; week 1 is the week (from first_weekday) that holds it"
+  },
+  {
+   "name": "weeks",
+   "type": "number",
+   "required": true,
+   "about": "how many weeks the plan has"
+  },
+  {
+   "name": "sessions",
+   "type": "list",
+   "required": true,
+   "about": "planned sessions, at most one a day: id, date, name, done"
+  },
+  {
+   "name": "day_names",
+   "type": "list",
+   "required": true,
+   "about": "seven short day names, Sunday first, in the app's language"
+  },
+  {
+   "name": "week_word",
+   "type": "text",
+   "required": true,
+   "about": "before the week number"
+  },
+  {
+   "name": "of_word",
+   "type": "text",
+   "required": true,
+   "about": "between the week number and the plan's length"
+  },
+  {
+   "name": "rest_word",
+   "type": "text",
+   "required": true,
+   "about": "the row name on a day with no session"
+  },
+  {
+   "name": "done_word",
+   "type": "text",
+   "required": true,
+   "about": "status under a done session"
+  },
+  {
+   "name": "next_word",
+   "type": "text",
+   "required": true,
+   "about": "status under the first session not done, today or later"
+  },
+  {
+   "name": "missed_word",
+   "type": "text",
+   "required": true,
+   "about": "status under a past session not done"
+  },
+  {
+   "name": "mark_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a session on its ring when not done"
+  },
+  {
+   "name": "unmark_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a session on its ring when done"
+  },
+  {
+   "name": "previous_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the previous week button"
+  },
+  {
+   "name": "next_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken on the next week button"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when the plan has no session at all"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "separator",
+  "radiusThumbnail",
+  "headline",
+  "body",
+  "bodyNumber",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "previous",
+    "gesture": "tap",
+    "event": "previous_week"
+   },
+   {
+    "node": "next",
+    "gesture": "tap",
+    "event": "next_week"
+   },
+   {
+    "node": "ring",
+    "gesture": "tap",
+    "event": "mark_done"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty under the week; every day reads rest"
+   },
+   "fallback": {
+    "shows": "a rest row: rest_word in a quiet colour, no status, no ring, no fill"
+   },
+   "attention": {
+    "shows": "the next session says next_word in accent; past ones not done say missed_word; today's badge fills"
+   }
+  },
+  "motion": [
+   {
+    "node": "day",
+    "enter": "rise"
+   },
+   {
+    "node": "previous",
+    "press": "shrink"
+   },
+   {
+    "node": "next",
+    "press": "shrink"
+   },
+   {
+    "node": "ring",
+    "press": "shrink"
+   },
+   {
+    "node": "ring_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "week_line",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "previous": "previous_label",
+   "next": "next_label",
+   "ring": "mark_word or unmark_word and the session"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ },
+ "notes": "Week 1 is the first_weekday week that holds plan_start; paging moves from the current week and stops at 1 and weeks. Only today's or past sessions can be marked; the ring is not shown on later days."
+}

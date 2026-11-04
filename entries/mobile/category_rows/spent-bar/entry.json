@@ -1,0 +1,9 @@
+{
+ "id": "mobile.category_rows.spent-bar",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "category_rows",
+ "kinds": ["budget", "limits"],
+ "line": "One row per category with what is used, the limit and a thin bar; the ones over the limit come first."
+}

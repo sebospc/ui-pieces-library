@@ -1,0 +1,139 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "photo",
+   "type": "image",
+   "required": false,
+   "default": "",
+   "about": "the person's picture; empty shows their initial on a placeholder"
+  },
+  {
+   "name": "name",
+   "type": "text",
+   "required": true,
+   "about": "the person's name, the largest line"
+  },
+  {
+   "name": "role",
+   "type": "text",
+   "required": true,
+   "about": "one secondary line under the name"
+  },
+  {
+   "name": "fields",
+   "type": "list",
+   "required": true,
+   "about": "facts as label over value: id (1 up), label, value, link (true shows the value in accent); a field with an empty value is left out"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when no field has a value"
+  },
+  {
+   "name": "kept_text",
+   "type": "text",
+   "required": true,
+   "about": "a short line under the role once kept"
+  },
+  {
+   "name": "keep_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the floating button while not kept"
+  },
+  {
+   "name": "unkeep_label",
+   "type": "text",
+   "required": true,
+   "about": "spoken label of the floating button once kept"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfacePlaceholder",
+  "separator",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCover",
+  "radiusControl",
+  "minTouch",
+  "titleHero",
+  "headline",
+  "body",
+  "caption"
+ ],
+ "scales": [
+  "space0",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "keep",
+    "gesture": "tap",
+    "event": "keep"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of facts"
+   },
+   "fallback": {
+    "shows": "placeholder with the initial in place of picture"
+   },
+   "attention": {
+    "shows": "keep filled, kept_line under the role"
+   }
+  },
+  "motion": [
+   {
+    "node": "picture",
+    "enter": "rise"
+   },
+   {
+    "node": "keep",
+    "press": "shrink"
+   },
+   {
+    "node": "keep_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "kept_line",
+    "enter": "rise"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "keep": "keep_label or unkeep_label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink and swap"
+ }
+}

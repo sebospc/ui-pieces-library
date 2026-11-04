@@ -1,0 +1,133 @@
+{
+ "title": "Practice minutes",
+ "periods": [
+  {
+   "id": 1,
+   "label": "Today"
+  },
+  {
+   "id": 2,
+   "label": "Week"
+  },
+  {
+   "id": 3,
+   "label": "Month"
+  },
+  {
+   "id": 4,
+   "label": "Ever"
+  }
+ ],
+ "start_period": 2,
+ "things": [
+  {
+   "id": 1,
+   "name": "Guitar"
+  },
+  {
+   "id": 2,
+   "name": "Running"
+  },
+  {
+   "id": 3,
+   "name": "Reading"
+  },
+  {
+   "id": 4,
+   "name": "Drawing"
+  }
+ ],
+ "logs": [
+  {
+   "id": 1,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "thing": 1,
+   "amount": 30
+  },
+  {
+   "id": 2,
+   "date": {
+    "date": "2026-10-29"
+   },
+   "thing": 1,
+   "amount": 20
+  },
+  {
+   "id": 3,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "thing": 1,
+   "amount": 40
+  },
+  {
+   "id": 4,
+   "date": {
+    "date": "2026-10-03"
+   },
+   "thing": 1,
+   "amount": 15
+  },
+  {
+   "id": 5,
+   "date": {
+    "date": "2026-09-20"
+   },
+   "thing": 1,
+   "amount": 60
+  },
+  {
+   "id": 6,
+   "date": {
+    "date": "2026-10-31"
+   },
+   "thing": 2,
+   "amount": 25
+  },
+  {
+   "id": 7,
+   "date": {
+    "date": "2026-10-27"
+   },
+   "thing": 2,
+   "amount": 45
+  },
+  {
+   "id": 8,
+   "date": {
+    "date": "2026-10-10"
+   },
+   "thing": 2,
+   "amount": 30
+  },
+  {
+   "id": 9,
+   "date": {
+    "date": "2026-10-25"
+   },
+   "thing": 3,
+   "amount": 50
+  },
+  {
+   "id": 10,
+   "date": {
+    "date": "2026-10-28"
+   },
+   "thing": 3,
+   "amount": 10
+  },
+  {
+   "id": 11,
+   "date": {
+    "date": "2026-09-01"
+   },
+   "thing": 4,
+   "amount": 90
+  }
+ ],
+ "unit": " min",
+ "selected_word": ", chosen",
+ "empty_period_line": "Nothing logged in this period"
+}

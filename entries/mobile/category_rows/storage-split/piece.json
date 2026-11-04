@@ -1,0 +1,158 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "parts",
+   "type": "list",
+   "required": true,
+   "about": "the categories of one total: id, name, size (a number), ticked (true or false)"
+  },
+  {
+   "name": "unit",
+   "type": "text",
+   "required": true,
+   "about": "after every size, e.g. MB"
+  },
+  {
+   "name": "heading",
+   "type": "text",
+   "required": true,
+   "about": "the line under the total"
+  },
+  {
+   "name": "clear_word",
+   "type": "text",
+   "required": true,
+   "about": "the action before the ticked total on the button"
+  },
+  {
+   "name": "freed_word",
+   "type": "text",
+   "required": true,
+   "about": "before the amount on the line shown after clearing"
+  },
+  {
+   "name": "note_text",
+   "type": "text",
+   "required": true,
+   "about": "the quiet note under the button"
+  },
+  {
+   "name": "tick_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a category when not ticked"
+  },
+  {
+   "name": "untick_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before a category when ticked"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "what shows when there is no category"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "surfacePlaceholder",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "separator",
+  "radiusCard",
+  "titleHero",
+  "headline",
+  "body",
+  "caption",
+  "minTouch"
+ ],
+ "scales": [
+  "space0",
+  "space1",
+  "space2",
+  "space4",
+  "space5",
+  "space6",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "row",
+    "gesture": "tap",
+    "event": "tick_part"
+   },
+   {
+    "node": "clear",
+    "gesture": "tap",
+    "event": "clear"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty; the total, bar, card and note hide"
+   },
+   "fallback": {
+    "shows": "the button dims and does nothing; with everything at 0 the bar hides"
+   },
+   "attention": {
+    "shows": "after clearing, a line says how much was freed"
+   }
+  },
+  "motion": [
+   {
+    "node": "row",
+    "press": "shrink"
+   },
+   {
+    "node": "clear",
+    "press": "shrink"
+   },
+   {
+    "node": "segment",
+    "animate": "smooth"
+   },
+   {
+    "node": "row_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "total",
+    "animate": "swap"
+   },
+   {
+    "node": "clear_text",
+    "animate": "swap"
+   },
+   {
+    "node": "page",
+    "animate": "smooth"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "row": "tick_word or untick_word, the name and the size",
+   "clear": "clear_word and the ticked total"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops shrink and swap"
+ },
+ "notes": "The donut became a segmented bar: one segment per category, filled when ticked. Rows run largest first (lower id on ties). Shares under 0.1 % read <0.1%. The Other fold and the auto-remove settings are left out."
+}

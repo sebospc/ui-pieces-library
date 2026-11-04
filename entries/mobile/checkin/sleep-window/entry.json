@@ -1,0 +1,9 @@
+{
+ "id": "mobile.checkin.sleep-window",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "checkin",
+ "kinds": ["sleep", "stepper"],
+ "line": "Bed and wake times set by steppers across midnight, the length worked out live and capped, one night kept a day."
+}

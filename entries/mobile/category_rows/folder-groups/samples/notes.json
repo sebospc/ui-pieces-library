@@ -1,0 +1,24 @@
+{
+ "title": "Notebook",
+ "updated_text": "Synced a minute ago",
+ "groups": [
+  {"id": 1, "name": "Home"},
+  {"id": 2, "name": "Work"}
+ ],
+ "rows": [
+  {"id": 1, "group": 0, "home": 1, "name": "All notes", "icon": "notes", "count": 0, "off": false},
+  {"id": 2, "group": 0, "home": 1, "name": "Starred", "icon": "star", "count": 3, "off": false},
+  {"id": 3, "group": 1, "home": 1, "name": "Recipes", "icon": "chef-hat", "count": 4, "off": false},
+  {"id": 4, "group": 1, "home": 1, "name": "Trips", "icon": "plane", "count": 0, "off": false},
+  {"id": 5, "group": 1, "home": 1, "name": "Old drafts", "icon": "folder", "count": 0, "off": true},
+  {"id": 6, "group": 2, "home": 2, "name": "Meetings", "icon": "calendar", "count": 2, "off": false},
+  {"id": 7, "group": 2, "home": 2, "name": "Ideas", "icon": "bulb", "count": 0, "off": false}
+ ],
+ "edit_word": "Edit",
+ "done_word": "Done",
+ "pin_word": "Pin",
+ "unpin_word": "Unpin",
+ "fold_word": "Fold",
+ "unfold_word": "Unfold",
+ "empty_text": "No folders yet"
+}

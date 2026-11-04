@@ -1,0 +1,14 @@
+{
+ "title": "Plot notes",
+ "items": [
+  {"id": 1, "text": "Water in the morning, at the roots, and the slugs get less of a party at night.", "by": "Rosa M.", "role": "plot 4"},
+  {"id": 2, "text": "Sow a short row every two weeks instead of one long row. You eat lettuce all summer.", "by": "Ben A.", "role": "plot 11"},
+  {"id": 3, "text": "Leave one corner wild. The frogs that move in do more than any spray.", "by": "Ines G.", "role": ""},
+  {"id": 4, "text": "Label everything the day you sow it. You will not remember in June.", "by": "Tomas K.", "role": "committee"}
+ ],
+ "stack_title": "Tips from the plots",
+ "list_title": "Everyone's tips",
+ "next_word": "Next tip",
+ "front_word": "showing",
+ "empty_text": "No tips shared yet"
+}

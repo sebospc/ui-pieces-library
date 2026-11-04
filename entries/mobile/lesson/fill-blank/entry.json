@@ -1,0 +1,12 @@
+{
+ "id": "mobile.lesson.fill-blank",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": [
+  "quiz",
+  "review"
+ ],
+ "line": "A progress bar, a sentence with a gap, word chips to fill it, one button that checks then moves on."
+}

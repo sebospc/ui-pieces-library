@@ -1,0 +1,39 @@
+{
+ "title": "Tell us what broke",
+ "lead": "Something not working in the garden planner? Say what you tapped and what happened instead.",
+ "field_label": "What went wrong",
+ "min_chars": 20,
+ "max_chars": 300,
+ "count_line": "=TEXT(used) & \" / \" & TEXT(max_chars)",
+ "short_text": "=\"A little more, please: \" & TEXT(need) & IF(need = 1, \" more character\", \" more characters\")",
+ "over_text": "=TEXT(over_by) & IF(over_by = 1, \" character\", \" characters\") & \" too long\"",
+ "topic_ask": "Where did it happen?",
+ "optional_word": "if you know",
+ "topics": [
+  {"id": 1, "name": "Planting calendar"},
+  {"id": 2, "name": "Watering reminders"},
+  {"id": 3, "name": "Seed list"},
+  {"id": 4, "name": "Somewhere else"}
+ ],
+ "note": "Leave out passwords and home addresses. A report holds your words and the topic, nothing else.",
+ "sent_title": "Report on its way",
+ "sent_line": "=IF(last_topic = \"\", \"Thanks. That makes \", \"Thanks, filed under \" & last_topic & \". That makes \") & TEXT(sent_count) & IF(sent_count = 1, \" report\", \" reports\") & \" from you.\"",
+ "set_text": {
+  "event": "set_text"
+ },
+ "pick_topic": {
+  "event": "pick_topic",
+  "value": "=it.id",
+  "label": "Pick"
+ },
+ "send": {
+  "event": "send",
+  "value": "=0",
+  "label": "Send report"
+ },
+ "again": {
+  "event": "again",
+  "value": "=0",
+  "label": "Write another"
+ }
+}

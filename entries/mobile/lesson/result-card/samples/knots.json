@@ -1,0 +1,30 @@
+{
+ "title": "Knot school",
+ "right": 4,
+ "total": 6,
+ "bands": [
+  {"id": 1, "min": 0, "word": "Loose", "verdict": "A first pass at the knots", "why": "Most of these take a few tries with real rope. Tie each missed one twice, then run the set again."},
+  {"id": 2, "min": 0.5, "word": "Steady", "verdict": "Half the knots hold already", "why": "The loops are there; the bends still slip. A short second run tomorrow tends to fix the rest."},
+  {"id": 3, "min": 0.8, "word": "Firm", "verdict": "Nearly every knot held", "why": "One or two left to settle. Look at the missed ones below and they should stick."},
+  {"id": 4, "min": 1, "word": "Locked", "verdict": "Every knot held", "why": "A clean run. The next set adds hitches for tying onto posts and rings."}
+ ],
+ "missed": [
+  {"id": 1, "ask": "Which knot joins two ropes of different thickness?", "answer": "Sheet bend"},
+  {"id": 2, "ask": "Which knot tightens around a post as you pull?", "answer": "Clove hitch"}
+ ],
+ "score_line": "=TEXT(right) & \" of \" & TEXT(total) & \" right, \" & TEXT(ROUND(share * 100, 0)) & \"%\"",
+ "best_tag": "Your best so far",
+ "missed_label": "=IF(open, \"Hide the missed\", \"See the \" & TEXT(miss_count) & IF(miss_count = 1, \" missed knot\", \" missed knots\"))",
+ "empty_text": "No questions in this run",
+ "kept_line": "=\"Kept. Best \" & TEXT(best) & \" of \" & TEXT(total) & \" over \" & TEXT(tries) & IF(tries = 1, \" run\", \" runs\")",
+ "toggle": {
+  "event": "toggle",
+  "value": "=0",
+  "label": "Missed"
+ },
+ "finish": {
+  "event": "finish",
+  "value": "=0",
+  "label": "Finish"
+ }
+}

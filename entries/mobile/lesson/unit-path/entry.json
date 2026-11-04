@@ -1,0 +1,13 @@
+{
+ "id": "mobile.lesson.unit-path",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "lesson",
+ "kinds": [
+  "path",
+  "progress",
+  "list"
+ ],
+ "line": "A unit's lessons as cards in order: done, the current one tagged, the rest locked until the ones before are done."
+}

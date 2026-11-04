@@ -1,0 +1,164 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the app's name, the screen title"
+  },
+  {
+   "name": "messages",
+   "type": "list",
+   "required": true,
+   "about": "the cards: id, sender, subject, preview, date, starred, read"
+  },
+  {
+   "name": "search_label",
+   "type": "text",
+   "required": true,
+   "about": "the spoken label and hint of the search field"
+  },
+  {
+   "name": "today_word",
+   "type": "text",
+   "required": true,
+   "about": "the time line for a card from today"
+  },
+  {
+   "name": "yesterday_word",
+   "type": "text",
+   "required": true,
+   "about": "the time line for a card from yesterday"
+  },
+  {
+   "name": "days_word",
+   "type": "text",
+   "required": true,
+   "about": "after the count of days for older cards, e.g. ' days ago'"
+  },
+  {
+   "name": "empty_text",
+   "type": "text",
+   "required": true,
+   "about": "shown when nothing is there or nothing matches the search"
+  },
+  {
+   "name": "unread_word",
+   "type": "text",
+   "required": true,
+   "about": "after the unread count in the line over the cards"
+  },
+  {
+   "name": "star_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the subject on the star button while not starred"
+  },
+  {
+   "name": "unstar_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the subject on the star button while starred"
+  },
+  {
+   "name": "open_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the subject on a closed card"
+  },
+  {
+   "name": "close_word",
+   "type": "text",
+   "required": true,
+   "about": "spoken before the subject on an open card"
+  }
+ ],
+ "tokens": [
+  "background",
+  "surfaceRow",
+  "accent",
+  "accentContainer",
+  "onAccentContainer",
+  "textPrimary",
+  "textSecondary",
+  "radiusCard",
+  "minTouch",
+  "headline",
+  "body",
+  "caption"
+ ],
+ "scales": [
+  "space1",
+  "space4",
+  "space5",
+  "space6",
+  "space7",
+  "space8",
+  "space9",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "search",
+    "gesture": "tap",
+    "event": "search"
+   },
+   {
+    "node": "card",
+    "gesture": "tap",
+    "event": "open_card"
+   },
+   {
+    "node": "star",
+    "gesture": "tap",
+    "event": "star"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "empty in place of cards (nothing there or no match)"
+   },
+   "attention": {
+    "shows": "unread_line and a dot before each unread subject"
+   }
+  },
+  "motion": [
+   {
+    "node": "card",
+    "enter": "rise"
+   },
+   {
+    "node": "card",
+    "press": "shrink"
+   },
+   {
+    "node": "star",
+    "press": "shrink"
+   },
+   {
+    "node": "star_icon",
+    "animate": "swap"
+   },
+   {
+    "node": "preview",
+    "animate": "smooth"
+   },
+   {
+    "node": "unread_line",
+    "animate": "swap"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "search": "search_label",
+   "card": "open_word or close_word + subject",
+   "star": "star_word or unstar_word + subject"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops rise, shrink, swap and the smooth open"
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "spec_version": "0.1.0",
+ "slots": [
+  {
+   "name": "title",
+   "type": "text",
+   "required": true,
+   "about": "the heading over the answers"
+  },
+  {
+   "name": "fields",
+   "type": "list",
+   "required": true,
+   "about": "the answers to confirm, in order: id (1 up), label, value (text, may be empty), required (true or false)"
+  },
+  {
+   "name": "empty_line",
+   "type": "text",
+   "required": true,
+   "about": "what an empty answer reads as"
+  },
+  {
+   "name": "sign_label",
+   "type": "text",
+   "required": true,
+   "about": "the consent row's words"
+  },
+  {
+   "name": "missing_line",
+   "type": "formula",
+   "required": true,
+   "about": "after a create that can't go yet; may read missing (empty required answers), signed and open (the row being edited, 0 for none)"
+  },
+  {
+   "name": "done_line",
+   "type": "text",
+   "required": true,
+   "about": "the line once created"
+  },
+  {
+   "name": "edit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: opens a row's editor (value: it.id), one row at a time"
+  },
+  {
+   "name": "set_draft",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: typing in the open row (value: the text)"
+  },
+  {
+   "name": "done_edit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: keeps the open row's text, trimmed"
+  },
+  {
+   "name": "cancel_edit",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: closes the open row without keeping"
+  },
+  {
+   "name": "toggle_sign",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: the consent checkbox"
+  },
+  {
+   "name": "create",
+   "type": "action",
+   "required": true,
+   "about": "{event, value expression, label}: creates once every required answer is filled, consent is given and no row is open; before that, says what is missing"
+  }
+ ],
+ "tokens": [
+  "background",
+  "textPrimary",
+  "textSecondary",
+  "accent",
+  "accentFill",
+  "onAccentFill",
+  "destructive",
+  "surfaceRow",
+  "titleHero",
+  "body",
+  "caption",
+  "buttonLabel",
+  "minTouch"
+ ],
+ "scales": [
+  "space1",
+  "space2",
+  "space3",
+  "space4",
+  "space6",
+  "space8",
+  "screenMargin"
+ ],
+ "behaviour": {
+  "actions": [
+   {
+    "node": "edit_btn",
+    "gesture": "tap",
+    "event": "edit"
+   },
+   {
+    "node": "field",
+    "gesture": "type",
+    "event": "set_draft"
+   },
+   {
+    "node": "done_btn",
+    "gesture": "tap",
+    "event": "done_edit"
+   },
+   {
+    "node": "cancel_btn",
+    "gesture": "tap",
+    "event": "cancel_edit"
+   },
+   {
+    "node": "sign_btn",
+    "gesture": "tap",
+    "event": "toggle_sign"
+   },
+   {
+    "node": "create_btn",
+    "gesture": "tap",
+    "event": "create"
+   }
+  ],
+  "states": {
+   "empty": {
+    "shows": "an empty answer reads as the empty line and create is dimmed; after a try it turns to the destructive role"
+   },
+   "attention": {
+    "shows": "a line over create says what is missing, and an unticked box turns destructive"
+   },
+   "fallback": {
+    "shows": "create and every edit go away and a done line shows"
+   }
+  },
+  "motion": [
+   {
+    "node": "field_cell",
+    "animate": "smooth"
+   },
+   {
+    "node": "value_text",
+    "animate": "swap"
+   },
+   {
+    "node": "missing_text",
+    "animate": "swap"
+   },
+   {
+    "node": "create_btn",
+    "press": "shrink"
+   }
+  ]
+ },
+ "accessibility": {
+  "min_tap": "minTouch",
+  "labels": {
+   "edit_btn": "edit.label",
+   "field": "the row's label",
+   "done_btn": "done_edit.label",
+   "cancel_btn": "cancel_edit.label",
+   "sign_btn": "toggle_sign.label",
+   "create_btn": "create.label"
+  },
+  "text_scales": true,
+  "reduce_motion": "the phone drops smooth, swap and shrink",
+  "not_colour_alone": "an empty answer reads as words, the circle has a tick when signed, and the missing line names what is left"
+ }
+}

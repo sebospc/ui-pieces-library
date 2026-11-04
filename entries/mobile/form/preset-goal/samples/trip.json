@@ -1,0 +1,14 @@
+{
+ "title": "Trip fund",
+ "subject": "Lisbon in spring",
+ "subject_icon": "plane",
+ "amount_head": "How much to put aside",
+ "amount_help": "Flights, rooms and a bit for food",
+ "amount_unit": "EUR",
+ "due_head": "By when",
+ "due_label": "Pick a day",
+ "presets": [{"id": 1, "label": "3 months", "days": 91}, {"id": 2, "label": "6 months", "days": 182}, {"id": 3, "label": "1 year", "days": 365}],
+ "goals": [],
+ "save_label": "Set goal",
+ "saved_text": "=\"Goals set: \" & TEXT(COUNT(goals))"
+}

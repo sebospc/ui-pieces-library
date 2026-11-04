@@ -1,0 +1,9 @@
+{
+ "id": "mobile.hero_list.balance-actions",
+ "version": "0.1.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "hero_list",
+ "kinds": ["tally", "quick-add"],
+ "line": "A big running total, a row of one-tap adds, and today's list with signed amounts, newest first."
+}

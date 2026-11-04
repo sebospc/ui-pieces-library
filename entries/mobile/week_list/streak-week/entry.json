@@ -1,0 +1,13 @@
+{
+ "id": "mobile.week_list.streak-week",
+ "version": "0.2.0",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "week_list",
+ "kinds": [
+  "habits",
+  "fitness",
+  "learning"
+ ],
+ "line": "The current streak big in a ring, this week's days ticked, the best run, one button for today."
+}

@@ -1,0 +1,13 @@
+{
+ "id": "mobile.form.live-rules",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "form",
+ "kinds": [
+  "field",
+  "validation",
+  "checklist"
+ ],
+ "line": "One field with its rules under it, each turning from a cross to a check as you type, and Next held until all pass."
+}

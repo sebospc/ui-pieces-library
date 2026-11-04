@@ -1,0 +1,2 @@
+{"version": "0.1.0", "date": "2026-10-31", "change": "first version: kind toggles, samples follow them, allow hands to the host, skip, status lines"}
+{"version": "0.1.1", "date": "2026-10-31", "change": "minimum: none-hidden-when-closed, stack-hidden-when-closed, kind-on-text, kind-off-text"}

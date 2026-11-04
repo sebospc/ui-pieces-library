@@ -1,0 +1,9 @@
+{
+ "id": "mobile.ranked_list.points-rank",
+ "version": "0.1.1",
+ "status": "draft",
+ "platform": "mobile",
+ "pattern": "ranked_list",
+ "kinds": ["ranking", "community"],
+ "line": "Items ranked by votes, each rank with its points and its move since the last visit; a vote re-ranks."
+}

@@ -1,0 +1,42 @@
+{
+ "title": "Crew",
+ "photo": "",
+ "name": "Maren Okafor",
+ "role": "Head gardener, north beds",
+ "fields": [
+  {
+   "id": 1,
+   "label": "Goes by",
+   "value": "Mo",
+   "link": false
+  },
+  {
+   "id": 2,
+   "label": "On site",
+   "value": "Mondays and Thursdays",
+   "link": false
+  },
+  {
+   "id": 3,
+   "label": "Phone",
+   "value": "",
+   "link": true
+  },
+  {
+   "id": 4,
+   "label": "Mail",
+   "value": "maren@example.org",
+   "link": true
+  },
+  {
+   "id": 5,
+   "label": "Ask about",
+   "value": "Pruning, compost, the greenhouse key",
+   "link": false
+  }
+ ],
+ "empty_text": "No details shared yet.",
+ "kept_text": "In your close list",
+ "keep_label": "Add to people you keep close",
+ "unkeep_label": "Remove from people you keep close"
+}
